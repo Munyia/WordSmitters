@@ -5,23 +5,23 @@ import { Link } from 'react-router-dom'
 
 const Header = () => {
   return (
-    <div className='  flex w-full h-[10vh]' id='Navbar'>
-        <img src={imageLogo} alt="" />
-        <div class="form-control">
-  <input
-    type="text"
-    placeholder="Search by...."
-    class="input input-alt"
-  />
-  <span className="input-border input-border-alt"></span>
-</div>
-<div class="group input-box cursor-pointer">
-  <p>Sign Up</p>
-  <div className="hidden group-hover:flex flex-col text-black gap-2 p-1">
+    <div className='text-white relative gap-5 pr flex w-full h-[10vh] bg-[#1c6355] justify-between items-center' id='Navbar'>
+       <div className='flex justify-around text-center items-center gap-5 content-center'>
+        <img src={imageLogo} className='h-[8vh]' alt="" />
+          <Link>About</Link>
+       </div>
+       <div>
+       <input type="text" autocomplete="off" name="text" class="input" placeholder="Search by Author, Title ..."/>
+       </div>
+       <div className=' flex'>
+  <Link>Login</Link>
+<div class="group input-box gap-5 relative w-[10vw] flex justify-evenly pr-5 cursor-pointer">
+  <Link>Sign Up</Link>
+  <div className="hidden text-white absolute top-[100%] bg-[#1c6355] rounded  group-hover:flex flex-col gap-2 p-2">
             <Link to={''} className='hover:bg-slate-300 rounded-lg px-1'>Reader</Link>
             <Link to={''} className='hover:bg-slate-300 rounded-lg px-1'>Writer</Link>
-            <Link to={''} className='hover:bg-slate-300 rounded-lg px-1'>Service provider</Link>
         </div>
+       </div>
 </div>
 
 
