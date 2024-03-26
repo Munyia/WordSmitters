@@ -2,12 +2,13 @@ import React from 'react'
 import imageLogo from "../assets/res/imageLogo.jpg"
 import "./header.css"
 import { Link } from 'react-router-dom'
+import log from '../assets/res/log.png'
 
 const Header = () => {
   return (
-    <div className='text-white relative gap-5 pr flex w-full h-[10vh] bg-[#1c6355] justify-between items-center' id='Navbar'>
+    <div className='text-white relative gap-5 pr flex w-full h-[10vh] bg-[rgb(198,82,0)] justify-between items-center' id='Navbar'>
        <div className='flex justify-around text-center items-center gap-5 content-center'>
-        <img src={imageLogo} className='h-[8vh]' alt="" />
+        <img src={log} className='h-[8vh]' alt="" />
           <Link>About</Link>
        </div>
        <div>
