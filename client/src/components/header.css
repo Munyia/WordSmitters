@@ -1,17 +1,20 @@
+*{
+color: rgb(10,32,8);
+}
 .input {
   border: none;
   outline: none;
   border-radius: 15px;
   padding: 1em;
-  background-color: #1C6355;
-  box-shadow: inset 2px 5px 10px rgba(0,0,0,0.3);
+  background-color:white ;
+  box-shadow: inset 2px 5px 10px grey;
   transition: 300ms ease-in-out;
   height: 8vh;
 }
 
 .input:focus {
-  background-color: #1C6355;
+  background-color:white;
   transform: scale(1.05);
-  box-shadow: 13px 13px 100px #969696,
-             -13px -13px 100px #ffffff;
+  box-shadow: 13px 13px 100px grey,
+             1px 1px px grey;
 }
