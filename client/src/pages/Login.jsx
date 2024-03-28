@@ -1,14 +1,14 @@
 import React from 'react'
 import "./login.css"
-import { tb } from '../assets'
-import { llogo } from '../assets'
+import { tb, llogo } from '../assets'
+import { Link } from 'react-router-dom'
 
 const Login = () => {
   return (
     <div className=' w-full placeholder:text-[#CD9564] bg-[rgba(10,32,8,0.9)] h-[100vh] overflow-hidden' id='Login'>
-      {/* <Link to={'/'}><img src={llogo} className='h-[16vh]' alt="" /></Link> */}
             <img src={tb} className='w-full  justify-center text-center align-middle' alt="" />
             <div className='absolute w-full h-full bg-[rgba(0,0,0,0.7)] flex justify-center items-center top-0 '>
+      <Link to={'/'}><img src={llogo} className='h-[10vh] absolute top-0 left-0' alt="" /></Link>
             <form class="form backdrop-blur-sm bg-[rgba(0,0,0,0.3)] ">
     <h1  id="heading" className=' text-2xl font-bold text-[#CD9564] '>Login</h1>
     <div className="field">
