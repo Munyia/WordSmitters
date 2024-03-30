@@ -8,7 +8,7 @@ import SignIn from '../pages/SignUp'
 const Header = () => {
   return (
     <div className='text-white  bg-[#CD9564] relative gap-5 pr flex w-full h-[10vh] bg- justify-between items-center' id='Navbar'>
-       <div className='flex justify-around text-[#3BE692] text-center items-center gap-5 content-center'>
+       <div className='flex justify-around text-[rgb(10,32,8)] text-center items-center gap-5 content-center'>
        <Link to={'/'}><img src={llogo} className='h-[16vh]' alt="" /></Link>
           <Link>About</Link>
           <Link>Books</Link>
@@ -16,14 +16,14 @@ const Header = () => {
        <div>
        <input type="text" autocomplete="off" name="text" class="input" placeholder="Search by Author, Title ..."/>
        </div>
-       <div className=' flex text-[#3BE692] '>
+       <div className=' flex text-[rgb(10,32,8)] '>
   <Link to={"/login"}>Login</Link>
-<div class="group input-box gap-5 relative w-[10vw] text-[#3BE692]  flex justify-evenly pr-5 cursor-pointer">
+<div class="group input-box gap-5 relative w-[10vw] text-[rgb(10,32,8)]  flex justify-evenly pr-5 cursor-pointer">
   <Link to={"/SignUp"}>Sign Up</Link>
   <div className="hidden text-black absolute top-[100%] bg-[#CD9564] rounded  group-hover:flex flex-col gap-2 p-2">
-            <Link to={''} className='hover:bg-[#3BE692)]  hover:text-white  rounded-lg px-1'>Reader</Link>
-            <Link to={''} className='hover:bg-[#3BE692)] hover:text-white rounded-lg px-1'>Writer</Link>
-            <div className=' border-b-[#3BE692]'></div>
+            <Link to={''} className='hover:bg-[rgb(10,32,8)]  hover:text-white  rounded-lg px-1'>Reader</Link>
+            <Link to={''} className='hover:bg-[rgb(10,32,8)] hover:text-white rounded-lg px-1'>Writer</Link>
+            <div className=' border-b-[rgb(10,32,8)]'></div>
         </div>
        </div>
 </div>

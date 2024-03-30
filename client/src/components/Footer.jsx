@@ -4,7 +4,7 @@ import { twitter,llogo } from '../assets'
 
 const Footer = () => {
   return (
-    <div className='flex mt-[25%] justify-around  bg-[#CD9564]  text-[#3BE692] text-center items-center gap-5 content-center' id='footer'>
+    <div className='flex mt-[25%] justify-around  bg-[#CD9564]  text-[rgb(10,32,8)] text-center items-center gap-5 content-center' id='footer'>
         <div className='flex flex-col justify-center  align-middle text-left gap-2'>
             <Link className=' hover:underline'>Company</Link>
             <Link className=' hover:underline'>About us</Link>
