@@ -19,7 +19,7 @@ const Header = () => {
        <div className=' flex text-[rgb(10,32,8)] '>
   <Link to={"/login"}>Login</Link>
 <div class="group input-box gap-5 relative w-[10vw] text-[rgb(10,32,8)]  flex justify-evenly pr-5 cursor-pointer">
-  <Link to={"/SignIn"}>Sign Up</Link>
+  <Link to={"/SignUp"}>Sign Up</Link>
   <div className="hidden text-black absolute top-[100%] bg-[#CD9564] rounded  group-hover:flex flex-col gap-2 p-2">
             <Link to={''} className='hover:bg-[rgb(10,32,8)]  hover:text-white  rounded-lg px-1'>Reader</Link>
             <Link to={''} className='hover:bg-[rgb(10,32,8)] hover:text-white rounded-lg px-1'>Writer</Link>
