@@ -1,4 +1,4 @@
-.form {
+#Login .form {
   display: flex;
   flex-direction: column;
   gap: 10px;
@@ -12,23 +12,23 @@
   align-items: center;
   text-align: center;
   width: 30%;
-  height:60%;
+  min-height:60%;
  
 }
 
-.form:hover {
+#Login .form:hover {
   transform: scale(1.05);
   border: 1px solid #CD9564;
 }
 
-#heading {
+#Login #heading {
   text-align: center;
   margin: 2em;
   /* color: #171717; */
   font-size: 1.2em;
 }
 
-.field {
+#Login .field {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -42,13 +42,13 @@
   box-shadow: inset 2px 5px 10px rgb(5, 5, 5);
 }
 
-.input-icon {
+#Login .input-icon {
   height: 1.3em;
   width: 1.3em;
   fill: #CD9564;
 }
 
-.input-field {
+#Login .input-field {
   background: none;
   border: none;
   outline: none;
@@ -56,7 +56,7 @@
   color:#CD9564;
 }
 
-.form .btn {
+#Login .form .btn {
   display: flex;
   justify-content: center;
   flex-direction: row;
@@ -64,7 +64,7 @@
   margin-top: 2.5em;
 }
 
-.button1 {
+#Login .button1 {
   padding: 0.3em;
   padding-left: 1.1em;
   padding-right: 1.1em;
@@ -79,12 +79,12 @@
   color: #CD9564;
 }
 
-.button1:hover {
+#Login .button1:hover {
   background-color: #171717;
   color: #CD9564;
 }
 
-.button2 {
+#Login .button2 {
   padding: 0.3em;
   padding-left: 1.1em;
   padding-right: 1.1em;
@@ -98,12 +98,12 @@
   color: #CD9564;
 }
 
-.button2:hover {
+#Login .button2:hover {
    background-color: #171717;
   color: #CD9564;
 }
 
-.button3 {
+#Login .button3 {
   margin-bottom: 3em;
   padding: 0.5em;
   border-radius: 5px;
@@ -114,7 +114,7 @@
   color: #CD9564;
 }
 
-.button3:hover {
+#Login .button3:hover {
   background-color: red;
   color: #171717;
 }
