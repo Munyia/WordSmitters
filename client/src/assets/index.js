@@ -5,7 +5,8 @@ import tb from './res/tb.jpg'
 import bg11 from './res/bg11.jpg'
 import bgg from './res/bgg.png'
 import bgg1 from './res/bgg1.png'
+import twitter from './res/twitter.svg'
 
 
 
-export {bg0, llogo, bgimg, tb, bg11, bgg, bgg1}
+export {bg0, llogo, bgimg, tb, bg11, bgg, bgg1, twitter}
