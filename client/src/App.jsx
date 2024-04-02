@@ -5,7 +5,6 @@ import llogo from './pages/Home';
 import Login from './pages/Login'
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import SignUp from './pages/SignUp';
-import Register from './pages/Register';
 import BookList from './components/BookList';
 import BookCard from './components/BookCard';
 import data from './components/data';
@@ -19,7 +18,6 @@ function App() {
       <Route path="/login" element ={<Login />}/>
       <Route path="/" element ={<Home/>}/>
       <Route path="/signup" element ={<SignUp/>}/>
-      <Route path="/register" element ={<Register/>}/>
       <Route path="/booklist" element ={<BookList list={data}/>}/>
       <Route path="/bookcard" element ={<BookCard/>}/>
     </Routes>
