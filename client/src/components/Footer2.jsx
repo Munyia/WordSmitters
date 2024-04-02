@@ -44,13 +44,13 @@ const Footer2 = () => {
   }, [isModalOpen]);
 
     return (
-        <footer className="sm:gap-6 relative flex sm:p-16 flex-col bg-white sm:bg-pry sm:text-white w-full flex-wrap">
-          <div className=" bg-white f-shadow rounded-2xl items-center flex flex-col gap-4 text-black mx-auto py-[100px] px-9 text-left w-[96%]  sm:hidden">
+        <footer className="sm:gap-6 relative flex sm:p-16 flex-col bg-white sm:bg-pry sm:text-white w-full flex-wrap mt-[30%]">
+          <div className=" bg-sec f-shadow rounded-2xl items-center flex flex-col gap-4 text-white mx-auto py-[100px] px-9 text-left w-[96%]  sm:hidden">
             <p className="font-[500] text-[14px] w-3/4">
               SUBSCRIBE TO OUR NEWSLETTER
             </p>
             <p className="font-[400] text-[10px] w-3/4">
-              GET UP-TO-DATE INFORMATION ABOUT TOPME AND ITS SERVICES
+              GET UP-TO-DATE INFORMATION ABOUT WOODSMITTERS AND ITS SERVICES
             </p>
             <div className="h-[38px] flex rounded border border-black">
               <div className="flex px-2 justify-center items-center">
@@ -69,16 +69,16 @@ const Footer2 = () => {
                 <img src={logo} alt="" className="hidden sm:block h-10" />
                 <img src={logoB} alt="" className="sm:hidden h-6" />
                 <div className="hidden items-center sm:flex justify-center gap-2 w-full">
-                  <div className="border rounded-full sm:p-1 md:p-2">
-                    <BiLogoYoutube />
+                  <div className="border  aspect-square flex items-center justify-center hover:w-10 hover:bg-sec rounded-full sm:p-1 md:p-2">
+                    <BiLogoYoutube className="" />
                   </div>
-                  <div className="border rounded-full sm:p-1 md:p-2">
+                  <div className="border  aspect-square flex items-center justify-center hover:w-10 hover:bg-sec rounded-full sm:p-1 md:p-2">
                     <BiLogoFacebook />
                   </div>
-                  <div className="border rounded-full sm:p-1 md:p-2">
+                  <div className="border  aspect-square flex items-center justify-center hover:w-10 hover:bg-sec rounded-full sm:p-1 md:p-2">
                     <BiLogoInstagram />
                   </div>
-                  <div className="border rounded-full sm:p-1 md:p-2">
+                  <div className="border  aspect-square flex items-center justify-center hover:w-10 hover:bg-sec rounded-full sm:p-1 md:p-2">
                     <BiLogoTwitter />
                   </div>
                 </div>
@@ -89,34 +89,29 @@ const Footer2 = () => {
                   <p className="sm:font-[500] sm:text-[14px] font-[300] text-[12px] mb-2">LINKS</p>
                   <p>Home</p>
                   <p>About</p>
-                  <p>Angels</p>
                   <p>Blog</p>
                   <p>Contact Us</p>
                   <p>FAQ</p>
                 </div>
                 <div className="font-[400] text-[14px] sm:text-[10px] flex flex-col gap-4">
-                  <p className="sm:font-[500] sm:text-[14px] font-[300] text-[12px] mb-2">PARTNERS</p>
-                  <p>Photoman</p>
-                  <p>Abuja Diplomat</p>
-                  <p>BIGWIG</p>
-                  <p>OneID</p>
-                  <p>Technology Advisors</p>
+                  <p className="sm:font-[500] sm:text-[14px] font-[300] text-[12px] mb-2">ETHICAL CODES</p>
+                  <p>Community Guidelines</p>
+                  <p>Code of conduct</p>
                 </div>
                 <div className="font-[400] text-[14px] sm:text-[10px] flex flex-col gap-4">
                   <p className="sm:font-[500] sm:text-[14px] font-[300] text-[12px] mb-2">RESOURCES</p>
                   <Link to={'/howitworks'}>How it works</Link>
-                  <Link to={'/pricing'}>Pricing and Fees</Link>
                   <Link to={'/guarantee'}>Guarantee Page</Link>
                 </div>
               </div>
             </div>
-            <div className=" bg-white text-black rounded-lg p-6 text-left w-1/4 hidden sm:block">
+            <div className=" bg-white text-black rounded-s-full p-6 text-left w-1/4 hidden sm:block">
               <p className=" text-[12px] font-semibold md:font-[700] md:text-[14px]">SUBSCRIBE TO OUR NEWSLETTER</p>
               <p className=" text-[0.5rem] font-[400] md:text-[10px] w-4/5 md:w-3/4 my-4">
-                GET UP-TO-DATE INFORMATION ABOUT TOPME AND ITS SERVICES
+                GET UP-TO-DATE INFORMATION ABOUT WOORDSMITTERS AND ITS SERVICES
               </p>
               <span onClick={openModal} className="p-1 md:p-2  rounded-e-2xl rounded-b-2xl text-white cursor-pointer bg-black sm:text-[12px]">
-                LET'S START
+                Subscribe
               </span>
             </div>
           </div>
@@ -124,14 +119,14 @@ const Footer2 = () => {
           <div className="flex flex-col sm:items-center sm:flex-row sm:gap-4 text-[#808080] sm:text-white text-[10px]  font-[400] flexWrap">
             <div className="flex justify-center gap-1 items-center w-full my-6 sm:my-0 text-center sm:w-auto">
             <span className="text-[18px]">&copy;</span>
-            <span className="">TopMe, 2023</span>
+            <span className="">WordSmitters, 2024</span>
             </div>
             <div className="flex flex-row gap-4 text-[10px] font-[400] flexWrap justify-center">
             <span>PRIVACY POLICY</span>
             <span>COOKIE POLICY</span>
             <span>TERMS & CONDITIONS</span>
             </div>
-            <div className="items-center text-[#808080] text-[16px] flex justify-center gap-6 w-full mt-5 mb-3 sm:hidden">
+            <div className="items-center text-[#808080] text-[16px]  flex justify-center gap-6 w-full mt-5 mb-3 sm:hidden">
                   <div className="border rounded-full p-2">
                     <BiLogoYoutube />
                   </div>

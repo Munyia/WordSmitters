@@ -2,7 +2,7 @@ import React from 'react'
 import Header from '../components/Header'
 import { bg0, bg11, bgg, bgg1 } from '../assets'
 import { Link } from 'react-router-dom'
-import Footer from '../components/Footer'
+import Footer2 from '../components/Footer2'
 
 const Home = () => {
   return (
@@ -30,7 +30,7 @@ const Home = () => {
         </div>
        </div>
         </div>
-        <Footer/>
+        <Footer2/>
     </div>
   )
 }
