@@ -5,11 +5,12 @@ import { Link } from "react-router-dom";
 import Footer2 from "../components/Footer2";
 
 const Home = () => {
-  // useEffect(() => {
-  //   fetch("http://localhost:4000/countries")
-  //     .then((res) => res.json())
-  //     .then((res) => console.log(res));
-  // }, []);
+  useEffect(() => {
+    fetch("http://localhost:4000/countries")
+      .then((res) => res.json())
+      .then((res) => console.log(res));
+  }, []);
+ 
   return (
     <div id="Home">
       <Header />
