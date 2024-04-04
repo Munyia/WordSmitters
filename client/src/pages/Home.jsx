@@ -29,10 +29,10 @@ const Home = () => {
               our diverse literary landscape."
             </p>
             <div className="flex justify-around text-white">
-              <Link className="bg-[rgb(10,32,8)] py-2 px-6 rounded-md">
+              <Link to={"/signup"} className="bg-[rgb(10,32,8)] py-2 px-6 rounded-md">
                 Reader
               </Link>
-              <Link className="bg-[rgb(10,32,8)] py-2 px-6 rounded-md">
+              <Link to={"/signup"} className="bg-[rgb(10,32,8)] py-2 px-6 rounded-md">
                 Writer
               </Link>
             </div>

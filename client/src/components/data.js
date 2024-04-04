@@ -23,7 +23,7 @@ const data = [
         title:'Bookcard',
         description :'A Novel',
         PosterURL: dance,
-        author: 'Author',
+        author: 'David',
         publisher: 'Publisher',
         year:'Year',
         genre: 'Genre',

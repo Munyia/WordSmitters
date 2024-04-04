@@ -2,6 +2,7 @@ import React from "react";
 import "./login.css";
 import { tb, llogo } from "../assets";
 import { Link } from "react-router-dom";
+import Loader from "../components/Loader";
 
 const SignUp = () => {
   return (
@@ -91,6 +92,7 @@ const SignUp = () => {
           <button className="button3">Sign Up With Google</button>
         </form>
       </div>
+      <Loader />
     </div>
    
   );

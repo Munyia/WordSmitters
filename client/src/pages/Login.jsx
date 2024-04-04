@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom'
 import { useState } from 'react'
 import { useEffect } from 'react'
 import axios from 'axios';
+import Loader from '../components/Loader'
 
 
 const Login = () => {
@@ -53,11 +54,13 @@ const Login = () => {
     <Link className="button2">Sign Up</Link>
     </div>
     <Link className="button3">Forgot Password</Link>
-    {loading && <p className='text-white'>loading</p>}
+    {loading && <div className='text-white'>
+ 
+      </div>}
 </form>
 
             </div>
-            
+            <Loader />
  
         </div>
 //     <div className=' w-full placeholder:text-[#CD9564] bg-[rgba(10,32,8,0.9)]  flex justify-between ' id='Login'>
