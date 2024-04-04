@@ -2,9 +2,9 @@ import React from 'react'
 
 const About = () => {
   return (
-    <div  className='flex p-5 flex-col px-15 align-middle bg-sec text-sec1 '>
+    <div  className='flex p-5 flex-col px-15 align-middle bg-sec text-pry '>
       <div>
-        <p className=' flex justify-center text-3xl '>About <span className='text-pry '> Wordsmitters</span></p>
+        <p className=' flex justify-center text-3xl '>About <span className='text-sec1 '> Wordsmitters</span></p>
         <p className='flex justify-center align-middle text-center'>Welcome to Wordsmitters, your premier destination for exploring the vibrant world of Nigerian literature. Founded with a passion for promoting Nigerian authors and showcasing the rich tapestry of Nigerian culture through literature, Wordsmitters aims to be the bridge that connects readers with captivating stories, insightful narratives, and diverse voices from Nigeria.</p>
       </div>
       <div>

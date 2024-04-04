@@ -1,11 +1,14 @@
 const express = require('express');
 const cors = require('cors');
+const connectdb = require('./db');
+const dotenv = require('dotenv');
+const User = require("./model/userModel");
 
 
 const app = express();
-const port = 5174;
-
-
+const port = 8081;
+dotenv.config();
+connectdb();
 const users =[
     {
         "name":"John",
@@ -22,7 +25,18 @@ const users =[
         "email":"<jane@gmail.com>",
         "password":"<PASSWORD>"
     },
-]
+];
+
+app.post("login", (req, res) => {
+
+});
+app.get("/addUser", (req, res) => {
+    const newUser = new User({email});
+    const addUser = newuser.save()
+    newUser.save((err, user) => {
+      
+    })
+})
 
 app.use(
     cors({

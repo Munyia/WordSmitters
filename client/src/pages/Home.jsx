@@ -18,10 +18,10 @@ const Home = () => {
         <div className="flex mt-[1%]">
           <div className=" w-3/5 pl-[3%] flex flex-col gap-6">
             <h1 className=" font-extrabold text-sec1 text-[3rem]">
-              Welcome to WordSmithers
+              Welcome to <span className="text-pry"> WordSmithers</span> 
             </h1>
-            <p className="text-pry justify-center content-center place-content-center tracking-wide leading-relaxed font-playfair">
-              "Hello and welcome to WordSmithers, where the magic of Nigerian
+            <p className="text-sec justify-center content-center place-content-center tracking-wide leading-relaxed font-playfair">
+              "Hello and welcome to <span className=" text-pry">WordSmithers</span>, where the magic of Nigerian
               literature comes to life! 📚 Whether you're a passionate reader
               eager to explore the rich tapestry of Nigerian stories or a
               talented writer looking to share your own narrative, you've found
@@ -41,7 +41,7 @@ const Home = () => {
             <img src={bg0} className="w-full " alt="" />
           </div>
         </div>
-        <div  id="imageContainer" className=" flex-wrap bg-sec w-full px-3 gap-3 pb-3 pt-4 flex ">
+        <div  id="imageContainer" className=" flex-wrap w-full px-3 gap-3 pb-3 pt-4 flex ">
           <div className=" flex gap-3 ">
   <div className="w-1/5">
   <img src={bk1} className="w-full " alt="" />

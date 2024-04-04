@@ -17,7 +17,7 @@ const Header = () => {
     <div className='text-white  bg-[#CD9564] relative gap-5 pr flex w-full h-[10vh] bg- justify-between items-center' id='Navbar'>
        <div className='flex justify-around text-[rgb(10,32,8)] text-center items-center gap-5 content-center'>
        <Link to={'/'}><img src={llogo} className='h-[16vh]' alt="" /></Link>
-          <Link>About</Link>
+          <Link to={"/about"}>About</Link>
           <Link to={"/books"}>Books</Link>
        </div>
        <form onSubmit={handleSubmit}>
