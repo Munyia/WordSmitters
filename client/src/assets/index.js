@@ -8,7 +8,8 @@ import bgg1 from './res/bgg1.png'
 import dance from './res/dance.jpg'
 import twitter from './res/twitter.svg'
 import term from './res/term.jpg'
+import bk1 from './res/bk1.jpg'
 
 
 
-export {bg0, llogo, bgimg, tb, bg11, bgg, bgg1, term, dance, twitter}
+export {bg0, llogo, bgimg, tb, bg11, bgg, bgg1, bk1, term, dance, twitter}
