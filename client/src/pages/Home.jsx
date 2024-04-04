@@ -14,7 +14,7 @@ const Home = () => {
   return (
     <div id="Home">
       <Header />
-      <div className="h-[90vh]">
+      <div className="h-[90vh] ">
         <div className="flex mt-[1%]">
           <div className=" w-3/5 pl-[3%] flex flex-col gap-6">
             <h1 className=" font-extrabold text-[#CD9564] text-[3rem]">

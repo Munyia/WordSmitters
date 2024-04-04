@@ -44,7 +44,7 @@ const Footer2 = () => {
   }, [isModalOpen]);
 
   return (
-    <footer className="sm:gap-6 relative flex sm:p-16 flex-col bg-white sm:bg-pry sm:text-white w-full flex-wrap mt-[30%]">
+    <footer className="sm:gap-6 relative flex sm:p-16 flex-col bg-white sm:bg-pry sm:text-white w-full flex-wrap">
       {/* this is for mobile version */}
       <div className=" bg-sec f-shadow rounded-2xl items-center flex flex-col gap-4 text-white mx-auto py-[100px] px-9 text-left w-[96%]  sm:hidden">
         <p className="font-[500] text-[14px] w-3/4">

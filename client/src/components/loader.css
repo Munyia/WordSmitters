@@ -4,7 +4,7 @@
     font-size: 25px;
     font-weight: 700;
     line-height: 1.2;
-    color: #fff;
+    color: #CD9564;
     letter-spacing: 5px;
     z-index: 1;
     animation: shift 1s ease-in-out infinite alternate;
@@ -22,13 +22,13 @@
   
   .loader  .glitch:before {
     animation: glitch 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94) both infinite;
-    color: #8b00ff;
+    color: #93B0D5;
     z-index: -1;
   }
   
   .loader .glitch:after {
     animation: glitch 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94) reverse both infinite;
-    color: #00e571;
+    color:rgb(10,32,8);
     z-index: -2;
   }
   

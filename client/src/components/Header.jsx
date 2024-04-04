@@ -18,7 +18,7 @@ const Header = () => {
        <div className='flex justify-around text-[rgb(10,32,8)] text-center items-center gap-5 content-center'>
        <Link to={'/'}><img src={llogo} className='h-[16vh]' alt="" /></Link>
           <Link>About</Link>
-          <Link>Books</Link>
+          <Link to={"/books"}>Books</Link>
        </div>
        <form onSubmit={handleSubmit}>
        <input type="text" autocomplete="off" name="text" value={searchContent} onChange={(e)=>setSearchContent(e.target.value)} className="input text-black" placeholder="Search by Author, Title ..."/>

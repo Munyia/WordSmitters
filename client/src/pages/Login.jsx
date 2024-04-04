@@ -49,9 +49,9 @@ const Login = () => {
     </svg>
       <input placeholder="Password" value={password} onChange={(e)=>setPassword(e.target.value)} className="input-field placeholder:text-[#CD9564] " type="password"/>
     </div>
-    <div className="btn">
-    <button type='submit' disabled= {loading} className="button1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Login&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</button>
-    <Link className="button2">Sign Up</Link>
+    <div className="btn flex gap-5 w-1/2 ">
+    <button type='submit' disabled= {loading} className="button3 ">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Login&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</button>
+    <Link className="button3 ">Sign Up</Link>
     </div>
     <Link className="button3">Forgot Password</Link>
     {loading && <div className='text-white'>
