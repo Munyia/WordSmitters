@@ -8,6 +8,7 @@ import BookCard from './components/BookCard';
 import data from './components/data';
 import Dashboard from './components/Dashboard';
 import Books from './pages/Books';
+import Terms from './components/Terms';
 
 function App() {
  
@@ -23,6 +24,7 @@ function App() {
       <Route path="/bookcard" element ={<BookCard/>}/>
       <Route path="/dashboard" element ={<Dashboard/>}/>
       <Route path="/books/*" element ={<Books/>}/>
+      <Route path="/terms" element ={<Terms/>}/>
     </Routes>
     </BrowserRouter>
     
