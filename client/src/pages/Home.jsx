@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import Header from "../components/Header";
-import { bg0, bg11, bgg, bgg1 } from "../assets";
+import { bg0, bk1, bk2, bk3, bk4, bk5, bk8, bk10, bk14, bk15, bk22, } from "../assets";
 import { Link } from "react-router-dom";
 import Footer2 from "../components/Footer2";
 
@@ -14,13 +14,13 @@ const Home = () => {
   return (
     <div id="Home">
       <Header />
-      <div className="h-[90vh] ">
+      <div className="h-[90vh] mb-[10%] text-sec1 ">
         <div className="flex mt-[1%]">
           <div className=" w-3/5 pl-[3%] flex flex-col gap-6">
-            <h1 className=" font-extrabold text-[#CD9564] text-[3rem]">
+            <h1 className=" font-extrabold text-sec1 text-[3rem]">
               Welcome to WordSmithers
             </h1>
-            <p className="text-sec justify-center content-center place-content-center tracking-wide leading-relaxed font-playfair">
+            <p className="text-pry justify-center content-center place-content-center tracking-wide leading-relaxed font-playfair">
               "Hello and welcome to WordSmithers, where the magic of Nigerian
               literature comes to life! 📚 Whether you're a passionate reader
               eager to explore the rich tapestry of Nigerian stories or a
@@ -41,12 +41,41 @@ const Home = () => {
             <img src={bg0} className="w-full " alt="" />
           </div>
         </div>
-        <div className="flex  justify-center align-middle text-center">
-          <div className="flex gap-10 mt-[5%] mb-[5%] pb-5 justify-between">
-            <img src={bgg1} className="w-[30%]" alt="" />
-            <img src={bgg} className="w-[40%]" alt="" />
-            <img src={bg11} className="w-[30%]" alt="" />
-          </div>
+        <div  id="imageContainer" className=" flex-wrap bg-sec w-full px-3 gap-3 pb-3 pt-4 flex ">
+          <div className=" flex gap-3 ">
+  <div className="w-1/5">
+  <img src={bk1} className="w-full " alt="" />
+  </div>
+  <div className="w-1/5">
+  <img src={bk2} className="w-full " alt="" />
+  </div>
+  <div className="w-1/5">
+  <img src={bk3} className="w-full " alt="" />
+  </div>
+  <div className="w-1/5">
+  <img src={bk4} className="w-full " alt="" />
+  </div>
+  <div className="w-1/5">
+  <img src={bk5} className="w-full " alt="" />
+  </div>
+  </div>
+  <div  className=" flex gap-3">
+  <div className="w-1/5">
+  <img src={bk8} className="w-full " alt="" />
+  </div>
+  <div className="w-1/5">
+  <img src={bk10} className="w-full " alt="" />
+  </div>
+  <div className="w-1/5">
+  <img src={bk14} className="w-full " alt="" />
+  </div>
+  <div className="w-1/5">
+  <img src={bk15} className="w-full " alt="" />
+  </div>
+  <div className="w-1/5">
+  <img src={bk22} className="w-full " alt="" />
+  </div>
+  </div>
         </div>
       </div>
       <Footer2 />
