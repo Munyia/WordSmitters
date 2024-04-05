@@ -20,7 +20,8 @@ const Home = () => {
             <h1 className=" font-extrabold text-sec text-[3rem]">
               Welcome to <span className="text-pry"> WordSmithers</span> 
             </h1>
-            <p className="text-sec font-semibold text-3xl justify-end content-center place-content-center tracking-wide leading-relaxed font-playfair">
+            <div>
+            <p className="text-sec relative font-semibold text-3xl justify-end content-center place-content-center tracking-wide leading-relaxed font-playfair">
               "Hello and welcome to <span className=" text-pry">WordSmithers</span>, where the magic of Nigerian
               literature comes to life! 📚 Whether you're a passionate reader
               eager to explore the rich tapestry of Nigerian stories or a
@@ -28,6 +29,7 @@ const Home = () => {
               the perfect place to connect, inspire, and celebrate the beauty of
               our diverse literary landscape."
             </p>
+            </div>
             <div className="flex justify-around text-white">
               <Link to={"/signup"} className="bg-[rgb(10,32,8)] py-2 px-6 rounded-md">
                 Reader
