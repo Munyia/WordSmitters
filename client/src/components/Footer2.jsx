@@ -98,18 +98,18 @@ const Footer2 = () => {
               <p className="sm:font-[500] sm:text-[14px] font-[600] text-base mb-2">
                 LINKS
               </p>
-              <p className="text-base hover:underline hover:text-sec">Home</p>
-              <p className="text-base hover:text-sec hover:underline">About</p>
-              <p className="text-base hover:text-sec hover:underline">Blog</p>
-              <p className="text-base hover:text-sec  hover:underline">Contact Us</p>
-              <p className="text-base hover:text-sec  hover:underline">FAQ</p>
+              <Link to={"/"} className="text-base hover:underline hover:text-sec">Home</Link>
+              <Link to={"/about"} className="text-base hover:text-sec hover:underline">About</Link>
+              <Link className="text-base hover:text-sec hover:underline">Blog</Link>
+              <Link className="text-base hover:text-sec  hover:underline">Contact Us</Link>
+              <Link className="text-base hover:text-sec  hover:underline">FAQ</Link>
             </div>
             <div className="font-[400] text-[14px] sm:text-[10px] flex flex-col gap-4">
               <p className="sm:font-[500] sm:text-[14px] font-[300] text-[12px] mb-2">
                 ETHICAL CODES
               </p>
-              <p className="text-base hover:text-sec hover:underline">Community Guidelines</p>
-              <p className="text-base hover:text-sec hover:underline">Code of conduct</p>
+              <Link className="text-base hover:text-sec hover:underline">Community Guidelines</Link>
+              <Link className="text-base hover:text-sec hover:underline">Code of conduct</Link>
             </div>
             <div className="font-[400] text-base sm:text-[10px] flex flex-col gap-4">
               <p className="sm:font-[500] sm:text-[14px] font-[300] text-base  mb-2">
