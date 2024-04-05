@@ -12,7 +12,8 @@ const Home = () => {
   }, []);
  
   return (
-    <div id="Home">
+    <div className="flex relative flex-col" id="Home">
+      <div className="mb-[28%]">
       <Header />
       <div className="h-[90vh] mb-[10%] text-sec1 ">
         <div className="flex mt-[1%]">
@@ -44,7 +45,7 @@ const Home = () => {
           </div>
         </div>
         <div  id="imageContainer" className=" flex-wrap w-full px-3 gap-3 pb-3 pt-4 flex ">
-          <div className=" flex gap-3 ">
+          <div className=" flex gap-2 ">
   <div className="w-1/5">
   <img src={bk1} className="w-full " alt="" />
   </div>
@@ -61,7 +62,7 @@ const Home = () => {
   <img src={bk5} className="w-full " alt="" />
   </div>
   </div>
-  <div  className=" flex gap-3">
+  <div  className=" flex gap-2">
   <div className="w-1/5">
   <img src={bk8} className="w-full " alt="" />
   </div>
@@ -79,6 +80,7 @@ const Home = () => {
   </div>
   </div>
         </div>
+      </div>
       </div>
       <Footer2 />
     </div>

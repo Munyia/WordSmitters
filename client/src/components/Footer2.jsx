@@ -44,7 +44,7 @@ const Footer2 = () => {
   }, [isModalOpen]);
 
   return (
-    <footer className="sm:gap-6 relative flex sm:p-16 flex-col bg-white sm:bg-pry sm:text-white w-full flex-wrap mt-[38%]">
+    <footer className="sm:gap-6 relative flex sm:p-16 flex-col bg-white sm:bg-pry sm:text-white w-full flex-wrap">
       {/* this is for mobile version */}
       <div className=" bg-sec f-shadow rounded-2xl items-center  flex flex-col gap-4 text-white mx-auto py-[100px] px-9 text-left w-[96%]  sm:hidden">
         <p className="font-[500] text-[14px] w-3/4">
@@ -108,8 +108,8 @@ const Footer2 = () => {
               <p className="sm:font-[500] sm:text-[14px] font-[300] text-[12px] mb-2">
                 ETHICAL CODES
               </p>
-              <Link className="text-base hover:text-sec hover:underline">Community Guidelines</Link>
-              <Link className="text-base hover:text-sec hover:underline">Code of conduct</Link>
+              <Link to={"/community"} className="text-base hover:text-sec hover:underline">Community Guidelines</Link>
+              <Link to={"/conduct"} className="text-base hover:text-sec hover:underline">Code of conduct</Link>
             </div>
             <div className="font-[400] text-base sm:text-[10px] flex flex-col gap-4">
               <p className="sm:font-[500] sm:text-[14px] font-[300] text-base  mb-2">

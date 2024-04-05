@@ -11,6 +11,7 @@ import Books from './pages/Books';
 import Terms from './components/Terms';
 import About from './pages/About';
 import Community from './components/Community';
+import Conduct from './components/Conduct';
 
 function App() {
  
@@ -29,6 +30,7 @@ function App() {
       <Route path="/terms" element ={<Terms/>}/>
       <Route path="/about" element ={<About/>}/>
       <Route path="/community" element ={<Community/>}/>
+      <Route path="/conduct" element ={<Conduct/>}/>
     </Routes>
     </BrowserRouter>
     
