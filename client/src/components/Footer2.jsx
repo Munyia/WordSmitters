@@ -44,7 +44,7 @@ const Footer2 = () => {
   }, [isModalOpen]);
 
   return (
-    <footer className="sm:gap-6 relative flex sm:p-16 flex-col bg-white sm:bg-pry sm:text-white w-full flex-wrap mt-[35%]">
+    <footer className="sm:gap-6 relative flex sm:p-16 flex-col bg-white sm:bg-pry sm:text-white w-full flex-wrap mt-[38%]">
       {/* this is for mobile version */}
       <div className=" bg-sec f-shadow rounded-2xl items-center  flex flex-col gap-4 text-white mx-auto py-[100px] px-9 text-left w-[96%]  sm:hidden">
         <p className="font-[500] text-[14px] w-3/4">
@@ -89,8 +89,8 @@ const Footer2 = () => {
                 <BiLogoTwitter />
               </div>
             </div>
-            <p className="hidden sm:block md:text-base hover:underline sm:text-[0.5rem]">
-              contact@WordSmitters.com
+            <p className="hidden sm:block md:text-base  hover:text-sec hover:underline sm:text-[0.5rem]">
+              contact@<span className="text-white">WordSmitters</span>.com
             </p>
           </div>
           <div className="flex justify-between text-base flex-col sm:flex-row gap-8 sm:w-[85%] md:w-1/2 sm:gap-0 text-center sm:text-left">
@@ -98,38 +98,38 @@ const Footer2 = () => {
               <p className="sm:font-[500] sm:text-[14px] font-[600] text-base mb-2">
                 LINKS
               </p>
-              <p className="text-base hover:underline">Home</p>
-              <p className="text-base hover:underline">About</p>
-              <p className="text-base hover:underline">Blog</p>
-              <p className="text-base hover:underline">Contact Us</p>
-              <p className="text-base hover:underline">FAQ</p>
+              <p className="text-base hover:underline hover:text-sec">Home</p>
+              <p className="text-base hover:text-sec hover:underline">About</p>
+              <p className="text-base hover:text-sec hover:underline">Blog</p>
+              <p className="text-base hover:text-sec  hover:underline">Contact Us</p>
+              <p className="text-base hover:text-sec  hover:underline">FAQ</p>
             </div>
             <div className="font-[400] text-[14px] sm:text-[10px] flex flex-col gap-4">
               <p className="sm:font-[500] sm:text-[14px] font-[300] text-[12px] mb-2">
                 ETHICAL CODES
               </p>
-              <p className="text-base hover:underline">Community Guidelines</p>
-              <p className="text-base hover:underline">Code of conduct</p>
+              <p className="text-base hover:text-sec hover:underline">Community Guidelines</p>
+              <p className="text-base hover:text-sec hover:underline">Code of conduct</p>
             </div>
             <div className="font-[400] text-base sm:text-[10px] flex flex-col gap-4">
               <p className="sm:font-[500] sm:text-[14px] font-[300] text-base  mb-2">
                 RESOURCES
               </p>
-              <Link to={"/howitworks"} className="text-base hover:underline">How it works</Link>
-              <Link to={"/guarantee"} className="text-base hover:underline">Guarantee Page</Link>
+              <Link to={"/howitworks"} className="text-base hover:text-sec hover:underline">How it works</Link>
+              <Link to={"/guarantee"} className="text-base hover:text-sec hover:underline">Guarantee Page</Link>
             </div>
           </div>
         </div>
-        <div className=" bg-white text-black rounded-s-full p-6 text-left w-1/4 hidden sm:block">
+        <div className=" bg-sec text-white rounded-e-full  p-6 text-left w-1/4 hidden sm:block">
           <p className=" text-base text-[12px] font-semibold md:font-[700] md:text-[14px]">
             SUBSCRIBE TO OUR NEWSLETTER
           </p>
           <p className=" text-base font-[400] md:text-[10px] w-4/5 md:w-3/4 my-4">
-            GET UP-TO-DATE INFORMATION ABOUT WOORDSMITTERS AND ITS SERVICES
+            GET UP-TO-DATE INFORMATION ABOUT <span className="text-pry"> WOORDSMITTERS</span> AND ITS SERVICES
           </p>
           <span
             onClick={openModal}
-            className="p-1 md:p-2 text-base rounded-e-2xl rounded-b-2xl text-white cursor-pointer bg-black sm:text-[12px]"
+            className="p-1 md:p-2 text-base rounded-e-2xl rounded-b-2xl text-sec cursor-pointer bg-pry sm:text-[12px]"
           >
             Subscribe
           </span>
@@ -137,14 +137,14 @@ const Footer2 = () => {
       </div>
       <hr />
       <div className="flex flex-col sm:items-center sm:flex-row sm:gap-4 text-[#808080] sm:text-white text-[10px]  font-[400] flexWrap">
-        <div className="flex justify-center text-base gap-1 items-center w-full my-6 sm:my-0 text-center sm:w-auto">
+        <div className="flex justify-center hover:text-sec text-base gap-1 items-center w-full my-6 sm:my-0 text-center sm:w-auto">
           <span className="text-[18px]">&copy;</span>
-          <span className="">WordSmitters, 2024</span>
+          <span className="flex hover:underline"> <p className="text-white">WordSmitters</p>, 2024</span>
         </div>
-        <div className="flex flex-row gap-4 text-base font-[400] flexWrap justify-center">
-          <span>PRIVACY POLICY</span>
-          <span>COOKIE POLICY</span>
-          <Link to={"/terms"}>TERMS & CONDITIONS</Link>
+        <div className="flex flex-row gap-4  text-base font-[400] flexWrap justify-center">
+          <span className="hover:text-sec hover:underline">PRIVACY POLICY</span>
+          <span className="hover:text-sec hover:underline">COOKIE POLICY</span>
+          <Link to={"/terms"} className="hover:text-sec">TERMS & CONDITIONS</Link>
         </div>
         <div className="items-center text-[#808080] text-[16px]  flex justify-center gap-6 w-full mt-5 mb-3 sm:hidden">
           <div className="border rounded-full p-2">

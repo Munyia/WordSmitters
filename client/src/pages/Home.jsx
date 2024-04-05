@@ -17,10 +17,10 @@ const Home = () => {
       <div className="h-[90vh] mb-[10%] text-sec1 ">
         <div className="flex mt-[1%]">
           <div className=" w-3/5 pl-[3%] flex flex-col gap-6">
-            <h1 className=" font-extrabold text-sec1 text-[3rem]">
+            <h1 className=" font-extrabold text-sec text-[3rem]">
               Welcome to <span className="text-pry"> WordSmithers</span> 
             </h1>
-            <p className="text-sec justify-center content-center place-content-center tracking-wide leading-relaxed font-playfair">
+            <p className="text-sec font-semibold text-3xl justify-end content-center place-content-center tracking-wide leading-relaxed font-playfair">
               "Hello and welcome to <span className=" text-pry">WordSmithers</span>, where the magic of Nigerian
               literature comes to life! 📚 Whether you're a passionate reader
               eager to explore the rich tapestry of Nigerian stories or a

@@ -1,20 +1,27 @@
 import React from 'react'
+import llogo from '../assets/res/log.png'
+import { Link } from 'react-router-dom'
 
 const About = () => {
   return (
-    <div  className='flex p-5 flex-col px-15 align-middle bg-sec text-pry '>
+    <div  className='flex p-5 flex-col px-15 bg-sec text-white align-middle   '>
       <div>
-        <p className=' flex justify-center text-3xl '>About <span className='text-sec1 '> Wordsmitters</span></p>
-        <p className='flex justify-center align-middle text-center'>Welcome to Wordsmitters, your premier destination for exploring the vibrant world of Nigerian literature. Founded with a passion for promoting Nigerian authors and showcasing the rich tapestry of Nigerian culture through literature, Wordsmitters aims to be the bridge that connects readers with captivating stories, insightful narratives, and diverse voices from Nigeria.</p>
+        <div className=' flex  pb-4 text-3xl align-middle justify-center text-center '> 
+        <div className='w-[20%] justify-center'>
+        <Link to={'/'}><img src={llogo} className='h-[15vh]  ' alt="" /></Link>
+        </div>
+        <div className='w-[70%] justify-center right-7'>
+        <p className='w-[50%] justify-center'> About <span className='text-pry '> Wordsmitters</span></p>
+        </div>
+        </div>
+        <p className='flex justify-center pb-3 align-middle text-center'>Welcome to Wordsmitters, your premier destination for exploring the vibrant world of Nigerian literature. Founded with a passion for promoting Nigerian authors and showcasing the rich tapestry of Nigerian culture through literature, Wordsmitters aims to be the bridge that connects readers with captivating stories, insightful narratives, and diverse voices from Nigeria.</p>
       </div>
       <div>
-        <p>Our Mission</p>
+        <p className='flex text-2xl justify-center pb-2  text-center '>Our Mission</p>
         <p>At Wordsmitters, our mission is deeply rooted in our commitment to:</p>
-        <ul>
-          <li>Promote Nigerian Literature: We are dedicated to shining a spotlight on Nigerian literature, elevating the voices of talented Nigerian authors, and fostering a greater appreciation for the literary treasures that Nigeria has to offer.</li>
-          <li>Empower Nigerian Authors: We provide a platform for Nigerian authors to share their stories with the world, empowering them to reach a wider audience and enriching the global literary landscape with their unique perspectives and experiences.</li>
-          <li>Celebrate Nigerian Culture: Through the pages of our books, readers can embark on a journey through the vibrant tapestry of Nigerian culture, exploring its rich history, traditions, and contemporary life.</li>
-        </ul>
+          <p>1. Promote Nigerian Literature: We are dedicated to shining a spotlight on Nigerian literature, elevating the voices of talented Nigerian authors, and fostering a greater appreciation for the literary treasures that Nigeria has to offer.</p>
+          <p>2. Empower Nigerian Authors: We provide a platform for Nigerian authors to share their stories with the world, empowering them to reach a wider audience and enriching the global literary landscape with their unique perspectives and experiences.</p>
+          <p>3. Celebrate Nigerian Culture: Through the pages of our books, readers can embark on a journey through the vibrant tapestry of Nigerian culture, exploring its rich history, traditions, and contemporary life.</p>
       </div>
       <div>
         <p>What We Offer</p>
