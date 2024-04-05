@@ -19,7 +19,10 @@ import bk10 from './res/bk10.jpg'
 import bk14 from './res/bk14.jpg'
 import bk15 from './res/bk15.jpg'
 import bk22 from './res/bk22.jpg'
+import haus from './res/haus.jpg'
+import ladies from './res/ladies.jpg'
+import Kevin from './res/Kevin.jpg'
 
 
 
-export {bg0, llogo, bgimg, tb, bg11, bgg, bgg1, bk1, bk2, bk3, bk4, bk5, bk8, bk10, bk14, bk15, bk22, term, dance, twitter}
+export {bg0, llogo, bgimg, haus, ladies, Kevin, tb, bg11, bgg, bgg1, bk1, bk2, bk3, bk4, bk5, bk8, bk10, bk14, bk15, bk22, term, dance, twitter}

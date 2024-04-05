@@ -1,4 +1,4 @@
-import { dance, bk1, bk2, bk3, bk4, bk5, bk8, tb, bk10, bk14, bk15, bk22, } from "../assets";
+import { dance, bk1, bk2, bk3, bk4, bk5, bk8, tb, bk10, bk14, bk15, bk22, haus, ladies, Kevin, } from "../assets";
 
 const data = [ 
     {
@@ -49,7 +49,7 @@ const data = [
     {
         title:'Bookcard',
         description :'A Novel',
-        PosterURL: bk2,
+        PosterURL: Kevin,
         author: 'Author',
         publisher: 'Publisher',
         year:'Year',
@@ -58,7 +58,7 @@ const data = [
     {
         title:'Bookcard',
         description :'A Novel',
-        PosterURL: dance,
+        PosterURL: bk8,
         author: 'Author',
         publisher: 'Publisher',
         year:'Year',
@@ -94,7 +94,7 @@ const data = [
     {
         title:'Bookcard',
         description :'A Novel',
-        PosterURL: bk8,
+        PosterURL: dance,
         author: 'Author',
         publisher: 'Publisher',
         year:'Year',
@@ -112,7 +112,7 @@ const data = [
     {
         title:'Bookcard',
         description :'A Novel',
-        PosterURL: dance,
+        PosterURL: bk2,
         author: 'Author',
         publisher: 'Publisher',
         year:'Year',
@@ -121,7 +121,7 @@ const data = [
     {
         title:'Bookcard',
         description :'A Novel',
-        PosterURL: dance,
+        PosterURL: ladies,
         author: 'Author',
         publisher: 'Publisher',
         year:'Year',
@@ -130,7 +130,7 @@ const data = [
     {
         title:'Bookcard',
         description :'A Novel',
-        PosterURL: dance,
+        PosterURL: haus,
         author: 'Author',
         publisher: 'Publisher',
         year:'Year',
