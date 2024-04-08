@@ -50,7 +50,7 @@ const Login = () => {
     </div>
     <div className="btn flex gap-5 w-1/2 ">
     <button type='submit' disabled= {loading} className="button3 ">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Login&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</button>
-    <Link className="button3 ">Sign Up</Link>
+    <Link to={"/signup"} className="button3 ">Sign Up</Link>
     </div>
     <Link className="button3">Forgot Password</Link>
    

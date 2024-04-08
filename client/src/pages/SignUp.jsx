@@ -52,7 +52,7 @@ const SignUp = () => {
         <Link to={"/"}>
           <img src={llogo} className="h-[10vh] absolute top-0 left-0" alt="" />
         </Link>
-        <form class="form backdrop-blur-sm bg-[rgba(0,0,0,0.3)]">
+        <form onSubmit={handleSubmit} c class="form backdrop-blur-sm bg-[rgba(0,0,0,0.3)]">
           <h1 id="heading" className=" text-2xl font-bold text-[#CD9564] ">
            Sign Up
           </h1>
@@ -135,7 +135,7 @@ const SignUp = () => {
           </div>
           <div className="btn flex gap-5 w-1/2 ">
     <button type='submit' disabled= {loading} className="button3 ">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Signup&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</button>
-    <Link className="button3 ">Login</Link>
+    <Link to={"/login"} className="button3 ">Login</Link>
     </div>
           <button className="button3">Sign Up With Google</button>
           { loading && <div className='absolute bottom-0 left-0 w-full flex justify-center'><Loader /></div>}
