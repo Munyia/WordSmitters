@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "./login.css";
-import { tb, llogo } from "../assets";
+import { tb, llogo, lock, eye } from '../assets'
 import { Link } from "react-router-dom";
 import axios from 'axios';
 import Loader from "../components/Loader";
@@ -13,7 +13,12 @@ const SignUp = () => {
   const [gender, setGender] = useState("")
   const [DOB, setDob] = useState("")
   const [loading, setLoading] = useState(false)
+  const [showPassword, setShowPassword] = useState(false); 
 
+  const togglePasswordVisibility = () => {
+    setShowPassword(!showPassword); 
+  };
+  
   function handleSubmit(e) {
     e.preventDefault()  
     setLoading(true)
@@ -97,24 +102,20 @@ const SignUp = () => {
             />
           </div>
           <div className="field">
-            <svg
-              className="input-icon"
-              xmlns="http://www.w3.org/2000/svg"
-              width="16"
-              height="16"
-              fill="currentColor"
-              viewBox="0 0 16 16"
-            >
-              <path d="M8 1a2 2 0 0 1 2 2v4H6V3a2 2 0 0 1 2-2zm3 6V3a3 3 0 0 0-6 0v4a2 2 0 0 0-2 2v5a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2z"></path>
-            </svg>
-            <input
-              placeholder="Password"
-              value={password}
-              onChange={(e)=>setPassword(e.target.value)}
-              className="input-field placeholder:text-[#CD9564] "
-              type="password"
-            />
-          </div>
+      <input
+        placeholder="Password"
+        value={password}
+        onChange={(e) => setPassword(e.target.value)}
+        className="input-field placeholder:text-[#CD9564]"
+        type={showPassword ? 'text' : 'password'} // Show password if showPassword is true, otherwise hide it
+      />
+      <img c
+        src={showPassword ? eye : lock} // Display different images based on the showPassword state
+        alt="Password toggle"
+        onClick={togglePasswordVisibility}
+        className="password-toggle-icon w-[7%]"
+      />
+    </div>
           <div className="field">
             <input
               placeholder="Gender"

@@ -98,7 +98,7 @@ const Footer2 = () => {
               <p className="sm:font-[500] sm:text-[14px] font-[600] text-base mb-2">
                 LINKS
               </p>
-              <Link to={"/"} className="text-base hover:underline hover:text-sec">Home</Link>
+              <Link to={"/books"} className="text-base hover:underline hover:text-sec">Books</Link>
               <Link to={"/about"} className="text-base hover:text-sec hover:underline">About</Link>
               <Link className="text-base hover:text-sec hover:underline">Blog</Link>
               <Link className="text-base hover:text-sec  hover:underline">Contact Us</Link>
@@ -142,8 +142,8 @@ const Footer2 = () => {
           <span className="flex hover:underline"> <p className="text-white">WordSmitters</p>, 2024</span>
         </div>
         <div className="flex flex-row gap-4  text-base font-[400] flexWrap justify-center">
-          <span className="hover:text-sec hover:underline">PRIVACY POLICY</span>
-          <span className="hover:text-sec hover:underline">COOKIE POLICY</span>
+          <Link to={"/privacy"} className="hover:text-sec hover:underline">PRIVACY POLICY</Link>
+          <Link to={"/cookie"} className="hover:text-sec hover:underline">COOKIE POLICY</Link>
           <Link to={"/terms"} className="hover:text-sec">TERMS & CONDITIONS</Link>
         </div>
         <div className="items-center text-[#808080] text-[16px]  flex justify-center gap-6 w-full mt-5 mb-3 sm:hidden">

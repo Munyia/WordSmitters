@@ -14,6 +14,7 @@ import Community from './components/Community';
 import Conduct from './components/Conduct';
 import HowItWorks from './components/HowItWorks';
 import Guarantee from './components/Guarantee';
+import Privacy from './components/Privacy';
 
 function App() {
  
@@ -35,6 +36,7 @@ function App() {
       <Route path="/conduct" element ={<Conduct/>}/>
       <Route path="/howitworks" element ={<HowItWorks/>}/>
       <Route path="/guarantee" element ={<Guarantee/>}/>
+      <Route path="/privacy" element ={<Privacy/>}/>
     </Routes>
     </BrowserRouter>
     
