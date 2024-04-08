@@ -54,13 +54,12 @@ const Login = () => {
     <Link className="button3 ">Sign Up</Link>
     </div>
     <Link className="button3">Forgot Password</Link>
-    {loading && <div className='text-white'>
- 
-      </div>}
+   
+            { loading && <div className='absolute bottom-0 left-0 w-full flex justify-center'><Loader /></div>}
 </form>
 
             </div>
-            <Loader />
+            
  
         </div>
 //     <div className=' w-full placeholder:text-[#CD9564] bg-[rgba(10,32,8,0.9)]  flex justify-between ' id='Login'>

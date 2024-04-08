@@ -6,7 +6,7 @@
     line-height: 1.2;
     color: #CD9564;
     letter-spacing: 5px;
-    z-index: 1;
+    z-index: 100;
     animation: shift 1s ease-in-out infinite alternate;
   }
   

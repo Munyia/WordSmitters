@@ -15,9 +15,9 @@ const Terms = () => {
         </div>
         <div className=' flex relative  flex-col'>
             <div className='flex text-2xl justify-center  text-center  mb-4 pl-10 pr-10 '> Welcome to <span className='text-pry '> WordSmitters</span> </div>
-            <div className='flex text-xl justify-center  align-middle text-center  mb-4 pl-10 pr-10  '>These terms and conditions outline the rules and regulations for the use of our book web app. 
-By accessing this web app, we assume you accept these terms and conditions. Do not continue to use  WordSmitters if you do not agree to all of the terms and conditions stated on this page.
-</div>
+            <p className=' text-xl justify-center  align-middle text-center  mb-4 pl-10 pr-10  '>These terms and conditions outline the rules and regulations for the use of our book web app. 
+By accessing this web app, we assume you accept these terms and conditions. Do not continue to use <span className='text-pry '> WordSmitters</span> if you do not agree to all of the terms and conditions stated on this page.
+</p>
 
 <div className='flex flex-col gap-5 text-lg justify-items-start pl-20 pr-20  '>
   <div>
@@ -59,7 +59,6 @@ By accessing this web app, we assume you accept these terms and conditions. Do n
   </div>
   <p>By using <span className='text-pry '> WordSmitters</span>, you signify your acceptance of these terms and conditions. If you have any questions or concerns about these terms, please contact us at <span> contact@<span className='text-pry '> WordSmitters</span>.com.</span></p>
 </div>
-
 
         </div>
     </div>
