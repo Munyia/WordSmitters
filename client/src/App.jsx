@@ -15,6 +15,7 @@ import Conduct from './components/Conduct';
 import HowItWorks from './components/HowItWorks';
 import Guarantee from './components/Guarantee';
 import Privacy from './components/Privacy';
+import Cooker from './components/Cooker';
 
 function App() {
  
@@ -37,6 +38,7 @@ function App() {
       <Route path="/howitworks" element ={<HowItWorks/>}/>
       <Route path="/guarantee" element ={<Guarantee/>}/>
       <Route path="/privacy" element ={<Privacy/>}/>
+      <Route path="/cooker" element ={<Cooker/>}/>
     </Routes>
     </BrowserRouter>
     
