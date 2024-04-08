@@ -12,6 +12,7 @@ import Terms from './components/Terms';
 import About from './pages/About';
 import Community from './components/Community';
 import Conduct from './components/Conduct';
+import HowItWorks from './components/HowItWorks';
 
 function App() {
  
@@ -31,6 +32,7 @@ function App() {
       <Route path="/about" element ={<About/>}/>
       <Route path="/community" element ={<Community/>}/>
       <Route path="/conduct" element ={<Conduct/>}/>
+      <Route path="/howitworks" element ={<HowItWorks/>}/>
     </Routes>
     </BrowserRouter>
     
