@@ -3,7 +3,6 @@ import "./login.css"
 import { tb, llogo } from '../assets'
 import { Link } from 'react-router-dom'
 import { useState } from 'react'
-import { useEffect } from 'react'
 import axios from 'axios';
 import Loader from '../components/Loader'
 

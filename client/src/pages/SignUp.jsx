@@ -1,10 +1,42 @@
-import React from "react";
+import React, { useState } from "react";
 import "./login.css";
 import { tb, llogo } from "../assets";
 import { Link } from "react-router-dom";
+import axios from 'axios';
 import Loader from "../components/Loader";
 
 const SignUp = () => {
+  const [fullname, setFullname] = useState("")
+  const [email, setEmail] = useState("")
+  const [password, setPassword] = useState("")
+  const [username, setUsername] = useState("")
+  const [gender, setGender] = useState("")
+  const [DOB, setDob] = useState("")
+  const [loading, setLoading] = useState(false)
+
+  function handleSubmit(e) {
+    e.preventDefault()  
+    setLoading(true)
+    axios.post("http://localhost:8081/login", {
+
+    fullname: fullname,
+    email: email,
+    password: password,
+    username: username,
+    gender: gender,
+    DOB: DOB
+
+  })
+  .then(response => {
+    console.log(response.data);
+    setLoading(false); // Toggle loading state off after successful request
+  })
+  .catch(error => {
+    console.error(error);
+    setLoading(false); // Toggle loading state off after request error
+  });
+  }
+
   
   return (
     <div
@@ -28,6 +60,8 @@ const SignUp = () => {
             <input
               autocomplete="off"
               placeholder="Full Name"
+              value={fullname}
+              onChange={(e)=>setFullname (e.target.value)}
               className="input-field placeholder:text-[#CD9564]"
               type="text"
             />
@@ -46,6 +80,8 @@ const SignUp = () => {
             <input
               autocomplete="off"
               placeholder="Email"
+              value={email}
+              onChange={(e)=>setEmail (e.target.value)}
               className="input-field placeholder:text-[#CD9564]"
               type="text"
             />
@@ -54,6 +90,8 @@ const SignUp = () => {
             <input
               autocomplete="off"
               placeholder="Username"
+              value={username}
+              onChange={(e)=>setUsername(e.target.value)}
               className="input-field placeholder:text-[#CD9564]"
               type="text"
             />
@@ -71,6 +109,8 @@ const SignUp = () => {
             </svg>
             <input
               placeholder="Password"
+              value={password}
+              onChange={(e)=>setPassword(e.target.value)}
               className="input-field placeholder:text-[#CD9564] "
               type="password"
             />
@@ -78,6 +118,8 @@ const SignUp = () => {
           <div className="field">
             <input
               placeholder="Gender"
+              value={gender}
+              onChange={(e)=>setGender (e.target.value)}
               className="input-field placeholder:text-[#CD9564] "
               type="text"
             />
@@ -85,12 +127,18 @@ const SignUp = () => {
           <div className="field">
             <input
               placeholder="DD/MM/YY"
+              value={DOB}
+              onChange={(e)=>setDob (e.target.value)}
               className="input-field placeholder:text-[#CD9564] "
               type="text"
             />
           </div>
-          <button className="button3">Sign Up</button>
+          <div className="btn flex gap-5 w-1/2 ">
+    <button type='submit' disabled= {loading} className="button3 ">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Signup&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</button>
+    <Link className="button3 ">Login</Link>
+    </div>
           <button className="button3">Sign Up With Google</button>
+          { loading && <div className='absolute bottom-0 left-0 w-full flex justify-center'><Loader /></div>}
         </form>
       </div>
       <Loader />

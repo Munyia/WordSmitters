@@ -28,7 +28,7 @@ const userschema =mongoose. Schema(
     },
     bio: {
         type: String,
-        required: false
+        required: false,
         default: "hgfjgh"
     },
     image: {
