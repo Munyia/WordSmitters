@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import Loader from "../components/Loader";
 
 const SignUp = () => {
+  
   return (
     <div
       className=" w-full placeholder:text-[#CD9564] bg-[rgba(10,32,8,0.9)] h-[100vh] overflow-hidden"
