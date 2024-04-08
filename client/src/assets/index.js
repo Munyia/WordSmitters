@@ -22,7 +22,9 @@ import bk22 from './res/bk22.jpg'
 import haus from './res/haus.jpg'
 import ladies from './res/ladies.jpg'
 import Kevin from './res/Kevin.jpg'
+import lock from './res/lock.png'
+import eye from './res/eye.png'
 
 
 
-export {bg0, llogo, bgimg, haus, ladies, Kevin, tb, bg11, bgg, bgg1, bk1, bk2, bk3, bk4, bk5, bk8, bk10, bk14, bk15, bk22, term, dance, twitter}
+export {bg0, llogo, bgimg, lock, haus, eye, ladies, Kevin, tb, bg11, bgg, bgg1, bk1, bk2, bk3, bk4, bk5, bk8, bk10, bk14, bk15, bk22, term, dance, twitter}
