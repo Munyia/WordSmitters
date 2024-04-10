@@ -14,7 +14,6 @@ const Home = () => {
   return (
     <div className="flex relative flex-col" id="Home">
       <div className="mb-[28%]">
-      <Header />
       <div className="h-[90vh] mb-[10%] text-sec1 ">
         <div className="flex mt-[1%]">
           <div className=" w-3/5 pl-[3%] flex flex-col gap-6">
@@ -82,7 +81,6 @@ const Home = () => {
         </div>
       </div>
       </div>
-      <Footer2 />
     </div>
   );
 };

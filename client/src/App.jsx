@@ -1,12 +1,11 @@
 import './App.css'
 import Home from './pages/Home';
 import Login from './pages/Login'
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import {  Navigate, RouterProvider, createBrowserRouter } from "react-router-dom";
 import SignUp from './pages/SignUp';
-import BookList from './components/BookList';
-import BookCard from './components/BookCard';
-import data from './components/data';
-import Dashboard from './components/Dashboard';
+import Filter from './components/Filter'
+import BookList from './components/BookList'
+import data from './components/data'
 import Books from './pages/Books';
 import Terms from './components/Terms';
 import About from './pages/About';
@@ -16,32 +15,76 @@ import HowItWorks from './components/HowItWorks';
 import Guarantee from './components/Guarantee';
 import Privacy from './components/Privacy';
 import Cooker from './components/Cooker';
+import Layout from './components/Layout';
 
 function App() {
+  function isLoggedIn() {
+    return !!localStorage.getItem('token')
+  }
+
+
+  const router = createBrowserRouter([
+    {
+      path: "/",
+      element: <Layout   />,
+      children: [
+       
+        {
+          index:true, element :<Home/>
+        },
+        {
+          path:"books", element :<Books />,children:[
+            {index:true, element:<BookList list={data}/>},
+            {path:':search', element:<Filter list={data}/>}
+          ]
+        },
+        {
+          path:"terms", element :<Terms />,
+        },
+        {
+          path:"about", element :<About />,
+        },
+        {
+          path:"community", element :<Community />,
+        },
+        {
+          path:"conduct", element :<Conduct />,
+        },
+        {
+          path:"howitworks", element :<HowItWorks />,
+        },
+        { path: "/guarantee", element: <Guarantee /> },
+        { path: "/privacy", element: <Privacy /> },
+        { path: "/cooker", element: <Cooker /> }
+
+      ]
+
+  },
+  {
+    path:"signup", element :!isLoggedIn()?<SignUp />:<Navigate to={'/'} />,
+  },
+  {
+    path:"/login", element : !isLoggedIn()?<Login />: <Navigate to={'/'} />,
+  },
+    {
+      path: "/writers",
+      element: <Layout />,
+      children: [
+        {
+          path:"login", element :<Login />,
+        },
+        {
+          index:true, element :<Home/>
+        },
+      ]
+
+  },
+
+  ])
  
   return (
     <>
-     
-    <BrowserRouter>
-    <Routes>
-      <Route path="/login" element ={<Login />}/>
-      <Route path="/" element ={<Home/>}/>
-      <Route path="/signup" element ={<SignUp/>}/>
-      <Route path="/booklist" element ={<BookList list={data}/>}/>
-      <Route path="/bookcard" element ={<BookCard/>}/>
-      <Route path="/dashboard" element ={<Dashboard/>}/>
-      <Route path="/books/*" element ={<Books/>}/>
-      <Route path="/terms" element ={<Terms/>}/>
-      <Route path="/about" element ={<About/>}/>
-      <Route path="/community" element ={<Community/>}/>
-      <Route path="/conduct" element ={<Conduct/>}/>
-      <Route path="/howitworks" element ={<HowItWorks/>}/>
-      <Route path="/guarantee" element ={<Guarantee/>}/>
-      <Route path="/privacy" element ={<Privacy/>}/>
-      <Route path="/cooker" element ={<Cooker/>}/>
-    </Routes>
-    </BrowserRouter>
-    
+      <RouterProvider router={router}/>
     </>
   )
 }
