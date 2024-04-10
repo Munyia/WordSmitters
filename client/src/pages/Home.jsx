@@ -12,7 +12,7 @@ const Home = () => {
   }, []);
  
   return (
-    <div className="flex relative flex-col" id="Home">
+    <div className="flex  flex-col" id="Home">
       <div className="mb-[28%]">
       <div className="h-[90vh] mb-[10%] text-sec1 ">
         <div className="flex mt-[1%]">
@@ -31,11 +31,8 @@ const Home = () => {
             </p>
             </div>
             <div className="flex justify-around text-white">
-              <Link to={"/signup"} className="bg-[rgb(10,32,8)] py-2 px-6 rounded-md">
-                Reader
-              </Link>
-              <Link to={"/signup"} className="bg-[rgb(10,32,8)] py-2 px-6 rounded-md">
-                Writer
+              <Link to={"/books"} className="bg-[rgb(10,32,8)] py-2 px-6 rounded-md">
+                Start Reading
               </Link>
             </div>
           </div>

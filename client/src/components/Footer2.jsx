@@ -95,7 +95,7 @@ const Footer2 = () => {
           </div>
           <div className="flex justify-between text-base flex-col sm:flex-row gap-8 sm:w-[85%] md:w-1/2 sm:gap-0 text-center sm:text-left">
             <div className="font-[400] text-base sm:text-[10px] flex flex-col gap-4">
-              <p className="sm:font-[500] sm:text-[14px] font-[600] text-base mb-2">
+              <p className="sm:font-[500] sm:text-[10px] font-[600] text-base mb-2">
                 LINKS
               </p>
               <Link to={"/books"} className="text-base hover:underline hover:text-sec">Books</Link>
@@ -105,14 +105,14 @@ const Footer2 = () => {
               <Link className="text-base hover:text-sec  hover:underline">FAQ</Link>
             </div>
             <div className="font-[400] text-[14px] sm:text-[10px] flex flex-col gap-4">
-              <p className="sm:font-[500] sm:text-[14px] font-[300] text-[12px] mb-2">
+              <p className="sm:font-[500] sm:text-[10px] font-[300] text-[12px] mb-2">
                 ETHICAL CODES
               </p>
               <Link to={"/community"} className="text-base hover:text-sec hover:underline">Community Guidelines</Link>
               <Link to={"/conduct"} className="text-base hover:text-sec hover:underline">Code of conduct</Link>
             </div>
             <div className="font-[400] text-base sm:text-[10px] flex flex-col gap-4">
-              <p className="sm:font-[500] sm:text-[14px] font-[300] text-base  mb-2">
+              <p className="sm:font-[500] sm:text-[10px] font-[300] text-base  mb-2">
                 RESOURCES
               </p>
               <Link to={"/howitworks"} className="text-base hover:text-sec hover:underline">How it works</Link>

@@ -1,7 +1,7 @@
 import React from 'react'
 import "./login.css"
 import { tb, llogo, lock, eye } from '../assets'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import { useState } from 'react'
 import axios from 'axios';
 import Loader from '../components/Loader'
@@ -12,26 +12,28 @@ const Login = () => {
   const [username, setUsername] = useState("")
   const [loading, setLoading] = useState(false)
   const [showPassword, setShowPassword] = useState(false); 
-
+  const Navigate = useNavigate()
   const togglePasswordVisibility = () => {
     setShowPassword(!showPassword); 
   };
   
   function handleSubmit(e) {
+    localStorage.setItem('token', "blahhhhhhhhhh")
+    Navigate('/')
     e.preventDefault()  
-    setLoading(true)
-    axios.post("http://localhost:8081/login", {
-    email: username,
-    password: password
-  })
-  .then(response => {
-    console.log(response.data);
-    setLoading(false); // Toggle loading state off after successful request
-  })
-  .catch(error => {
-    console.error(error);
-    setLoading(false); // Toggle loading state off after request error
-  });
+  //   setLoading(true)
+  //   axios.post("http://localhost:8081/login", {
+  //   email: username,
+  //   password: password
+  // })
+  // .then(response => {
+  //   console.log(response.data);
+  //   setLoading(false); // Toggle loading state off after successful request
+  // })
+  // .catch(error => {
+  //   console.error(error);
+  //   setLoading(false); // Toggle loading state off after request error
+  // });
   }
 
   return (
@@ -47,25 +49,28 @@ const Login = () => {
     </svg>
       <input autoComplete="off" placeholder="Username" value={username} onChange={(e)=>setUsername(e.target.value)} className="input-field placeholder:text-[#CD9564]" type="text"/>
     </div>
+    <div>
+
+      <p className='text-pry text-left text-sm'>Password</p>
     <div className="field">
       <input
-        placeholder="Password"
         value={password}
         onChange={(e) => setPassword(e.target.value)}
         className="input-field placeholder:text-[#CD9564]"
         type={showPassword ? 'text' : 'password'} // Show password if showPassword is true, otherwise hide it
-      />
-      <img c
+        />
+      <img 
         src={showPassword ? eye : lock} // Display different images based on the showPassword state
         alt="Password toggle"
         onClick={togglePasswordVisibility}
         className="password-toggle-icon w-[7%]"
-      />
+        />
+        </div>
     </div>
-    <div className="btn flex gap-5 w-1/2 ">
-    <button type='submit' disabled= {loading} className="button3 ">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Login&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</button>
-    <Link to={"/signup"} className="button3 ">Sign Up</Link>
-    </div>
+    
+    <button type='submit' disabled= {loading} className="mb-[2em] text-pry bg-[#171717] rounded border-none hover:text-white hover:bg-pry p-[0.5rem] transition-all ease-in-out duration-500">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Login&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</button>
+    
+    <p to={"/signup"} className="group text-pry ">Don't have an account? <Link to={'/signup'} className=' group-hover:underline'> Sign Up </Link></p>
     <Link className="button3">Forgot Password</Link>
    
             { loading && <div className='absolute bottom-0 left-0 w-full flex justify-center'><Loader /></div>}
