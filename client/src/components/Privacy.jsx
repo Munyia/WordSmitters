@@ -4,15 +4,10 @@ import { Link } from 'react-router-dom'
 
 const Privacy = () => {
   return (
-    <div  className='flex font-medium text-lg leading-loose tracking-wide  p-5 flex-col px-15 bg-gradient-to-br from-[rgb(11,31,10)] via-[rgb(7,49,3)] to-[rgb(6,49,6)]  text-white align-middle   '>
-        <div className=' flex pt-2  text-3xl align-middle justify-between text-center '> 
-        <div className='w-[20%] '>
-        <Link to={'/'}><img src={llogo} className='h-[15vh]  ' alt="" /></Link>
-        </div>
-        <div className='w-[70%] '>
-        <p className='w-[50%] justify-center text-2xl'>Privacy Policy </p>
-        </div>
-        </div>
+    <div className='flex font-medium text-lg leading-loose tracking-wide  py-5 flex-col px-[12.5%] bg-gradient-to-br from-[rgb(11,31,10)] via-[rgb(7,49,3)] to-[rgb(6,49,6)]  text-white align-middle   '>
+         <div className='flex pt-2  text-3xl align-middle justify-between text-center'>    
+        <p className='w-full text-center mb-10'> Privacy Policy</p>
+       </div>
         <div className='flex flex-col mx-10 gap-7 text-lg '>
             <div>
             <p className='pb-5 justify-center text-center text-xl'> <span className='text-pry '> WordSmitters</span> is committed to protecting the privacy of its users. This Privacy Policy outlines how we collect, use, disclose, and protect your personal information when you use our website or services.</p>
