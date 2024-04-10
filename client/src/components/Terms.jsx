@@ -4,22 +4,17 @@ import { Link } from 'react-router-dom'
 
 const Terms = () => {
   return (
-    <div className='flex font-medium text-lg leading-loose tracking-wide  p-5 flex-col px-15 bg-gradient-to-br from-[rgb(11,31,10)] via-[rgb(7,49,3)] to-[rgb(6,49,6)]  text-white align-middle   '>
-    <div className=' flex pt-2  text-3xl align-middle justify-between text-center '> 
-        <div className='w-[20%] '>
-        <Link to={'/'}><img src={llogo} className='h-[15vh]  ' alt="" /></Link>
-        </div>
-        <div className='w-[70%] '>
-        <p className='w-[50%] justify-center'> Terms and Condition</p>
-        </div>
-        </div>
+    <div className='flex font-medium text-lg leading-loose tracking-wide  py-5 flex-col px-[12.5%] bg-gradient-to-br from-[rgb(11,31,10)] via-[rgb(7,49,3)] to-[rgb(6,49,6)]  text-white align-middle   '>
+    <div className='flex pt-2  text-3xl align-middle justify-between text-center'>    
+   <p className='w-full text-center mb-10'> Terms and Condition</p>
+  </div>
         <div className=' flex relative  flex-col'>
             <div className='flex text-2xl justify-center  text-center  mb-4 pl-10 pr-10 '> Welcome to <span className='text-pry '> WordSmitters</span> </div>
             <p className=' text-xl justify-center  align-middle text-center  mb-4 pl-10 pr-10  '>These terms and conditions outline the rules and regulations for the use of our book web app. 
 By accessing this web app, we assume you accept these terms and conditions. Do not continue to use <span className='text-pry '> WordSmitters</span> if you do not agree to all of the terms and conditions stated on this page.
 </p>
 
-<div className='flex flex-col gap-5 text-lg justify-items-start pl-20 pr-20  '>
+<div className='flex flex-col gap-5 text-lg justify-items-start  '>
   <div>
   <p>1. License to Use</p>
   <p>1.1.<span className='text-pry '> WordSmitters</span>grants you a limited license to access and use this web app for personal use only.</p>

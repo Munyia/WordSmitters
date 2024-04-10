@@ -8,7 +8,7 @@ const Conduct = () => {
     <div className='flex pt-2  text-3xl align-middle justify-between text-center'>    
    <p className='w-full text-center mb-10'>Code of Conduct</p>
   </div>
-        <div className='flex text-lg gap-5 justify-center  flex-col  mb-4 pl-20 pr-20'>
+        <div className='flex text-lg gap-5 justify-center  flex-col  mb-4 '>
             <p> <span className='font-bold'>1. Respect and Kindness:</span> Treat all members with respect, kindness, and empathy. Be considerate of others' opinions, backgrounds, and experiences.</p>
             <p> <span  className='font-bold'>2. Inclusive Environment:</span> Foster an inclusive environment where everyone feels welcome, regardless of race, ethnicity, gender, sexual orientation, religion, disability, or any other characteristic.</p>
             <p><span className='font-bold'>3. Civil Discourse:</span> Engage in constructive and civil discourse. Avoid personal attacks, harassment, discrimination, or any form of disrespectful behavior.</p>

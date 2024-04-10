@@ -8,7 +8,7 @@ const Privacy = () => {
          <div className='flex pt-2  text-3xl align-middle justify-between text-center'>    
         <p className='w-full text-center mb-10'> Privacy Policy</p>
        </div>
-        <div className='flex flex-col mx-10 gap-7 text-lg '>
+        <div className='flex flex-col gap-7 text-lg '>
             <div>
             <p className='pb-5 justify-center text-center text-xl'> <span className='text-pry '> WordSmitters</span> is committed to protecting the privacy of its users. This Privacy Policy outlines how we collect, use, disclose, and protect your personal information when you use our website or services.</p>
             <p>1. Information We Collect</p>
