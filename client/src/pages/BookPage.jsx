@@ -1,21 +1,27 @@
 import React from 'react'
+import dropdown from '../assets/res/dropdown.gif'
 
 const BookPage = () => {
   return (
-    <div>
-        <div className='flex flex-col '>
+    <div className='flex gap-5'>
+        <div className='flex border  text-lg text-pryw-[35%] ' >
+            <div className='flex gap-4 ' >
             <p>Lagos Wahala</p>
-            <p>Pheecamila Ranjo</p>
-            <div class="group  gap-5 relative w-[10vw] text-[rgb(10,32,8)]  flex justify-evenly pr-5 cursor-pointer">
-        <p  className='flex hover:underline text-lg hover:text-xl '>Sign Up</p>
+            <p>Pheecamila Ranjo</p> 
+            </div>
+        <div class="group  gap-5 relative text-[rgb(10,32,8)] w-[10%] flex justify-evenly pr-5 ">
+        <img className='flex' src={dropdown} alt="" />
   <div className="hidden text-black absolute top-[100%] bg-[#CD9564] rounded  group-hover:flex w-full flex-col gap-2 p-2 text-center">
-            <Link to={"/signup"} className='hover:bg-[rgb(10,32,8)]  hover:text-white  rounded-lg px-1 py-1'>Reader</Link>
-            <Link to={"/signup"} className='hover:bg-[rgb(10,32,8)] hover:text-white rounded-lg px-1 py-1'>Writer</Link>
-            <div className=' border-b-[rgb(10,32,8)]'></div>
+            <p>Chapter 1</p>
+            <p>Chapter 2</p>
+            <p>Chapter 33</p>
+            <p>Chapter 4</p>
+            <p>Chapter 5</p>
         </div>
        </div>
         </div>
         <div>
+            <div className='flex flex-col mx-10 w-[65] gap-5 text-lg pb-5'>
             <p>Chapter 1</p>
             <p>The sun had barely risen, casting a warm orange glow over the sprawling metropolis of Lagos, Nigeria. The city was already bustling with activity, as vendors set up their stalls and commuters jostled for space on the crowded streets.</p>
             <p>In the midst of all this chaos, a young woman named Ada emerged from the bustling crowd. She was tall and slender, with dark skin and hair pulled back into a neat bun. She wore a simple yellow dress and carried a small suitcase, her eyes scanning the unfamiliar surroundings with a mix of excitement and trepidation.</p>
@@ -31,6 +37,10 @@ const BookPage = () => {
             <p>But as she approached her building, she noticed something strange. There was a group of men standing outside, smoking and talking in hushed tones. They looked up as she approached, their eyes narrowing.</p>
             <p>Ada felt a chill run down her spine. She quickened her pace, but it was too late. The men moved to block her way, their faces twisted into menacing grins.</p>
             <p>"Where do you think you're going, pretty lady?" one of them sneered. <br />Ada's heart raced as she tried to think of a way to escape. But before she could react, a voice rang out from the shadows.</p>
+        </div>
+        <div className='flex justify-center text-center'>
+            <p className='border w-[30%] bg-sec text-pry h-10 rounded-full text-lg justify-center align-middle text-center'>Continue</p>
+        </div>
         </div>
     </div>
   )
