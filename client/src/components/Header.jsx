@@ -23,14 +23,17 @@ const Header = () => {
   
   return (
     <div className='text-white  bg-[#CD9564] relative gap-5 pr flex w-full h-[13vh] bg- justify-between items-center' id='Navbar'>
-       <div className='flex justify-around text-[rgb(10,32,8)] text-center items-center gap-5 content-center h-full overflow-hidden'>
+       <div className='flex justify-around text-[rgb(10,32,8)] text-center items-center gap-5 content-center h-full overflow-hidden w-[35%]'>
        <Link to={'/'}><img src={llogo} className='h-[16vh]' alt="" /></Link>
           <Link to={"/about"} className='flex hover:underline text-lg hover:text-xl w-20'>About</Link>
           <Link to={"/books"}  className='flex hover:underline text-lg hover:text-xl w-20'>Books</Link>
+          <div  className='flex hover:underline text-lg hover:text-xl w-20'>Categories</div>
        </div>
        <form onSubmit={handleSubmit}>
        <input type="text" autocomplete="off" name="text" value={searchContent} onChange={(e)=>setSearchContent(e.target.value)} className="border-none outline-none rounded-2xl p-4 bg-white transition duration-300 ease-in-out h-[8vh] shadow-[inset_2px_5px_10px_grey] focus:shadow-[inset_1px_1px_10px_grey] focus:scale-[1.05] text-black" placeholder="Search by Author, Title ..."/>
        </form>
+       <div className='w-[35%] flex justify-end'>
+
         {  isLoggedIn()? <div className='relative'>
           <Hamburger toggled={isOpen} toggle={setOpen}/>
           {
@@ -59,6 +62,8 @@ const Header = () => {
        </div>
 </div>
 }
+</div>
+
 
 
 
