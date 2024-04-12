@@ -1,5 +1,4 @@
 import React, { useState } from 'react'
-import "./header.css"
 import { Link, useNavigate } from 'react-router-dom'
 import llogo from '../assets/res/log.png'
 import { Fade as Hamburger } from 'hamburger-react'
@@ -30,7 +29,7 @@ const Header = () => {
           <Link to={"/books"}  className='flex hover:underline text-lg hover:text-xl w-20'>Books</Link>
        </div>
        <form onSubmit={handleSubmit}>
-       <input type="text" autocomplete="off" name="text" value={searchContent} onChange={(e)=>setSearchContent(e.target.value)} className="input text-black" placeholder="Search by Author, Title ..."/>
+       <input type="text" autocomplete="off" name="text" value={searchContent} onChange={(e)=>setSearchContent(e.target.value)} className="border-none outline-none rounded-2xl p-4 bg-white transition duration-300 ease-in-out h-[8vh] shadow-[inset_2px_5px_10px_grey] focus:shadow-[inset_1px_1px_10px_grey] focus:scale-[1.05] text-black" placeholder="Search by Author, Title ..."/>
        </form>
         {  isLoggedIn()? <div className='relative'>
           <Hamburger toggled={isOpen} toggle={setOpen}/>
