@@ -27,10 +27,14 @@ const Header = () => {
        <Link to={'/'}><img src={llogo} className='h-[16vh]' alt="" /></Link>
           <Link to={"/about"} className='flex hover:underline text-lg hover:text-xl w-20'>About</Link>
           <Link to={"/books"}  className='flex hover:underline text-lg hover:text-xl w-20'>Books</Link>
-          <div className="group  gap-5  w-[10vw] text-[rgb(10,32,8)]  flex justify-evenly pr-5 cursor-pointer">
-          <Link  className='flex hover:underline text-lg hover:text-xl w-20'>Categories</Link>
- 
-        </div>
+          <div className="group relative w-[10vw] flex justify-evenly pr-5 cursor-pointer">
+    <Link to="#" className="flex items-center hover:underline text-lg hover:text-xl text-sec">Categories</Link>
+    <div className="hidden absolute top-full left-0 bg-pry rounded w-full flex-col gap-2 p-2 text-center group-hover:flex">
+        <Link to="/fiction" className="hover:bg-green-800 rounded-lg px-1 py-1 text-black">Fiction</Link>
+        <Link to="/non-fiction" className="hover:bg-green-800 rounded-lg px-1 py-1 text-black">Non-Fiction</Link>
+    </div>
+</div>
+
        </div>
        <form onSubmit={handleSubmit}>
        <input type="text" autocomplete="off" name="text" value={searchContent} onChange={(e)=>setSearchContent(e.target.value)} className="border-none outline-none rounded-2xl p-4 bg-white transition duration-300 ease-in-out h-[8vh] shadow-[inset_2px_5px_10px_grey] focus:shadow-[inset_1px_1px_10px_grey] focus:scale-[1.05] text-black" placeholder="Search by Author, Title ..."/>
