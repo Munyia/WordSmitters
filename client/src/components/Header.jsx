@@ -27,7 +27,10 @@ const Header = () => {
        <Link to={'/'}><img src={llogo} className='h-[16vh]' alt="" /></Link>
           <Link to={"/about"} className='flex hover:underline text-lg hover:text-xl w-20'>About</Link>
           <Link to={"/books"}  className='flex hover:underline text-lg hover:text-xl w-20'>Books</Link>
-          <div  className='flex hover:underline text-lg hover:text-xl w-20'>Categories</div>
+          <div className="group  gap-5  w-[10vw] text-[rgb(10,32,8)]  flex justify-evenly pr-5 cursor-pointer">
+          <Link  className='flex hover:underline text-lg hover:text-xl w-20'>Categories</Link>
+ 
+        </div>
        </div>
        <form onSubmit={handleSubmit}>
        <input type="text" autocomplete="off" name="text" value={searchContent} onChange={(e)=>setSearchContent(e.target.value)} className="border-none outline-none rounded-2xl p-4 bg-white transition duration-300 ease-in-out h-[8vh] shadow-[inset_2px_5px_10px_grey] focus:shadow-[inset_1px_1px_10px_grey] focus:scale-[1.05] text-black" placeholder="Search by Author, Title ..."/>
@@ -52,7 +55,7 @@ const Header = () => {
        <div className=' flex text-[rgb(10,32,8)]'>
 
           <Link to={"/login"}  className='flex hover:underline text-lg hover:text-xl w-20'>Login</Link>
-        <div class="group  gap-5 relative w-[10vw] text-[rgb(10,32,8)]  flex justify-evenly pr-5 cursor-pointer">
+        <div className="group  gap-5 relative w-[10vw] text-[rgb(10,32,8)]  flex justify-evenly pr-5 cursor-pointer">
         <Link  className='flex hover:underline text-lg hover:text-xl '>Sign Up</Link>
   <div className="hidden text-black absolute top-[100%] bg-[#CD9564] rounded  group-hover:flex w-full flex-col gap-2 p-2 text-center">
             <Link to={"/signup"} className='hover:bg-[rgb(10,32,8)]  hover:text-white  rounded-lg px-1 py-1'>Reader</Link>
