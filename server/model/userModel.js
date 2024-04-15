@@ -14,7 +14,11 @@ const userschema =mongoose. Schema(
         type: String,
         required: true
     },
-    name: {
+    fullname: {
+        type: String,
+        required: true
+    },
+    username: {
         type: String,
         required: true
     },
@@ -22,7 +26,7 @@ const userschema =mongoose. Schema(
         type: String,
         required: false
     },
-    age: {
+    DOB: {
         type: Number,
         required: false
     },

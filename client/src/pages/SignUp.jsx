@@ -22,8 +22,9 @@ const SignUp = () => {
   function handleSubmit(e) {
     e.preventDefault();
     setLoading(true);
+    console.log(email, password);
     axios
-      .post("http://localhost:8081/login", {
+      .post("http://localhost:8081/users", {
         fullname: fullname,
         email: email,
         password: password,
@@ -32,7 +33,7 @@ const SignUp = () => {
         DOB: DOB,
       })
       .then((response) => {
-        console.log(response.data);
+        console.log(response);
         setLoading(false); // Toggle loading state off after successful request
       })
       .catch((error) => {
