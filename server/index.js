@@ -3,6 +3,7 @@ import cors from 'cors';
 import connectdb from './db.js';
 import User from "./model/userModel.js";
 import dotenv from "dotenv"
+import userRoutes from "./model/userModel.js"
 
 const app = express();
 const port = 8081;
@@ -37,6 +38,8 @@ app.get("/addUser", (req, res) => {
     })
 })
 
+app.use('/users', userRoutes)
+
 app.use(
     cors({
         origin: 'http://localhost:5173', 
@@ -45,7 +48,7 @@ app.use(
 app.use(express.json())
 
 app.get('/', (req, res) => {
-    res.send("I live suckers");  
+    res.send("Mudijo");  
 });
 app.post('/login', (req, res) => {
     const {email, password} = req.body;
