@@ -27,8 +27,8 @@ const BookPage = () => {
         </div>
         <div className=' px-10'>
             <div className='flex flex-col w-[65] gap-5 text-lg my-6 pb-5 h-[80%] no-scrollbar overflow-y-scroll'>
-            <p>Chapter 1</p>
-            <p>The sun had barely risen, casting a warm orange glow over the sprawling metropolis of Lagos, Nigeria. The city was already bustling with activity, as vendors set up their stalls and commuters jostled for space on the crowded streets.</p>
+            <p className='text-4xl text-sec font-serif font-bold justify-center text-center'>Chapter 1</p>
+            <p> <span className='text-2xl text-sec pr-1 font-semibold font-serif'>The</span>sun had barely risen, casting a warm orange glow over the sprawling metropolis of Lagos, Nigeria. The city was already bustling with activity, as vendors set up their stalls and commuters jostled for space on the crowded streets.</p>
             <p>In the midst of all this chaos, a young woman named Ada emerged from the bustling crowd. She was tall and slender, with dark skin and hair pulled back into a neat bun. She wore a simple yellow dress and carried a small suitcase, her eyes scanning the unfamiliar surroundings with a mix of excitement and trepidation.</p>
             <p>Ada had never been to Lagos before. She had grown up in a small village in the countryside, where life was simple and quiet. But she had always dreamed of seeing the big city, with its towering skyscrapers and endless opportunities.</p>
             <p>As she made her way through the crowded streets, Ada couldn't help but feel overwhelmed. She had never seen so many people in one place before, and the noise and chaos was almost too much to bear.</p>
@@ -44,8 +44,8 @@ const BookPage = () => {
             <p>"Where do you think you're going, pretty lady?" one of them sneered. <br />Ada's heart raced as she tried to think of a way to escape. But before she could react, a voice rang out from the shadows.</p>
         </div>
         <div className='flex justify-between text-center mt-8 '>
-            <p className='border w-[20%] bg-pry text-sec py-1 rounded-full text-lg justify-center align-middle text-center'>Previous Chapter</p>
-            <p className='border w-[20%] bg-pry text-sec py-1 rounded-full text-lg justify-center align-middle text-center'>Next Chapter</p>
+            <p className='border w-[15%] bg-pry text-sec py-1 rounded-full text-sm justify-center align-middle text-center'>Previous Chapter</p>
+            <p className='border w-[15%] bg-pry text-sec py-1 rounded-full text-sm justify-center align-middle text-center'>Next Chapter</p>
         </div>
         </div>
     </div>
