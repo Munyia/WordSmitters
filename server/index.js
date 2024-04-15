@@ -1,9 +1,8 @@
-const express = require('express');
-const cors = require('cors');
-const connectdb = require('./db');
-const dotenv = require('dotenv');
-const User = require("./model/userModel");
-
+import express from 'express';
+import cors from 'cors';
+import connectdb from './db.js';
+import User from "./model/userModel.js";
+import dotenv from "dotenv"
 
 const app = express();
 const port = 8081;
