@@ -55,11 +55,11 @@ Dive into our collection of Nigerian books and embark on a literary adventure. F
         <p>Meet the passionate team behind <span className='text-pry '> WordSmitters</span>:</p>
         <ul>
           <li> Laurel Ranjo - Head of Content: With a background in publishing and a deep love for storytelling, Laurel oversees the curation of our book collection and content strategy.</li>
-          <li>Stephanie Ranjo - Community Manager: Stephanie is passionate about fostering a sense of community among our readers and authors, ensuring that <span className='text-pry '> WordSmitters</span>remains a welcoming space for all literature enthusiasts.</li>
+          <li>Stephanie Ranjo - Community Manager: Stephanie is passionate about fostering a sense of community among our readers and authors, ensuring that <span className='text-pry pr-1 '> WordSmitters</span>remains a welcoming space for all literature enthusiasts.</li>
         </ul>
       </div>
       <div className='text-lg'>
-        <p>Join the <span className='text-pry '> WordSmitters</span>Community</p>
+        <p>Join the <span className='text-pry pr-1 '> WordSmitters</span>Community</p>
         <p>Join our growing community of readers, writers, and literature enthusiasts and explore the rich world of Nigerian literature with <span className='text-pry '> WordSmitters</span>.</p>
       </div>
       </div>
