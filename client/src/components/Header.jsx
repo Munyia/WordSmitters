@@ -30,8 +30,8 @@ const Header = () => {
           <div className="group relative w-[10vw] flex justify-evenly pr-5 cursor-pointer">
     <Link to="#" className="flex items-center hover:underline text-lg hover:text-xl text-sec">Categories</Link>
     <div className="hidden absolute top-full z-50 left-0 bg-pry rounded w-full flex-col gap-2 p-2 text-center group-hover:flex">
-        <Link to="/fiction" className="hover:bg-sec rounded-lg px-1 py-1 text-black">Fiction</Link>
-        <Link to="/non-fiction" className="hover:bg-sec rounded-lg px-1 py-1 text-black">Non-Fiction</Link>
+        <Link to="/fiction" className="hover:bg-sec hover:text-white rounded-lg px-1 py-1 text-black">Fiction</Link>
+        <Link to="/non-fiction" className="hover:bg-sec hover:text-white rounded-lg px-1 py-1 text-black">Non-Fiction</Link>
     </div>
 </div>
 
