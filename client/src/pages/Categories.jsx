@@ -1,51 +1,57 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
+
 const Categories = () => {
   return (
-    <div className='text-lg flex my-[3%] w-full justify-around '>
-        <div className='border-none w-[40%]  text-center shadow-2xl  flex flex-col '>
-            <Link>Romance</Link>
-            <Link>Science Fiction</Link>
-            <Link>Fantasy</Link>
-            <Link>Teen & Young Adult</Link>
-            <Link>Mystery, Thriller & Suspense</Link>
-            <Link>Historical Fiction</Link>
-            <Link>Literary Fiction</Link>
-            <Link>Children Fiction</Link>
-            <Link>Comics & Graphic (Manga)</Link>
-            <Link className=' underline mt-20'>Literary Non-Fiction</Link>
-            <Link>Biography</Link>
-            <Link>Autobiography & Memory</Link>
+    <div className=' '>
+      <div className='flex relative text-lg my-[3%] w-full justify-around  '>
+        <div className='border-none w-[25%] bg-white text-lg py-5 gap-3 text-sec text-center shadow-2xl  flex flex-col '>
+          <p className='underline text-2xl'>Fiction</p>
+            <Link className="hover:text-white hover:bg-sec block px-2 py-1">Romance</Link>
+            <Link className="hover:text-white hover:bg-sec block px-2 py-1">Science Fiction</Link>
+            <Link className="hover:text-white hover:bg-sec block px-2 py-1">Fantasy</Link>
+            <Link className="hover:text-white hover:bg-sec block px-2 py-1">Teen & Young Adult</Link>
+            <Link className="hover:text-white hover:bg-sec block px-2 py-1">Mystery, Thriller & Suspense</Link>
+            <Link className="hover:text-white hover:bg-sec block px-2 py-1">Historical Fiction</Link>
+            <Link className="hover:text-white hover:bg-sec block px-2 py-1">Literary Fiction</Link>
+            <Link className="hover:text-white hover:bg-sec block px-2 py-1">Children Fiction</Link>
+            <Link className="hover:text-white hover:bg-sec block px-2 py-1">Comics & Graphic (Manga)</Link>
+            </div>
+            <div className='border-none w-[25%] text-lg py-5 gap-3 text-sec  bg-white text-center shadow-2xl  flex flex-col '>
+            <p className='underline text-2xl'>Literary Non-Fiction</p>
+            <Link className="hover:text-white hover:bg-sec block px-2 py-1">Biography</Link>
+            <Link className="hover:text-white hover:bg-sec block px-2 py-1">Autobiography & Memory</Link>
+            <Link className='underline mt-20 text-2xl hover:text-white hover:bg-sec block px-2 py-1'>AUDIOBOOK</Link>
         </div>
-        <div className='border-none w-[40%] text-center shadow-2xl flex flex-col '>
-            <Link>Non-Fiction</Link>
-            <Link>History</Link>
-            <Link>Philosophy</Link>
-            <Link>Science</Link>
-            <Link>Essay</Link>
-            <Link>Self Help</Link>
-            <Link>Cookbook</Link>
-            <Link>Children Non-Fiction</Link>
-            <Link>Travel Literature</Link>
-            <Link>Journalism</Link>
-            <Link>Religion & Spirituality</Link>
-            <Link>Politics & social sciences</Link>
-            <Link>Business & Economics</Link>
-            <Link>Health & Wellness</Link>
-            <Link>Craft & Hobbies</Link>
-            <Link>Art & Photograph</Link>
-            <Link>Technology & Computer</Link>
-            <Link>Education</Link>
-            <Link>Engineering</Link>
-            <Link>History</Link>
-            <Link>Humour & Entertainment</Link>
-            <Link>Law</Link>
-            <Link>Academic Research</Link>
-            <Link className='underline mt-20'>AUDIOBOOK</Link>
-            <Link>Podcast</Link>
-            <Link>Motivational Books</Link>
+        <div className='border-none w-[25%] text-lg py-5 gap-3  bg-white text-sec text-se text-center shadow-2xl flex flex-col '>
+            <p className='underline text-2xl'>Non-Fiction</p>
+            <Link className="hover:text-white hover:bg-sec block px-2 py-1">History</Link>
+            <Link className="hover:text-white hover:bg-sec block px-2 py-1">Philosophy</Link>
+            <Link className="hover:text-white hover:bg-sec block px-2 py-1">Science</Link>
+            <Link className="hover:text-white hover:bg-sec block px-2 py-1">Essay</Link>
+            <Link className="hover:text-white hover:bg-sec block px-2 py-1">Self Help</Link>
+            <Link className="hover:text-white hover:bg-sec block px-2 py-1">Cookbook</Link>
+            <Link className="hover:text-white hover:bg-sec block px-2 py-1">Children Non-Fiction</Link>
+            <Link className="hover:text-white hover:bg-sec block px-2 py-1">Travel Literature</Link>
+            <Link className="hover:text-white hover:bg-sec block px-2 py-1">Journalism</Link>
+            <Link className="hover:text-white hover:bg-sec block px-2 py-1">Religion & Spirituality</Link>
+            <Link className="hover:text-white hover:bg-sec block px-2 py-1">Politics & social sciences</Link>
+            <Link className="hover:text-white hover:bg-sec block px-2 py-1">Business & Economics</Link>
+            <Link className="hover:text-white hover:bg-sec block px-2 py-1">Health & Wellness</Link>
+            <Link className="hover:text-white hover:bg-sec block px-2 py-1">Craft & Hobbies</Link>
+            <Link className="hover:text-white hover:bg-sec block px-2 py-1">Art & Photograph</Link>
+            <Link className="hover:text-white hover:bg-sec block px-2 py-1">Technology & Computer</Link>
+            <Link className="hover:text-white hover:bg-sec block px-2 py-1">Education</Link>
+            <Link className="hover:text-white hover:bg-sec block px-2 py-1">Engineering</Link>
+            <Link className="hover:text-white hover:bg-sec block px-2 py-1">History</Link>
+            <Link className="hover:text-white hover:bg-sec block px-2 py-1">Humour & Entertainment</Link>
+            <Link className="hover:text-white hover:bg-sec block px-2 py-1">Law</Link>
+            <Link className="hover:text-white hover:bg-sec block px-2 py-1">Academic Research</Link>
+            <Link className="hover:text-white hover:bg-sec block px-2 py-1">Motivational Books</Link>
+            <Link className="hover:text-white hover:bg-sec block px-2 py-1">Podcast</Link>
         </div>
+    </div>
     </div>
   )
 }

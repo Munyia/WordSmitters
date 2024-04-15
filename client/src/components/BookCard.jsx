@@ -44,10 +44,13 @@ const BookCard = ({
          <div
           className={`fixed  flex justify-center items-center left-0 z-50 bottom-0 w-[100vw] h-[100vh] bg-[rgba(0,0,0,0.4)]`}
         >
-            <div className='w-3/5 h-3/4 border hover:text-red-700'>
-
-            <button onClick={closeDescription} className='border w-[20%] bg-pry text-sec py-1 rounded-full text-lg justify-center align-middle text-center'>X</button>
-            <p className='border w-[20%] bg-sec text-pry py-1 rounded-full text-lg justify-center align-middle text-center'>Next Chapter</p>
+            <div className='w-3/5 h-3/4 border justify-end text-end '>
+            <button onClick={closeDescription} className='border w-[5%] bg-pry text-sec hover:text-red-700 hover:text-2xl py-1 rounded-full text-lg justify-center align-middle text-center'>X</button>
+            </div>
+            <div>
+              <img src="" alt="" />
+              <p>Description</p>
+              <p></p>
             </div>
         </div>
 
