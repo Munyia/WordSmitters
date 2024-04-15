@@ -2,10 +2,10 @@ import mongoose from 'mongoose'
 
 const userschema =mongoose. Schema(
     {
-    username: {
-        type: String,
-        required: true
-    },
+    // username: {
+    //     type: String,
+    //     required: true
+    // },
     password: {
         type: String,
         required: true
@@ -20,11 +20,11 @@ const userschema =mongoose. Schema(
     },
     gender: {
         type: String,
-        required: true
+        required: false
     },
     age: {
         type: Number,
-        required: true
+        required: false
     },
     bio: {
         type: String,
@@ -33,12 +33,8 @@ const userschema =mongoose. Schema(
     },
     image: {
         type: String,
-        required: true
+        required: false
     },
-    password: {
-        type: String,
-        required: true
-    }
 },
     {
     timestamps: true

@@ -30,13 +30,6 @@ const users =[
 app.post("login", (req, res) => {
 
 });
-app.get("/addUser", (req, res) => {
-    const newUser = new User({email});
-    const addUser = newuser.save()
-    newUser.save((err, user) => {
-      
-    })
-})
 
 app.use('/users', userRoutes)
 
