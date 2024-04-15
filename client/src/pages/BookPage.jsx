@@ -27,7 +27,7 @@ const BookPage = () => {
         </div>
         <div className=' px-10'>
             <div className='flex flex-col w-[65] gap-5 text-lg my-6 pb-5 h-[80%] no-scrollbar overflow-y-scroll'>
-            <p className='text-4xl text-sec font-serif font-bold justify-center text-center'>Chapter 1</p>
+            <p className='text-5xl text-sec font-serif font-bold text-center '>Chapter 1</p>
             <p> <span className='text-2xl text-sec pr-1 font-semibold font-serif'>The</span>sun had barely risen, casting a warm orange glow over the sprawling metropolis of Lagos, Nigeria. The city was already bustling with activity, as vendors set up their stalls and commuters jostled for space on the crowded streets.</p>
             <p>In the midst of all this chaos, a young woman named Ada emerged from the bustling crowd. She was tall and slender, with dark skin and hair pulled back into a neat bun. She wore a simple yellow dress and carried a small suitcase, her eyes scanning the unfamiliar surroundings with a mix of excitement and trepidation.</p>
             <p>Ada had never been to Lagos before. She had grown up in a small village in the countryside, where life was simple and quiet. But she had always dreamed of seeing the big city, with its towering skyscrapers and endless opportunities.</p>

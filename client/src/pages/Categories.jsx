@@ -3,11 +3,11 @@ import { Link } from 'react-router-dom'
 
 const Categories = () => {
   return (
-    <div className='flex text-lg bg-sec text-pry'>
-        <div>
+    <div className='text-lg flex my-[3%] w-full justify-around '>
+        <div className='border-none w-[40%]  text-center shadow-2xl  flex flex-col '>
             <Link>Romance</Link>
             <Link>Science Fiction</Link>
-            <Link>FFantasy</Link>
+            <Link>Fantasy</Link>
             <Link>Teen & Young Adult</Link>
             <Link>Mystery, Thriller & Suspense</Link>
             <Link>Historical Fiction</Link>
@@ -18,7 +18,7 @@ const Categories = () => {
             <Link>Biography</Link>
             <Link>Autobiography & Memory</Link>
         </div>
-        <div>
+        <div className='border-none w-[40%] text-center shadow-2xl flex flex-col '>
             <Link>Non-Fiction</Link>
             <Link>History</Link>
             <Link>Philosophy</Link>
