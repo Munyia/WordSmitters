@@ -4,9 +4,11 @@ import { tb, llogo, lock, eye } from "../assets";
 import { Link } from "react-router-dom";
 import axios from "axios";
 import Loader from "../components/Loader";
+import RegistrationSuccesful from "../components/RegistrationSuccessful";
 
 const SignUp = () => {
   const [fullname, setFullname] = useState("");
+  const [successful, setSuccessful] = useState(false);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [username, setUsername] = useState("");
@@ -151,6 +153,9 @@ const SignUp = () => {
         </form>
       </div>
       <Loader />
+      {
+        !successful && <RegistrationSuccesful/>
+      }
     </div>
   );
 };
