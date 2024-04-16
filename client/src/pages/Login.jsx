@@ -8,6 +8,7 @@ import Loader from '../components/Loader'
 
 
 const Login = () => {
+  document.title= "Login"
   const [password, setPassword] = useState("") 
   const [username, setUsername] = useState("")
   const [loading, setLoading] = useState(false)

@@ -154,7 +154,7 @@ const SignUp = () => {
       </div>
       <Loader />
       {
-        !successful && <RegistrationSuccesful/>
+        successful && <RegistrationSuccesful/>
       }
     </div>
   );

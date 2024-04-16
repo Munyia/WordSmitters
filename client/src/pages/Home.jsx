@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import Footer2 from "../components/Footer2";
 
 const Home = () => {
+  document.title= "Landing Page"
   useEffect(() => {
     fetch("http://localhost:4000/countries")
       .then((res) => res.json())

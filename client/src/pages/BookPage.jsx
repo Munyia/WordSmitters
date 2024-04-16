@@ -2,6 +2,7 @@ import React from 'react'
 import dropdown from '../assets/res/dropdown.gif'
 
 const BookPage = () => {
+    document.title= ""
   return (
     <div className='flex h-[87vh] gap-5'>
         <div className='flex border flex-col gap-4  items-center text-lg text-sec w-[35%]' >
