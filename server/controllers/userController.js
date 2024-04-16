@@ -17,4 +17,21 @@ const registerUser =  async (req, res) => {
 catch (err) {res.send("i failed");}
 }
 
-export {registerUser}
+const authUser =  async (req, res) => {
+    const { username, password} = req.body
+    try{
+        const user = await User.findOne({username: username});
+        if(user){
+            if(user.password === password){
+                res.send(user);
+            }else{
+                res.send("wrong password");
+            }
+        }else{
+            res.send("user not found");
+        }
+    }catch (err) {res.send("i failed", err);}
+}
+
+
+export {registerUser, authUser}
