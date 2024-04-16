@@ -29,7 +29,7 @@ const registerUser =  async (req, res) => {
     console.log("i got here")
     user = await newUser.save();
     console.log("i got here")
-     res.send(user);
+     res.status(200).send('user created successfully');
 }
 catch (err) {res.send("i failed" + err);}
 }
