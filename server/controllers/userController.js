@@ -2,8 +2,21 @@ import User from "../model/userModel.js";
 
 const registerUser =  async (req, res) => {
     const {firstname, lastname, email, username, gender, DOB, password} = req.body
-    console.log("i got here")
+    if (!firstname || !lastname || !email || !username || !gender || !DOB || !password) {
+        res.status(400).json({message: "Please fill all fields"})
+    }
     try{
+    
+        let user = await User.findOne({username})
+    
+    if(user){
+        res.status(400).json({message: "User already exists"})
+    }
+    user = await User.findOne({email})
+    if(user){
+        res.status(400).json({message: "User already exists"})
+    }
+    
         const newUser = new User({
             firstname: firstname,
         lastname: lastname,
@@ -14,7 +27,7 @@ const registerUser =  async (req, res) => {
         DOB: DOB,
     })
     console.log("i got here")
-    const user = await newUser.save();
+    user = await newUser.save();
     console.log("i got here")
      res.send(user);
 }
