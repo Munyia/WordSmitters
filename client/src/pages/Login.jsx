@@ -22,19 +22,19 @@ const Login = () => {
     localStorage.setItem('token', "blahhhhhhhhhh")
     Navigate('/')
     e.preventDefault()  
-  //   setLoading(true)
-  //   axios.post("http://localhost:8081/login", {
-  //   email: username,
-  //   password: password
-  // })
-  // .then(response => {
-  //   console.log(response.data);
-  //   setLoading(false); // Toggle loading state off after successful request
-  // })
-  // .catch(error => {
-  //   console.error(error);
-  //   setLoading(false); // Toggle loading state off after request error
-  // });
+    setLoading(true)
+    axios.post("http://localhost:8081/login", {
+    email: username,
+    password: password
+  })
+  .then(response => {
+    console.log(response.data);
+    setLoading(false); // Toggle loading state off after successful request
+  })
+  .catch(error => {
+    console.error(error);
+    setLoading(false); // Toggle loading state off after request error
+  });
   }
 
   return (
