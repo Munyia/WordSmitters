@@ -7,7 +7,8 @@ import Loader from "../components/Loader";
 import RegistrationSuccesful from "../components/RegistrationSuccessful";
 
 const SignUp = () => {
-  const [fullname, setFullname] = useState("");
+  const [firstname, setFirstname] = useState("");
+  const [lastname, setLastname] = useState("");
   const [successful, setSuccessful] = useState(false);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -27,7 +28,8 @@ const SignUp = () => {
     console.log(email, password);
     axios
       .post("http://localhost:8081/users", {
-        fullname: fullname,
+        firstname: firstname,
+        lastname: lastname,
         email: email,
         password: password,
         username: username,
@@ -66,13 +68,23 @@ const SignUp = () => {
           <h1 id="heading" className=" text-2xl font-bold text-[#CD9564] ">
             Sign Up
           </h1>
-          <div className="w-full flex flex-col gap-3">
+          <div className="w-full flex flex-col gap-2">
             <div className="field">
               <input
                 autocomplete="off"
-                placeholder="Full Name"
-                value={fullname}
-                onChange={(e) => setFullname(e.target.value)}
+                placeholder="First Name"
+                value={firstname}
+                onChange={(e) => setFirstname(e.target.value)}
+                className="input-field placeholder:text-[#CD9564]"
+                type="text"
+              />
+            </div>
+            <div className="field">
+              <input
+                autocomplete="off"
+                placeholder="Last Name"
+                value={lastname}
+                onChange={(e) => setLastname(e.target.value)}
                 className="input-field placeholder:text-[#CD9564]"
                 type="text"
               />
