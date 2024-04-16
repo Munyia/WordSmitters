@@ -35,21 +35,27 @@ const registerUser =  async (req, res) => {
 catch (err) {res.send("i failed" + err);}
 }
 
-const authUser =  async (req, res) => {
-    const { username, password} = req.body
-    try{
-        const user = await User.findOne({username: username});
-        if(user){
-            if(user.password === password){
-                res.send(user);
-            }else{
-                res.send("wrong password");
-            }
-        }else{
-            res.send("user not found");
+
+const authUser = async (req, res) => {
+    const {credentials, password} =   req.body
+    if (!email || !password){
+        res.status(400).json({message: "Please fill all fields"})
+        // !IMPORTANT(json is use for arrays when u have multiple stuff and send is use for one message)
+    }
+    let user = await User.findOne({email:credentials});
+    if (!user){
+        user = await User.findOne({username:credentials});
+        if (!user){
+            res.status(401).send({message: "User not found"})
         }
-    }catch (err) {res.send("i failed", err);}
+    }
+
+    const isMatch = await user.matchPassword(password);
+    if (!isMatch) {
+        res.status(401).send({message: "Password is incorrect"})
+    }
+    res.status(200).send({message: "user authenticated successfully", data:user});
+
+
 }
-
-
 export {registerUser, authUser}
