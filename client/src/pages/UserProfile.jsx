@@ -27,9 +27,9 @@ const user ={
   return (
     <div className='bg-sec'>
       {user ? (
-      <div className='flex flex-col w-1/2 gap-4   '>
-         <div className=' border shadow-2xl justify-start w-[30%]  rouded py-10 px-10 ml-10 my-10'>
-         <img className='w-[10%] text-pry text-[3rem] flex justify-center items-center aspect-square bg-pry rounded-full overflow-hidden' src={user.profileImage} alt="" />
+      <div className='flex gap-4 w-1/4 border text-white  items-center  '>
+         <div className=' border shadow-2xl justify-start  rouded py-10 px-10 ml-10 my-10'>
+         <img className='w-[100%] text-pry text-[3rem] flex justify-center items-center aspect-square bg-pry rounded-full overflow-hidden' src={user.profileImage} alt="" />
          <div className='flex text-white gap-5 font-bold text-center justify-center'>
          <h1 className='text-xl'>{user.firstname}</h1>
          <h1 className='text-xl'>{user.lastname}</h1>
@@ -43,11 +43,14 @@ const user ={
        <div>
 
        </div>
+       <div>Currently Reading</div>
+       <div>Reading Lists</div>
+       <div>Purchased Books</div>
       </div>
       ) : 
-      <div className=" bottom-0 left-0 w-full flexh-[50vh] justify-center">
-      <Loader />
-    </div>
+    <div className=" bottom-0 left-0 w-full flexh-[50vh] justify-center">
+              <Loader />
+            </div>
       }
     </div>
   );
