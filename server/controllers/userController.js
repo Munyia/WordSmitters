@@ -1,4 +1,5 @@
 import User from "../model/userModel.js";
+import generateToken from "../utils/generateToken.js";
 
 const registerUser =  async (req, res) => {
     const {firstname, lastname, email, username, gender, DOB, password} = req.body
@@ -38,7 +39,7 @@ catch (err) {res.send("i failed" + err);}
 
 const authUser = async (req, res) => {
     const {credentials, password} =   req.body
-    if (!email || !password){
+    if (!credentials || !password){
         res.status(400).json({message: "Please fill all fields"})
         // !IMPORTANT(json is use for arrays when u have multiple stuff and send is use for one message)
     }
@@ -54,7 +55,7 @@ const authUser = async (req, res) => {
     if (!isMatch) {
         res.status(401).send({message: "Password is incorrect"})
     }
-    res.status(200).send({message: "user authenticated successfully", data:user});
+    res.status(200).send({message: "user authenticated successfully", token: generateToken({id:user._id, email:user.email, firstname:user.firstname, lastname:user.lastname, created:user.createdAt, updated:user.updatedAt})});
 
 
 }
