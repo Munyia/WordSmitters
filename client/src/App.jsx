@@ -22,6 +22,9 @@ import Cooker from "./components/Cooker";
 import Layout from "./components/Layout";
 import BookPage from "./pages/BookPage";
 import Categories from "./pages/Categories";
+import UserProfile from "./pages/UserProfile";
+
+
 
 function App() {
   function isLoggedIn() {
@@ -70,6 +73,9 @@ function App() {
         { path: "/cooker", element: <Cooker /> },
         { path: "/bookpage", element: <BookPage /> },
         { path: "/categories", element: <Categories /> },
+        { path: "/userprofile", element: <UserProfile /> },
+        
+     
       ],
     },
     {
