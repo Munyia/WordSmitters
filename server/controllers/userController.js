@@ -12,11 +12,11 @@ const registerUser =  async (req, res) => {
         let user = await User.findOne({username})
     
     if(user){
-        res.status(401).send({message: "User already exists"})
+        res.status(401).send("User already exists")
     }
     user = await User.findOne({email})
     if(user){
-        res.status(401).send({message: "User already exists"})
+        res.status(401).send("User already exists")
     }
     
         const newUser = new User({

@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import axios from "axios";
 import Loader from "../components/Loader";
 import RegistrationSuccesful from "../components/RegistrationSuccessful";
+import api from "../utils/api";
 
 const SignUp = () => {
   const [firstname, setFirstname] = useState("");
@@ -16,34 +17,27 @@ const SignUp = () => {
   const [gender, setGender] = useState("");
   const [DOB, setDob] = useState("");
   const [loading, setLoading] = useState(false);
+  const [errors, setErrors] = useState('');
   const [showPassword, setShowPassword] = useState(false);
   document.title= "Sign Up"
   const togglePasswordVisibility = () => {
     setShowPassword(!showPassword);
   };
-
-  function handleSubmit(e) {
+  const handleSubmit = async(e) => {
     e.preventDefault();
     setLoading(true);
     console.log(email, password);
-    axios
-      .post("http://localhost:8081/users", {
-        firstname: firstname,
-        lastname: lastname,
-        email: email,
-        password: password,
-        username: username,
-        gender: gender,
-        DOB: DOB,
-      })
-      .then((response) => {
-        console.log(response);
-        setLoading(false); // Toggle loading state off after successful request
-      })
-      .catch((error) => {
-        console.error(error);
-        setLoading(false); // Toggle loading state off after request error
-      });
+    try {
+      const response = await api.post('users', {firstname, lastname, username, gender, DOB, email, password})
+      console.log(response)
+      setLoading(false); // Toggle loading state off after successful request
+    } catch (error) {
+      console.log(error);
+      setLoading(false); // Toggle loading state off after request error
+      setErrors(error.response.data);
+      
+    }
+   
   }
 
   return (
@@ -62,7 +56,7 @@ const SignUp = () => {
         </Link>
         <form
           onSubmit={handleSubmit}
-          c
+          
           class="form backdrop-blur-sm bg-[rgba(0,0,0,0.3)]"
         >
           <h1 id="heading" className=" text-2xl font-bold text-[#CD9564] ">
@@ -145,7 +139,7 @@ const SignUp = () => {
             </div>
             <div>
 
-            <button type='submit' disabled= {loading} className="mb-[2em] text-pry bg-[#171717] rounded border-none hover:text-white hover:bg-pry p-[0.5rem] px-6 transition-all ease-in-out duration-500">Sign Up</button>
+            <button type='submit' disabled= {loading} className="mb-[2em] disabled:bg-sec text-pry bg-[#171717] rounded border-none hover:text-white hover:bg-pry p-[0.5rem] px-6 transition-all ease-in-out duration-500">Sign Up</button>
             </div>
 
           </div>
@@ -157,6 +151,7 @@ const SignUp = () => {
             </Link>
           </p>
           <button className="button3">Sign Up With Google</button>
+          <p className="text-red-500">{errors && errors}</p>
           {loading && (
             <div className="absolute bottom-0 left-0 w-full flex justify-center">
               <Loader />
