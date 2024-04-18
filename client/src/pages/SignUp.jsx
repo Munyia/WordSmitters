@@ -112,7 +112,6 @@ const SignUp = () => {
                 type={showPassword ? "text" : "password"} // Show password if showPassword is true, otherwise hide it
               />
               <img
-                c
                 src={showPassword ? eye : lock} // Display different images based on the showPassword state
                 alt="Password toggle"
                 onClick={togglePasswordVisibility}
@@ -168,3 +167,6 @@ const SignUp = () => {
 };
 
 export default SignUp;
+
+
+
