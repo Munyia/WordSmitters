@@ -13,9 +13,9 @@ const HowItWorks = () => {
         
        </div>
        <div>
-        <p className=' text-2xl text-center'>Welcome to <span className='text-pry '> WordSmitters</span>, your go-to platform for exploring Nigerian books and literature. Here's how <span className='text-pry '> WordSmitters</span> works:</p>
+        <p className=' text-2xl rounded-3xl px-5 py-5 bg-white/30 backdrop-blur-lg text-black border border-transparent shadow-xl mb-5 text-center'>Welcome to <span className='text-pry '> WordSmitters</span>, your go-to platform for exploring Nigerian books and literature. Here's how <span className='text-pry '> WordSmitters</span> works:</p>
        </div>
-       <div className='flex text-lg gap-5 flex-col'>
+       <div className='flex text-lg gap-5 rounded-3xl px-5 py-5 bg-white/30 backdrop-blur-lg text-black border border-transparent shadow-xl flex-col'>
         <p className=' flex text-2xl' >Ghostwriting Services</p>
         <p className=''>1. In addition to providing a platform for exploring Nigerian books and literature, <span className='text-pry '> WordSmitters</span>also offers professional ghostwriting services. Our team of experienced writers specializes in crafting high-quality written content tailored to your specifications. </p>
         <p><span className='font-bold'>2. Discover Nigerian Books:</span> <span className='text-pry '> WordSmitters</span>is your gateway to discovering a diverse collection of Nigerian books spanning various genres, including fiction, non-fiction, poetry, drama, and more. Dive into our extensive library to explore captivating stories, insightful essays, and thought-provoking poetry penned by Nigerian authors.</p>

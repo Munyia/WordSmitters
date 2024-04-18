@@ -9,7 +9,7 @@ const Community = () => {
     <div className='flex pt-2  text-3xl align-middle justify-between text-center'>    
    <p className='w-full text-center mb-10'> Community Guidelines</p>
   </div>
-        <div className='flex text-lg gap-5 justify-center  flex-col  mb-4 '>
+        <div className='flex text-lg gap-5 justify-center rounded-3xl px-5 py-5 bg-white/30 backdrop-blur-lg text-black border border-transparent shadow-xl  flex-col  mb-4 '>
             <p> <span className='font-bold'>1. Respectful Communication:</span> Treat others with kindness, respect, and empathy. Avoid offensive language, personal attacks, and discriminatory remarks. Foster a positive and inclusive atmosphere where everyone feels valued and heard.</p>
             <p><span className='font-bold'>2. Constructive Feedback:</span> Provide feedback in a constructive and helpful manner. Focus on the content and ideas rather than attacking the person. Offer suggestions for improvement and encourage open dialogue.</p>
             <p><span className='font-bold'>3. Intellectual Property Rights:</span> Respect the intellectual property rights of others. Do not plagiarize or infringe on copyrights. If sharing content created by others, give proper credit and obtain necessary permissions.</p>

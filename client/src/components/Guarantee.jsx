@@ -10,7 +10,7 @@ const Guarantee = () => {
         <p className='w-full text-center mb-10'> Guarantee Page: <span className='text-pry '> WordSmitters</span></p>
        </div>
        
-        <div className='flex flex-col gap-5 text-lg   '>
+        <div className='flex flex-col gap-5 rounded-3xl px-5 py-5 bg-white/30 backdrop-blur-lg text-black border border-transparent shadow-xl text-lg   '>
             <p className='flex justify-center text-lg '>Our Commitment to You</p>
             <p className='flex justify-center text-center text-lg '> At <span className='text-pry ml-1 '>  WordSmitters</span>, we are dedicated to providing you with unparalleled service and satisfaction. We stand behind the quality of our work and strive to exceed your expectations at every step of the process. Here's what you can expect when you choose <span className='text-pry '> WordSmitters</span>:</p>
             <p> <span className='font-bold'>1. Quality Assurance: </span>We guarantee the highest standards of quality in every aspect of our service. From meticulously crafted content to seamless project management, we ensure excellence in every detail.</p>

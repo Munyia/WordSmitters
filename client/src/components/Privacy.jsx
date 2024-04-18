@@ -10,37 +10,37 @@ const Privacy = () => {
         <p className='w-full text-center mb-10'> Privacy Policy</p>
        </div>
         <div className='flex flex-col gap-7 text-lg '>
-            <div>
+            <div className='rounded-3xl px-5 py-5 bg-white/30 backdrop-blur-lg text-black border border-transparent shadow-xl'>
             <p className='pb-5 justify-center text-center text-xl'> <span className='text-pry '> WordSmitters</span> is committed to protecting the privacy of its users. This Privacy Policy outlines how we collect, use, disclose, and protect your personal information when you use our website or services.</p>
             <p>1. Information We Collect</p>
             <p>Personal Information: When you register for an account or use our services, we may collect personal information such as your name, email address, username, password, and any other information you provide.</p>
             <p>Usage Information: We may collect information about how you interact with our website or services, such as your IP address, device information, browser type, pages visited, and the duration of your visit.</p>
             <p>Cookies: We may use cookies and similar tracking technologies to enhance your experience and collect additional information about your usage patterns.</p>
             </div>
-            <div>
+            <div className='rounded-3xl px-5 py-5 bg-white/30 backdrop-blur-lg text-black border border-transparent shadow-xl'>
             <p>2. How We Use Your Information</p>
             <p>Provide Services: We use your personal information to provide and personalize our services, communicate with you, and process transactions.</p>
             <p>Improve Services: We analyze usage data to improve our website, services, and user experience.</p>
             <p>Marketing: With your consent, we may send you promotional emails about our services or other information we think you may find interesting.</p>
             <p>Legal Compliance: We may use your information to comply with legal obligations, enforce our policies, and protect our rights and interests.</p>
             </div>
-            <div>
+            <div className='rounded-3xl px-5 py-5 bg-white/30 backdrop-blur-lg text-black border border-transparent shadow-xl'>
                 <p>3. Information Sharing</p>
                 <p>We do not sell, trade, or rent your personal information to third parties. However, we may share your information with trusted service providers who assist us in operating our website or providing services to you. We may also disclose your information in response to legal requests, enforce our policies, or protect our rights.</p>
             </div>
-            <div>
+            <div className='rounded-3xl px-5 py-5 bg-white/30 backdrop-blur-lg text-black border border-transparent shadow-xl'>
                 <p>4. Data Security</p>
                 <p>We implement appropriate security measures to protect your personal information from unauthorized access, alteration, disclosure, or destruction.</p>
             </div>
-            <div>
+            <div className='rounded-3xl px-5 py-5 bg-white/30 backdrop-blur-lg text-black border border-transparent shadow-xl'>
                 <p>5. Children's Privacy</p>
                 <p>Our website and services are not intended for individuals under the age of 13. We do not knowingly collect personal information from children under 13. If you believe we have collected information from a child under 13, please contact us immediately.</p>
             </div>
-            <div>
+            <div className='rounded-3xl px-5 py-5 bg-white/30 backdrop-blur-lg text-black border border-transparent shadow-xl'>
                 <p>6. Changes to This Privacy Policy</p>
                 <p>We may update this Privacy Policy from time to time. We will notify you of any changes by posting the new Privacy Policy on this page.</p>
             </div>
-            <div>
+            <div className='rounded-3xl px-5 py-5 bg-white/30 backdrop-blur-lg text-black border border-transparent shadow-xl'>
                 <p>7. Contact Us</p>
                 <p>If you have any questions or concerns about this Privacy Policy or our privacy practices, please contact us at [<span className='text-pry '>WordSmitters</span>@gmail.com].</p>
             </div>
