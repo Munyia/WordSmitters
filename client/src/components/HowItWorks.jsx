@@ -6,16 +6,16 @@ import { Link } from 'react-router-dom'
 const HowItWorks = () => {
   document.title= "How it Works"
   return (
-    <div  className='flex underline  font-medium text-lg leading-loose tracking-wide  py-5 flex-col px-[12.5%] bg-gradient-to-br from-[rgb(11,31,10)] via-[rgb(7,49,3)] to-[rgb(6,49,6)]  text-white align-middle   '>
+    <div  className='flex   font-medium text-lg leading-loose tracking-wide  py-5 flex-col px-[12.5%] bg-gradient-to-br from-[rgb(11,31,10)] via-[rgb(7,49,3)] to-[rgb(6,49,6)]  text-white align-middle   '>
           <div className='flex pt-2  text-3xl align-middle justify-between text-center'>
         
-        <p className='w-full text-center mb-10'> How <span className='text-pry '> WordSmitters</span> Works</p>
+        <p className='w-full underline text-center mb-10'> How <span className='text-pry '> WordSmitters</span> Works</p>
         
        </div>
        <div>
         <p className=' text-2xl rounded-3xl px-5 py-5 bg-white/30 backdrop-blur-lg text-black border border-transparent shadow-xl mb-5 text-center'>Welcome to <span className='text-pry '> WordSmitters</span>, your go-to platform for exploring Nigerian books and literature. Here's how <span className='text-pry '> WordSmitters</span> works:</p>
        </div>
-       <div className='flex text-lg gap-5 rounded-3xl px-5 py-5 bg-white/30 backdrop-blur-lg text-black border border-transparent shadow-xl flex-col'>
+       <div className='flex text-lg gap-5  rounded-3xl px-5 py-5 bg-white/30 backdrop-blur-lg text-black border border-transparent shadow-xl flex-col'>
         <p className=' flex text-2xl' >Ghostwriting Services</p>
         <p className=''>1. In addition to providing a platform for exploring Nigerian books and literature, <span className='text-pry '> WordSmitters</span>also offers professional ghostwriting services. Our team of experienced writers specializes in crafting high-quality written content tailored to your specifications. </p>
         <p><span className='font-bold'>2. Discover Nigerian Books:</span> <span className='text-pry '> WordSmitters</span>is your gateway to discovering a diverse collection of Nigerian books spanning various genres, including fiction, non-fiction, poetry, drama, and more. Dive into our extensive library to explore captivating stories, insightful essays, and thought-provoking poetry penned by Nigerian authors.</p>

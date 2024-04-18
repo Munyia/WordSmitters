@@ -23,6 +23,7 @@ import Layout from "./components/Layout";
 import BookPage from "./pages/BookPage";
 import Categories from "./pages/Categories";
 import UserProfile from "./pages/UserProfile";
+import WriterProfile from "./pages/WriterProfile";
 
 
 
@@ -74,6 +75,7 @@ function App() {
         { path: "/bookpage", element: <BookPage /> },
         { path: "/categories", element: <Categories /> },
         { path: "/userprofile", element: <UserProfile /> },
+        { path: "/writerprofile", element: <WriterProfile /> },
         
      
       ],
