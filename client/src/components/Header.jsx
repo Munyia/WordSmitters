@@ -51,7 +51,7 @@ const Header = () => {
             <span className=' bg-gray-300 rounded-full aspect-square w-[30%] flex items-center justify-center'>MN</span>
             <span to={"/login"} className="button3 ">Munyia</span>
             </div>
-            <p className="hover:bg-sec bg-opacity-0 cursor-not-allowed rounded p-1 text-center">Profile</p>
+            <Link to={'/userprofile'} className="hover:bg-sec bg-opacity-0 cursor-pointer rounded p-1 text-center">Profile</Link>
             <p onClick={logout} className="hover:bg-sec rounded p-1 cursor-pointer text-center">Logout</p>
           </div>
           }

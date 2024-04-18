@@ -6,7 +6,7 @@ const Categories = () => {
   return (
     <div className=' '>
       <div className='flex relative text-lg my-[3%] w-full justify-around  '>
-        <div className='border-none w-[25%] bg-white text-lg py-5 gap-3 text-sec text-center shadow-2xl  flex flex-col '>
+        <div className='border-none w-[25%] rounded-3xl bg-white text-lg py-5 gap-3   shadow-black text-sec text-center shadow-2xl  flex flex-col '>
           <p className='underline text-2xl'>Fiction</p>
             <Link className="hover:text-white hover:bg-sec block px-2 py-1">Romance</Link>
             <Link className="hover:text-white hover:bg-sec block px-2 py-1">Science Fiction</Link>
@@ -18,13 +18,13 @@ const Categories = () => {
             <Link className="hover:text-white hover:bg-sec block px-2 py-1">Children Fiction</Link>
             <Link className="hover:text-white hover:bg-sec block px-2 py-1">Comics & Graphic (Manga)</Link>
             </div>
-            <div className='border-none w-[25%] text-lg py-5 gap-3 text-sec  bg-white text-center shadow-2xl  flex flex-col '>
+            <div className='border-none w-[25%] rounded-3xl text-lg py-5 gap-3  shadow-black text-sec  bg-white text-center shadow-2xl  flex flex-col '>
             <p className='underline text-2xl'>Literary Non-Fiction</p>
             <Link className="hover:text-white hover:bg-sec block px-2 py-1">Biography</Link>
             <Link className="hover:text-white hover:bg-sec block px-2 py-1">Autobiography & Memory</Link>
             <Link className='underline mt-20 text-2xl hover:text-white hover:bg-sec block px-2 py-1'>AUDIOBOOK</Link>
         </div>
-        <div className='border-none w-[25%] text-lg py-5 gap-3  bg-white text-sec text-se text-center shadow-2xl flex flex-col '>
+        <div className='border-none w-[25%] rounded-3xl text-lg py-5 gap-3 shadow-black bg-white text-sec text-se text-center shadow-2xl flex flex-col '>
             <p className='underline text-2xl'>Non-Fiction</p>
             <Link className="hover:text-white hover:bg-sec block px-2 py-1">History</Link>
             <Link className="hover:text-white hover:bg-sec block px-2 py-1">Philosophy</Link>
