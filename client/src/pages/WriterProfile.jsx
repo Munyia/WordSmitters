@@ -81,12 +81,12 @@ function WriterProfile({ userId }) {
   };
 
   return (
-    <div className='bg-gradient-to-br overflow-scroll'>
+    <div className=' overflow-scroll'>
       {user ? (
-        <div className='flex gap-5 text-black justify-center text-center py-5 px-5 '>
-          <img src={dropdown} alt="Toggle Profile" onClick={toggleProfileVisibility} className='w-10 h-10 cursor-pointer self-end'/>
+        <div className='flex gap-5 text-black justify-center text-center py-5  '>
+          <img src={dropdown} alt="Toggle Profile" onClick={toggleProfileVisibility} className='w-10 h-10 justify-start absolute cursor-pointer'/>
           {showProfile && (
-            <div className='shadow-black shadow-2xl max-h-[90vh] bg-white rounded-3xl justify-center flex flex-col gap-5 items-center w-[23%]'>
+            <div className='shadow-black shadow-2xl max-h-[90vh] relative bg-white rounded-3xl justify-center flex flex-col gap-5 items-center w-[23%]'>
               {user.profileImage ? (
                 <img className='rounded-full aspect-square overflow-hidden' src={user.profileImage} alt="Profile" />
               ) : (
@@ -109,7 +109,7 @@ function WriterProfile({ userId }) {
           )}
 
        
-            <div className='flex  flex-col gap-10 min-w-[100vh]'>
+            <div className='flex relative flex-col mt-10 gap-10 min-w-[100vh]'>
             <div className='flex min-h-[50%] flex-col min-w-[100vh]  shadow-black shadow-2xl   overflow-scroll bg-white rounded-3xl border  pt-5 text-lg '>
             <input type="file" onChange={uploadBook} className="my-2" />
             {user.savedBooks.map(book => (
