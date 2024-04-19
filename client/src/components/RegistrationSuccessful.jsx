@@ -17,7 +17,7 @@ const RegistrationSuccesful = () => {
                             Your account has been successfully created.
                         </p>
                     </div>
-                    <Link to={'/login'} className='bg-pry text-sec text-center justify-center rounded p-2'>Login</Link>
+                    <Link to={'/login'} className='bg-pry text-sec text-center justify-center rounded p-2'>Go to Login</Link>
                 </div>
             </div>
         </div>

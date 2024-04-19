@@ -30,7 +30,8 @@ const SignUp = () => {
     try {
       const response = await api.post('users', {firstname, lastname, username, gender, DOB, email, password})
       console.log(response)
-      setLoading(false); // Toggle loading state off after successful request
+      setLoading(false);
+      setSuccessful(true) // Toggle loading state off after successful request
     } catch (error) {
       console.log(error);
       setLoading(false); // Toggle loading state off after request error
