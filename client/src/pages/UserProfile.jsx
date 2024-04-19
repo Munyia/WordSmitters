@@ -40,10 +40,10 @@ const handleImageChange = (event) => {
 //   }, [userId]);
 
 return (
-  <div className='bg-gradient-to-br from-[rgb(11,31,10)] via-[rgb(7,49,3)]  to-[rgb(6,49,6)] justify-around text-center'>
+  <div className='bg-gradient-to-br from-[rgb(11,31,10)] via-[rgb(7,49,3)] w-full  to-[rgb(6,49,6)] '>
     {user ? (
-      <div className='flex border min-h-[80vh] gap-5 text-black justify-center text-center py-5 px-5 '>
-        <div className='border shadow-2xl  bg-white rounded-3xl justify-center flex flex-col gap-5 items-center w-[23%]'>
+      <div className='flex border text-black py-4 px-2 '>
+        <div className='border shadow-2xl mr-2 max-h-[80vh]  bg-white rounded-3xl justify-center flex flex-col gap-5 items-center w-[23%]'>
           {user.profileImage ? (
             <img className='w-[50%] rounded-full overflow-hidden'
               src={user.profileImage} alt="Profile"
@@ -62,9 +62,11 @@ return (
           <p className='text-black'>Joined: {new Date(user.joinDate).toLocaleDateString()}</p>
           <input type="file" onChange={handleImageChange} className="my-2" />
         </div>
-        <div className='w-[23%] bg-white rounded-3xl border  pt-5 text-lg items-center justify-center'>Currently Reading</div>
-        <div className='w-[23%] bg-white rounded-3xl border   pt-5 text-lg items-center justify-center'>Reading Lists</div>
-        <div className='w-[23%] bg-white rounded-3xl border   pt-5 text-lg items-center justify-center'>Purchased Books</div>
+        <div className='flex gap-5 text-sec font-bold flex-col w-full h-[80vh] overflow-y-scroll flex-nowrap [&::-webkit-scrollbar]:hidden'>
+        <div className='w-full bg-white rounded-3xl border min-h-[40vh] pt-5 text-lg flex overflow-x-scroll [&::-webkit-scrollbar]:hidden '>Currently Reading</div>
+        <div className='w-full bg-white rounded-3xl border min-h-[40vh]  pt-5 text-lg overflow-x-scroll [&::-webkit-scrollbar]:hidden'>Reading Lists</div>
+        <div className='w-full bg-white rounded-3xl border  min-h-[40vh] pt-5 text-lg overflow-x-scroll [&::-webkit-scrollbar]:hidden'>Purchased Books</div>
+        </div>
       </div>
     ) : 
       <div className="bottom-0 left-0 w-full flex h-[50vh] justify-center">
