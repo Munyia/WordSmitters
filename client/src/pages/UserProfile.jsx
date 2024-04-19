@@ -20,6 +20,11 @@ const getInitials = (firstname, lastname) => {
   return `${firstname[0]}${lastname[0]}`;
 };
 
+
+const deleteProfileImage = () => {
+  setUser({...user, profileImage: ''}); // Clears the profile image state
+};
+
 const handleImageChange = (event) => {
   const file = event.target.files[0];
   const reader = new FileReader();
@@ -52,6 +57,7 @@ return (
             <div className='w-[50%] flex justify-center items-center aspect-square bg-pry rounded-full overflow-hidden text-white text-[3rem]'>
               {getInitials(user.firstname, user.lastname)}
             </div>
+            
           )}
           <div className='flex text-white gap-5 font-bold text-center justify-center'>
             <h1 className='text-xl'>{user.firstname}</h1>
