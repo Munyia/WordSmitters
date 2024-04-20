@@ -34,6 +34,7 @@ const handleImageChange = (event) => {
   reader.readAsDataURL(file);
 };
 
+
 //   useEffect(() => {
 //     axios.get(`http://localhost:8081/users/${userId}`)
 //       .then(response => {
@@ -67,6 +68,17 @@ return (
           <p className='text-blue-500 font-bold'>Email: {user.email}</p>
           <p className='text-black'>Joined: {new Date(user.joinDate).toLocaleDateString()}</p>
           <input type="file" onChange={handleImageChange} className="my-2" />
+            {user.profileImage && (
+                <button
+                onClick={deleteProfileImage}
+                className={`bg-red-500 hover:bg-red-700 text-white font-bold py-1 px-2 rounded ${
+                  !user.profileImage ? 'opacity-50 cursor-not-allowed' : '' // Only apply opacity if no profileImage
+                }`}
+                disabled={!user.profileImage} // Explicitly disable if no profileImage
+              >
+                Delete Image
+              </button>
+            )}
         </div>
         <div className='flex gap-5 text-sec font-bold flex-col w-full h-[80vh] overflow-y-scroll flex-nowrap [&::-webkit-scrollbar]:hidden'>
         <div className='w-full bg-white rounded-3xl border min-h-[40vh] pt-5 text-lg flex overflow-x-scroll [&::-webkit-scrollbar]:hidden '>Currently Reading</div>
