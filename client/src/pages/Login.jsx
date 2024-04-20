@@ -81,7 +81,7 @@ const Login = () => {
                 type="text"
               />
               <label
-                className={`absolute left-2 px-2 ${isFocused || credentials ? 'text-white' : 'text-pry'} transition-all duration-300 ${isFocused ? '-translate-y-2 text-sm' : 'translate-y-2 text-base'}`}
+                className={`absolute left-10 px-2 ${isFocused || credentials ? 'text-white' : 'text-pry'} transition-all duration-300 ${isFocused ? '-translate-y-2 text-sm' : 'translate-y-2 text-base'}`}
               >
                 Username
               </label>
@@ -92,7 +92,7 @@ const Login = () => {
               <input
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
-                className="input-field placeholder:text-[#CD9564]"
+                className="input-field placeholder:text-[#CD9564]  w-full border-b border-gray-500 focus:border-black outline-none py-1 px-2 ${isFocused ? 'border-t-2 border-black"
                 type={showPassword ? 'text' : 'password'} // Show password if showPassword is true, otherwise hide it
                 onFocus={handlePasswordFocus}
                 onBlur={handlePasswordBlur}
@@ -104,7 +104,7 @@ const Login = () => {
                 className="password-toggle-icon w-[7%]"
               />
               <label
-                className={`absolute justify-start text-left px-2 ${isPasswordFocused || password ? 'text-white' : 'text-pry'} transition-all duration-300 ${isPasswordFocused ? '-translate-y-2 text-sm' : 'translate-y-2 text-base'}`}
+                className={`absolute left-21 px-2 ${isPasswordFocused || password ? 'text-white' : 'text-pry'} transition-all duration-300 ${isPasswordFocused ? '-translate-y-2 text-sm' : 'translate-y-2 text-base'}`}
               >
                 Password
               </label>

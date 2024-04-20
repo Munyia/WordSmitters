@@ -13,105 +13,113 @@ const SignUp = () => {
   const [successful, setSuccessful] = useState(false);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [confirmPassword, setConfirmPassword] = useState("");
   const [username, setUsername] = useState("");
   const [gender, setGender] = useState("");
   const [DOB, setDob] = useState("");
   const [loading, setLoading] = useState(false);
   const [errors, setErrors] = useState('');
   const [showPassword, setShowPassword] = useState(false);
-  document.title= "Sign Up"
+  const [isFocused, setIsFocused] = useState(false);
+
+  document.title = "Sign Up";
+
   const togglePasswordVisibility = () => {
     setShowPassword(!showPassword);
   };
-  const handleSubmit = async(e) => {
+
+  const handleFocus = () => {
+    setIsFocused(true);
+  };
+
+  const handleBlur = () => {
+    setIsFocused(false);
+  };
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
     console.log(email, password);
     try {
-      const response = await api.post('users', {firstname, lastname, username, gender, DOB, email, password})
-      console.log(response)
+      const response = await api.post('users', { firstname, lastname, username, gender, DOB, email, password });
+      console.log(response);
       setLoading(false);
-      setSuccessful(true) // Toggle loading state off after successful request
+      setSuccessful(true); // Toggle loading state off after successful request
     } catch (error) {
       console.log(error);
       setLoading(false); // Toggle loading state off after request error
       setErrors(error.response.data);
-      
     }
-   
-  }
+  };
 
   return (
-    <div
-      className=" w-full placeholder:text-[#CD9564] bg-[rgba(10,32,8,0.9)] h-[100vh] overflow-hidden"
-      id="Login"
-    >
-      <img
-        src={tb}
-        className="w-full  justify-center text-center align-middle"
-        alt=""
-      />
-      <div className="absolute w-full h-full overflow-hidden bg-[rgba(0,0,0,0.7)] flex justify-center items-center top-0 ">
+    <div className="w-full placeholder:text-[#CD9564] bg-[rgba(10,32,8,0.9)] h-[100vh] overflow-hidden" id="Login">
+      <img src={tb} className="w-full justify-center text-center align-middle" alt="" />
+      <div className="absolute w-full bg-[rgba(0,0,0,0.7)] flex justify-center items-center top-0 ">
         <Link to={"/"}>
           <img src={llogo} className="h-[10vh] absolute top-0 left-0" alt="" />
         </Link>
-        <form
-          onSubmit={handleSubmit}
-          
-          class="form backdrop-blur-sm bg-[rgba(0,0,0,0.3)]"
-        >
-          <h1 id="heading" className=" text-2xl font-bold text-[#CD9564] ">
-            Sign Up
-          </h1>
-          <div className="w-full flex flex-col gap-2">
+        <form onSubmit={handleSubmit} className="form backdrop-blur-sm bg-[rgba(0,0,0,0.3)]">
+          <h1 id="heading" className="text-2xl font-bold text-[#CD9564]">Sign Up</h1>
+          <div className="w-full flex flex-col">
             <div className="field">
               <input
-                autocomplete="off"
-                placeholder="First Name"
+                autoComplete="off"
                 value={firstname}
                 onChange={(e) => setFirstname(e.target.value)}
-                className="input-field placeholder:text-[#CD9564]"
+                className={`input-field placeholder:text-[#CD9564] ${isFocused || firstname ? 'focus:border-black outline-none py-1 px-2 border-b border-gray-500' : ''}`}
                 type="text"
+                onFocus={handleFocus}
+                onBlur={handleBlur}
               />
+              <label className={`absolute left-21 px-2 ${isFocused || firstname ? 'text-white' : 'text-pry'} transition-all duration-300 ${isFocused ? '-translate-y-2 text-sm' : 'translate-y-2 text-base'}`}>First Name</label>
             </div>
             <div className="field">
               <input
-                autocomplete="off"
-                placeholder="Last Name"
+                autoComplete="off"
                 value={lastname}
                 onChange={(e) => setLastname(e.target.value)}
-                className="input-field placeholder:text-[#CD9564]"
+                className={`input-field placeholder:text-[#CD9564] ${isFocused || lastname ? 'focus:border-black outline-none py-1 px-2 border-b border-gray-500' : ''}`}
                 type="text"
+                onFocus={handleFocus}
+                onBlur={handleBlur}
               />
+              <label className={`absolute left-21 px-2 ${isFocused || lastname ? 'text-white' : 'text-pry'} transition-all duration-300 ${isFocused ? '-translate-y-2 text-sm' : 'translate-y-2 text-base'}`}>Last Name</label>
             </div>
             <div className="field">
               <input
                 autocomplete="off"
-                placeholder="Email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                className="input-field placeholder:text-[#CD9564]"
+                className={`input-field placeholder:text-[#CD9564] ${isFocused || lastname ? 'focus:border-black outline-none py-1 px-2 border-b border-gray-500' : ''}`}
                 type="text"
+                onFocus={handleFocus}
+                onBlur={handleBlur}
               />
+              <label className={`absolute left-21 px-2 ${isFocused || email ? 'text-white' : 'text-pry'} transition-all duration-300 ${isFocused ? '-translate-y-2 text-sm' : 'translate-y-2 text-base'}`}>Email</label>
             </div>
             <div className="field">
               <input
                 autocomplete="off"
-                placeholder="Username"
                 value={username}
                 onChange={(e) => setUsername(e.target.value)}
-                className="input-field placeholder:text-[#CD9564]"
+                className={`input-field placeholder:text-[#CD9564] ${isFocused || lastname ? 'focus:border-black outline-none py-1 px-2 border-b border-gray-500' : ''}`}
                 type="text"
+                onFocus={handleFocus}
+                onBlur={handleBlur}
               />
+              <label className={`absolute left-21 px-2 ${isFocused || username? 'text-white' : 'text-pry'} transition-all duration-300 ${isFocused ? '-translate-y-2 text-sm' : 'translate-y-2 text-base'}`}>Username</label>
             </div>
             <div className="field">
               <input
-                placeholder="Password"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
                 className="input-field placeholder:text-[#CD9564]"
                 type={showPassword ? "text" : "password"} // Show password if showPassword is true, otherwise hide it
+                onFocus={handleFocus}
+                onBlur={handleBlur}
               />
+              <label className={`absolute left-21 px-2 ${isFocused || password? 'text-white' : 'text-pry'} transition-all duration-300 ${isFocused ? '-translate-y-2 text-sm' : 'translate-y-2 text-base'}`}>Password</label>
               <img
                 src={showPassword ? eye : lock} // Display different images based on the showPassword state
                 alt="Password toggle"
@@ -121,25 +129,47 @@ const SignUp = () => {
             </div>
             <div className="field">
               <input
-                placeholder="Gender"
-                value={gender}
-                onChange={(e) => setGender(e.target.value)}
-                className="input-field placeholder:text-[#CD9564] "
-                type="text"
+                value={password}
+                onChange={(e) => setConfirmPassword(e.target.value)}
+                className="input-field placeholder:text-[#CD9564]"
+                type={showPassword ? "text" : "Confirm password"} // Show password if showPassword is true, otherwise hide it
+                onFocus={handleFocus}
+                onBlur={handleBlur}
+              />
+              <label className={`absolute left-21 px-2 ${isFocused || confirmPassword? 'text-white' : 'text-pry'} transition-all duration-300 ${isFocused ? '-translate-y-2 text-sm' : 'translate-y-2 text-base'}`}>Confirm Password</label>
+  
+              <img
+                src={showPassword ? eye : lock} // Display different images based on the showPassword state
+                alt="Password toggle"
+                onClick={togglePasswordVisibility}
+                className="password-toggle-icon w-[7%]"
               />
             </div>
             <div className="field">
               <input
-                placeholder="DD/MM/YY"
+                value={gender}
+                onChange={(e) => setGender(e.target.value)}
+                className="input-field placeholder:text-[#CD9564] "
+                type="text"
+                onFocus={handleFocus}
+                onBlur={handleBlur}
+              />
+              <label className={`absolute left-21 px-2 ${isFocused || gender? 'text-white' : 'text-pry'} transition-all duration-300 ${isFocused ? '-translate-y-2 text-sm' : 'translate-y-2 text-base'}`}>Gender</label>
+            </div>
+            <div className="field">
+              <input
                 value={DOB}
                 onChange={(e) => setDob(e.target.value)}
                 className="input-field placeholder:text-[#CD9564] "
                 type="text"
+                onFocus={handleFocus}
+                onBlur={handleBlur}
               />
+              <label className={`absolute left-21 px-2 ${isFocused || DOB? 'text-white' : 'text-pry'} transition-all duration-300 ${isFocused ? '-translate-y-2 text-sm' : 'translate-y-2 text-base'}`}>DOB</label>
             </div>
             <div>
 
-            <button type='submit' disabled= {loading} className="mb-[2em] disabled:bg-sec text-pry bg-[#171717] rounded border-none hover:text-white hover:bg-pry p-[0.5rem] px-6 transition-all ease-in-out duration-500">Sign Up</button>
+            <button type='submit' disabled= {loading} className="mb-[0.5em] mt-2 disabled:bg-sec text-pry bg-[#171717] rounded border-none hover:text-white hover:bg-pry p-[0.5rem] px-6 transition-all ease-in-out duration-500">Sign Up</button>
             </div>
 
           </div>
