@@ -143,7 +143,6 @@ const Footer2 = () => {
         </div>
         <div className="flex flex-row gap-4  text-base font-[400] flexWrap justify-center">
           <Link to={"/privacy"} className="hover:text-sec hover:underline">PRIVACY POLICY</Link>
-          <Link to={"/cookie"} className="hover:text-sec hover:underline">COOKIE POLICY</Link>
           <Link to={"/terms"} className="hover:text-sec">TERMS & CONDITIONS</Link>
         </div>
         <div className="items-center text-[#808080] text-[16px]  flex justify-center gap-6 w-full mt-5 mb-3 sm:hidden">

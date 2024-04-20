@@ -18,7 +18,6 @@ import Conduct from "./components/Conduct";
 import HowItWorks from "./components/HowItWorks";
 import Guarantee from "./components/Guarantee";
 import Privacy from "./components/Privacy";
-import Cooker from "./components/Cooker";
 import Layout from "./components/Layout";
 import BookPage from "./pages/BookPage";
 import Categories from "./pages/Categories";
@@ -71,7 +70,6 @@ function App() {
         },
         { path: "/guarantee", element: <Guarantee /> },
         { path: "/privacy", element: <Privacy /> },
-        { path: "/cooker", element: <Cooker /> },
         { path: "/bookpage", element: <BookPage /> },
         { path: "/categories", element: <Categories /> },
         { path: "/userprofile", element: <UserProfile /> },
