@@ -51,9 +51,11 @@ return (
       <div className='flex border text-black py-4 px-2 '>
         <div className='border shadow-2xl mr-2 max-h-[80vh]  bg-white rounded-3xl justify-center flex flex-col gap-5 items-center w-[23%]'>
           {user.profileImage ? (
-            <img className='w-[50%] rounded-full overflow-hidden'
+            <div className='w-[50%] flex justify-center items-center aspect-square bg-pry rounded-full overflow-hidden text-white text-[3rem]'>
+            <img className='w-full rounded-full overflow-hidden'
               src={user.profileImage} alt="Profile"
-            />
+              />
+              </div>
           ) : (
             <div className='w-[50%] flex justify-center items-center aspect-square bg-pry rounded-full overflow-hidden text-white text-[3rem]'>
               {getInitials(user.firstname, user.lastname)}
