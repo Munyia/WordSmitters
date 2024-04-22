@@ -8,8 +8,8 @@ import RegistrationSuccesful from "../components/RegistrationSuccessful";
 import api from "../utils/api";
 
 const SignUp = () => {
-  const [firstname, setFirstname] = useState("");
-  const [lastname, setLastname] = useState("");
+  const [firstname, setFirstName] = useState("");
+  const [lastname, setLastName] = useState("");
   const [successful, setSuccessful] = useState(false);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -20,7 +20,15 @@ const SignUp = () => {
   const [loading, setLoading] = useState(false);
   const [errors, setErrors] = useState('');
   const [showPassword, setShowPassword] = useState(false);
-  const [isFocused, setIsFocused] = useState(false);
+  const [isFirstNameFocused, setIsFirstNameFocused] = useState(false);
+  const [isLastNameFocused, setIsLastNameFocused] = useState(false);
+  const [isEmailFocused, setIsEmailFocused] = useState(false);
+  const [isUsernameFocused, setIsUsernameFocused] = useState(false);
+  const [isPasswordFocused, setIsPasswordFocused] = useState(false);
+  const [isConfirmPasswordFocused, setIsConfirmPasswordFocused] = useState(false);
+  const [isGenderFocused, setIsGenderFocused] = useState(false);
+  const [isDobFocused, setIsDobFocused] = useState(false);
+
 
   document.title = "Sign Up";
 
@@ -28,13 +36,86 @@ const SignUp = () => {
     setShowPassword(!showPassword);
   };
 
-  const handleFocus = () => {
-    setIsFocused(true);
+  const handleFirstNameFocus = () => {
+    setIsFirstNameFocused(true);
   };
 
-  const handleBlur = () => {
-    setIsFocused(false);
+  const handleFirstNameBlur = () => {
+    if (!firstname) {
+      setIsFirstNameFocused(false);
+    }
   };
+
+  const handleLastNameFocus = () => {
+    setIsLastNameFocused(true);
+  };
+
+  const handleLastNameBlur = () => {
+    if (!lastname) {
+      setIsLastNameFocused(false);
+    }
+  };
+
+  const handlePasswordFocus = () => {
+    setIsPasswordFocused(true);
+  };
+
+  const handlePasswordBlur = () => {
+    if (!password) {
+      setIsPasswordFocused(false);
+    }
+  };
+
+  const handleEmailFocus = () => {
+    setIsEmailFocused(true);
+  };
+
+  const handleEmailBlur = () => {
+    if (!email) {
+      setIsEmailFocused(false);
+    }
+  };
+
+  const handleUsernameFocus = () => {
+    setIsUsernameFocused(true);
+  };
+
+  const handleUsernameBlur = () => {
+    if (!username) {
+      setIsUsernameFocused(false);
+    }
+  };
+
+  const handleConfirmPasswordFocus = () => {
+    setIsConfirmPasswordFocused(true);
+  };
+
+  const handleConfirmPasswordBlur = () => {
+    if (!confirmPassword) {
+      setIsConfirmPasswordFocused(false);
+    }
+  };
+
+  const handleGenderFocus = () => {
+    setIsGenderFocused(true);
+  };
+
+  const handleGenderBlur = () => {
+    if (!gender) {
+      setIsGenderFocused(false);
+    }
+  };
+
+  const handleDobFocus = () => {
+    setIsDobFocused(true);
+  };
+
+  const handleDobBlur = () => {
+    if (!DOB) {
+      setIsDobFocused(false);
+    }
+  };
+
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -53,7 +134,7 @@ const SignUp = () => {
   };
 
   return (
-    <div className="w-full placeholder:text-[#CD9564] bg-[rgba(10,32,8,0.9)] h-[100vh] overflow-hidden" id="Login">
+    <div className="w-full placeholder:text-[#CD9564] bg-[rgba(10,32,8,0.9)] h-[100vh]  overflow-clip" id="Login">
       <img src={tb} className="w-full justify-center text-center align-middle" alt="" />
       <div className="absolute w-full bg-[rgba(0,0,0,0.7)] flex justify-center items-center top-0 ">
         <Link to={"/"}>
@@ -66,60 +147,60 @@ const SignUp = () => {
               <input
                 autoComplete="off"
                 value={firstname}
-                onChange={(e) => setFirstname(e.target.value)}
-                className={`input-field placeholder:text-[#CD9564] ${isFocused || firstname ? 'focus:border-black outline-none py-1 px-2 border-b border-gray-500' : ''}`}
+                onChange={(e) => setFirstName(e.target.value)}
+                className={`input-field placeholder:text-[#CD9564] ${isFirstNameFocused || firstname ? 'focus:border-black outline-none py-1 px-2 border-b border-gray-500' : ''}`}
                 type="text"
-                onFocus={handleFocus}
-                onBlur={handleBlur}
+                onFocus={handleFirstNameFocus}
+                onBlur={handleFirstNameBlur}
               />
-              <label className={`absolute left-21 px-2 ${isFocused || firstname ? 'text-white' : 'text-pry'} transition-all duration-300 ${isFocused ? '-translate-y-2 text-sm' : 'translate-y-2 text-base'}`}>First Name</label>
+              <label className={`absolute left-21 px-2 ${isFirstNameFocused || firstname ? 'text-white' : 'text-pry'} transition-all duration-300 ${isFirstNameFocused ? '-translate-y-2 text-sm' : 'translate-y-2 text-base'}`}>First Name</label>
             </div>
             <div className="field">
-              <input
+            <input
                 autoComplete="off"
                 value={lastname}
-                onChange={(e) => setLastname(e.target.value)}
-                className={`input-field placeholder:text-[#CD9564] ${isFocused || lastname ? 'focus:border-black outline-none py-1 px-2 border-b border-gray-500' : ''}`}
+                onChange={(e) => setLastName(e.target.value)}
+                className={`input-field placeholder:text-[#CD9564] ${isLastNameFocused || lastname ? 'focus:border-black outline-none py-1 px-2 border-b border-gray-500' : ''}`}
                 type="text"
-                onFocus={handleFocus}
-                onBlur={handleBlur}
+                onFocus={handleLastNameFocus}
+                onBlur={handleLastNameBlur}
               />
-              <label className={`absolute left-21 px-2 ${isFocused || lastname ? 'text-white' : 'text-pry'} transition-all duration-300 ${isFocused ? '-translate-y-2 text-sm' : 'translate-y-2 text-base'}`}>Last Name</label>
+              <label className={`absolute left-21 px-2 ${isLastNameFocused || lastname ? 'text-white' : 'text-pry'} transition-all duration-300 ${isLastNameFocused ? '-translate-y-2 text-sm' : 'translate-y-2 text-base'}`}>Last Name</label>
             </div>
             <div className="field">
               <input
                 autocomplete="off"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                className={`input-field placeholder:text-[#CD9564] ${isFocused || lastname ? 'focus:border-black outline-none py-1 px-2 border-b border-gray-500' : ''}`}
+                className={`input-field placeholder:text-[#CD9564] ${isEmailFocused || email ? 'focus:border-black outline-none py-1 px-2 border-b border-gray-500' : ''}`}
                 type="text"
-                onFocus={handleFocus}
-                onBlur={handleBlur}
+                onFocus={handleEmailFocus}
+                onBlur={handleEmailBlur}
               />
-              <label className={`absolute left-21 px-2 ${isFocused || email ? 'text-white' : 'text-pry'} transition-all duration-300 ${isFocused ? '-translate-y-2 text-sm' : 'translate-y-2 text-base'}`}>Email</label>
+              <label className={`absolute left-21 px-2 ${isEmailFocused || email ? 'text-white' : 'text-pry'} transition-all duration-300 ${isEmailFocused ? '-translate-y-2 text-sm' : 'translate-y-2 text-base'}`}>Email</label>
             </div>
             <div className="field">
               <input
                 autocomplete="off"
                 value={username}
                 onChange={(e) => setUsername(e.target.value)}
-                className={`input-field placeholder:text-[#CD9564] ${isFocused || lastname ? 'focus:border-black outline-none py-1 px-2 border-b border-gray-500' : ''}`}
+                className={`input-field placeholder:text-[#CD9564] ${isUsernameFocused || username ? 'focus:border-black outline-none py-1 px-2 border-b border-gray-500' : ''}`}
                 type="text"
-                onFocus={handleFocus}
-                onBlur={handleBlur}
+                onFocus={handleUsernameFocus}
+                onBlur={handleUsernameBlur}
               />
-              <label className={`absolute left-21 px-2 ${isFocused || username? 'text-white' : 'text-pry'} transition-all duration-300 ${isFocused ? '-translate-y-2 text-sm' : 'translate-y-2 text-base'}`}>Username</label>
+              <label className={`absolute left-21 px-2 ${isUsernameFocused || username? 'text-white' : 'text-pry'} transition-all duration-300 ${isUsernameFocused ? '-translate-y-2 text-sm' : 'translate-y-2 text-base'}`}>Username</label>
             </div>
             <div className="field">
               <input
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
-                className="input-field placeholder:text-[#CD9564]"
+                className={`input-field placeholder:text-[#CD9564] ${isPasswordFocused || password ? 'focus:border-black outline-none py-1 px-2 border-b border-gray-500' : ''}`}
                 type={showPassword ? "text" : "password"} // Show password if showPassword is true, otherwise hide it
-                onFocus={handleFocus}
-                onBlur={handleBlur}
+                onFocus={handlePasswordFocus}
+                onBlur={handlePasswordBlur}
               />
-              <label className={`absolute left-21 px-2 ${isFocused || password? 'text-white' : 'text-pry'} transition-all duration-300 ${isFocused ? '-translate-y-2 text-sm' : 'translate-y-2 text-base'}`}>Password</label>
+              <label className={`absolute left-21 px-2 ${isPasswordFocused || password? 'text-white' : 'text-pry'} transition-all duration-300 ${isPasswordFocused ? '-translate-y-2 text-sm' : 'translate-y-2 text-base'}`}>Password</label>
               <img
                 src={showPassword ? eye : lock} // Display different images based on the showPassword state
                 alt="Password toggle"
@@ -129,14 +210,14 @@ const SignUp = () => {
             </div>
             <div className="field">
               <input
-                value={password}
+                value={confirmPassword}
                 onChange={(e) => setConfirmPassword(e.target.value)}
-                className="input-field placeholder:text-[#CD9564]"
+                className={`input-field placeholder:text-[#CD9564] ${isConfirmPasswordFocused || confirmPassword? 'focus:border-black outline-none py-1 px-2 border-b border-gray-500' : ''}`}
                 type={showPassword ? "text" : "Confirm password"} // Show password if showPassword is true, otherwise hide it
-                onFocus={handleFocus}
-                onBlur={handleBlur}
+                onFocus={handleConfirmPasswordFocus}
+                onBlur={handleConfirmPasswordBlur}
               />
-              <label className={`absolute left-21 px-2 ${isFocused || confirmPassword? 'text-white' : 'text-pry'} transition-all duration-300 ${isFocused ? '-translate-y-2 text-sm' : 'translate-y-2 text-base'}`}>Confirm Password</label>
+              <label className={`absolute left-21 px-2 ${isConfirmPasswordFocused || confirmPassword? 'text-white' : 'text-pry'} transition-all duration-300 ${isConfirmPasswordFocused ? '-translate-y-2 text-sm' : 'translate-y-2 text-base'}`}>Confirm Password</label>
   
               <img
                 src={showPassword ? eye : lock} // Display different images based on the showPassword state
@@ -149,23 +230,23 @@ const SignUp = () => {
               <input
                 value={gender}
                 onChange={(e) => setGender(e.target.value)}
-                className="input-field placeholder:text-[#CD9564] "
+                className={`input-field placeholder:text-[#CD9564] ${isGenderFocused || gender? 'focus:border-black outline-none py-1 px-2 border-b border-gray-500' : ''}`}
                 type="text"
-                onFocus={handleFocus}
-                onBlur={handleBlur}
+                onFocus={handleGenderFocus}
+                onBlur={handleGenderBlur}
               />
-              <label className={`absolute left-21 px-2 ${isFocused || gender? 'text-white' : 'text-pry'} transition-all duration-300 ${isFocused ? '-translate-y-2 text-sm' : 'translate-y-2 text-base'}`}>Gender</label>
+              <label className={`absolute left-21 px-2 ${isGenderFocused || gender? 'text-white' : 'text-pry'} transition-all duration-300 ${isGenderFocused ? '-translate-y-2 text-sm' : 'translate-y-2 text-base'}`}>Gender</label>
             </div>
             <div className="field">
               <input
                 value={DOB}
                 onChange={(e) => setDob(e.target.value)}
-                className="input-field placeholder:text-[#CD9564] "
+                className={`input-field placeholder:text-[#CD9564] ${isDobFocused ||DOB? 'focus:border-black outline-none py-1 px-2 border-b border-gray-500' : ''}`}
                 type="text"
-                onFocus={handleFocus}
-                onBlur={handleBlur}
+                onFocus={handleDobFocus}
+                onBlur={handleDobBlur}
               />
-              <label className={`absolute left-21 px-2 ${isFocused || DOB? 'text-white' : 'text-pry'} transition-all duration-300 ${isFocused ? '-translate-y-2 text-sm' : 'translate-y-2 text-base'}`}>DOB</label>
+              <label className={`absolute left-21 px-2 ${isDobFocused || DOB? 'text-white' : 'text-pry'} transition-all duration-300 ${isDobFocused ? '-translate-y-2 text-sm' : 'translate-y-2 text-base'}`}>DOB</label>
             </div>
             <div>
 
