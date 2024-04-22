@@ -115,11 +115,33 @@ const SignUp = () => {
       setIsDobFocused(false);
     }
   };
+  
 
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
+
+    // Email validation
+    if (!validateEmail(email)) {
+      setLoading(false);
+      setErrors("Please enter a valid email address.");
+      return;
+    }
+    // Password validation
+    if (password.length < 6) {
+      setLoading(false);
+      setErrors("Password must be at least 6 characters long.");
+      return;
+    }
+
+    // Confirm password validation
+    if (password !== confirmPassword) {
+      setLoading(false);
+      setErrors("Passwords do not match.");
+      return;
+    }
+
     console.log(email, password);
     try {
       const response = await api.post('users', { firstname, lastname, username, gender, DOB, email, password });
@@ -132,16 +154,22 @@ const SignUp = () => {
       setErrors(error.response.data);
     }
   };
+   // Function to validate email format
+   const validateEmail = (email) => {
+    const re = /\S+@\S+\.\S+/;
+    return re.test(email);
+  };
+
 
   return (
-    <div className="w-full placeholder:text-[#CD9564] bg-[rgba(10,32,8,0.9)] h-[100vh]  overflow-clip" id="Login">
+    <div className="w-full placeholder:text-[#CD9564] bg-[rgba(10,32,8,0.9)] h-[100vh]  overflow-hidden" id="Login">
       <img src={tb} className="w-full justify-center text-center align-middle" alt="" />
       <div className="absolute w-full bg-[rgba(0,0,0,0.7)] flex justify-center items-center top-0 ">
         <Link to={"/"}>
           <img src={llogo} className="h-[10vh] absolute top-0 left-0" alt="" />
         </Link>
-        <form onSubmit={handleSubmit} className="form backdrop-blur-sm bg-[rgba(0,0,0,0.3)]">
-          <h1 id="heading" className="text-2xl font-bold text-[#CD9564]">Sign Up</h1>
+        <form onSubmit={handleSubmit} className="form overflow-clip backdrop-blur-sm bg-[rgba(0,0,0,0.3)]">
+          <h1 id="heading" className="text-2xl font-bold mb[-20] text-[#CD9564]">Sign Up</h1>
           <div className="w-full flex flex-col">
             <div className="field">
               <input

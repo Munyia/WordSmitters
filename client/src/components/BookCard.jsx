@@ -40,22 +40,32 @@ const BookCard = ({
       </div>      
     </div>
     {
-      showdescription && <div>
+      showdescription && (<div>
          <div
           className={`fixed  flex justify-center items-center left-0 z-50 bottom-0 w-[100vw] h-[100vh] bg-[rgba(0,0,0,0.4)]`}
         >
             <div className='w-3/5 h-3/4 border justify-end text-end '>
             <button onClick={closeDescription} className='border w-[5%] bg-pry text-sec hover:text-red-700 hover:text-2xl py-1 rounded-full text-lg justify-center align-middle text-center'>X</button>
             </div>
-            <div>
-              <img src="" alt="" />
-              <p>Description</p>
-              <p></p>
-            </div>
+            <div className="flex justify-between items-center w-3/5 h-full">
+                        <div className="w-1/2">
+                            <img className="w-full h-full" src={PosterURL} alt="" />
+                        </div>
+                        <div className="w-1/2 p-4">
+                            <h2 className="text-2xl font-bold mb-2">{title}</h2>
+                            <p><span className="font-bold">Author:</span> {author}</p>
+                            <p><span className="font-bold">Publisher:</span> {publisher}</p>
+                            <p><span className="font-bold">Year:</span> {year}</p>
+                            <p className="mt-4">{description}</p>
+                        </div>
+                    </div>
         </div>
 
       </div>
-    }
+   ) }
+
+
+
     </div>
 
  
