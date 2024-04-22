@@ -169,8 +169,8 @@ const SignUp = () => {
           <img src={llogo} className="h-[10vh] absolute top-0 left-0" alt="" />
         </Link>
         <form onSubmit={handleSubmit} className="form overflow-clip backdrop-blur-sm bg-[rgba(0,0,0,0.3)]">
-          <h1 id="heading" className="text-2xl font-bold mb[-20] text-[#CD9564]">Sign Up</h1>
-          <div className="w-full flex flex-col">
+          <h1 id="heading" className="text-2xl font-bold mb[-60] text-[#CD9564]">Sign Up</h1>
+          <div className="w-full flex gap-1 flex-col">
             <div className="field">
               <input
                 autoComplete="off"
