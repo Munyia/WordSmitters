@@ -5,18 +5,18 @@ const registerUser =  async (req, res) => {
     const {firstname, lastname, email, username, gender, DOB, password} = req.body
     console.log( firstname, lastname, email, username, DOB, password);
     if (!firstname || !lastname || !email || !username || !password || !DOB) {
-        res.status(400).json({message: "Please fill all fields"})
+        return res.status(400).json({message: "Please fill all fields"})
     }
     try{
     
         let user = await User.findOne({username})
     
     if(user){
-        res.status(401).send("User already exists")
+        return res.status(401).send("User already exists")
     }
     user = await User.findOne({email})
     if(user){
-        res.status(401).send("User already exists")
+        return res.status(401).send("User already exists")
     }
     
         const newUser = new User({
@@ -40,22 +40,22 @@ catch (err) {res.send("i failed" + err);}
 const authUser = async (req, res) => {
     const {credentials, password} =   req.body
     if (!credentials || !password){
-        res.status(400).json({message: "Please fill all fields"})
+        return res.status(400).json({message: "Please fill all fields"})
         // !IMPORTANT(json is use for arrays when u have multiple stuff and send is use for one message)
     }
     let user = await User.findOne({email:credentials});
     if (!user){
         user = await User.findOne({username:credentials});
         if (!user){
-            res.status(401).send({message: "User not found"})
+            return res.status(401).send({message: "User not found"})
         }
     }
 
     const isMatch = await user.matchPassword(password);
     if (!isMatch) {
-        res.status(401).send({message: "Password is incorrect"})
+        return res.status(401).send({message: "Password is incorrect"})
     }
-    res.status(200).send({message: "user authenticated successfully", token: generateToken({id:user._id, email:user.email, firstname:user.firstname, lastname:user.lastname, created:user.createdAt, updated:user.updatedAt})});
+    return res.status(200).send({message: "user authenticated successfully", token: generateToken({"id":user._id, "email":user.email, "firstname":user.firstname, "lastname":user.lastname, "created":user.createdAt, "updated":user.updatedAt})});
 
 
 }

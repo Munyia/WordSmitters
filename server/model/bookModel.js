@@ -27,7 +27,11 @@ const bookSchema = new mongoose.Schema
         type: String,
         required: true
     },
-    author: {
+    authorId: {
+        type: String,
+        required: true
+    },
+    authorName: {
         type: String,
         required: true
     },
