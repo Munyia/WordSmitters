@@ -49,21 +49,23 @@ const BookCard = ({
         <div className="fixed flex justify-center items-center left-0 z-50 bottom-0 w-[100vw] h-[100vh] bg-[rgba(0,0,0,0.4)]">
           <div className="w-1/2 h-1/2 border justify-end text-end">
             <div className="w-full h-full p-4 bg-white overflow-clip">
-            <button
-              onClick={closeDescription}
-              className="border w-[5%] bg-pry text-sec hover:text-red-700 hover:text-2xl py-1 rounded-full text-lg justify-center align-middle text-center"
-            >
-              X
-            </button>
-              <div className="flex justify-between items-center h-full">
+              <div className="flex justify-between gap-3 items-center h-full">
                 <div className="w-1/2">
                   <img
-                    className="w-full h-full object-cover"
+                    className="w-full h-[100%] object-cover"
                     src={coverImage}
                     alt=""
                   />
                 </div>
-                <div className="w-1/2 justify-start mt[-20] text-start p-4">
+                <div className="w-1/2 justify-start text-start ">
+                  <div className=" justify-end top-0 text-end flex">
+            <button
+              onClick={closeDescription}
+              className="border w-[5%] bg-pry text-sec hover:text-red-700 py-1 rounded-full text-lg justify-right align-middle text-end"
+              >
+              X
+            </button>
+              </div>
                   <h2 className="text-2xl font-bold mb-2">{title}</h2>
                   <p>
                     <span className="font-bold">Author:</span> {author}

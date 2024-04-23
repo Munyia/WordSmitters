@@ -130,7 +130,7 @@ const data = [
     {
         title:'Bookcard',
         description :'A Novel',
-        coverImagesss: haus,
+        coverImage: haus,
         author: 'Author',
         publisher: 'Publisher',
         year:'Year',
