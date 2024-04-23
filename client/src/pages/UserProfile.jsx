@@ -5,6 +5,7 @@ import BookCard from '../components/BookCard';
 import DeleteModal from '../components/DeleteModal';
 
 function UserProfile({ userId }) {
+  document.title= "Profile"
 //   const [user, setUser] = useState(null);
 
 const currentlyReadingBooks = [

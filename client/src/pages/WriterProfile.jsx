@@ -4,7 +4,8 @@ import Loader from '../components/Loader';
 import BookCard from '../components/BookCard';
 import DeleteModal from '../components/DeleteModal';
 
-function UserProfile({ userId }) {
+function WriterProfile({ userId }) {
+  document.title= "Writer Profile"
 //   const [user, setUser] = useState(null);
 
 const currentlyReadingBooks = [
@@ -144,10 +145,8 @@ return (
 
         <div className='w-full bg-white  text-sec font-bold  justify-center text-center rounded-3xl border min-h-[40vh] pt-5 text-lg   '>
           <div className='flex'>
-          <h2 className="section-title">Upload Books</h2>
+          <h2 className="section-title">Uploaded Books</h2>
           </div>
-          <div className="  h-full pl-3 flex gap-5 overflow-x-scroll [&::-webkit-scrollbar]:hidden "> 
-            </div>
         </div>
         <div className='w-full bg-white  text-sec font-bold  justify-center text-center rounded-3xl border min-h-[40vh] pt-5 text-lg   '>
           <div className='flex'>
@@ -197,4 +196,4 @@ return (
 }
 
 
-export default UserProfile;
+export default WriterProfile;
