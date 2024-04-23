@@ -8,7 +8,7 @@ const BookCard = ({
   publisher = "Publisher",
   year = "Year",
   genre = "Genre",
-  id = "jksak239k129h9o1",
+  chapters = "",
 }) => {
   const [showdescription, setdescription] = useState(false);
   console.log(showdescription);
@@ -75,6 +75,12 @@ const BookCard = ({
                   </p>
                   <p>
                     <span className="font-bold">Year:</span> {year}
+                  </p>
+                  <p>
+                    <span className="font-bold">Year:</span> {genre}
+                  </p>
+                  <p>
+                    <span className="font-bold">Year:</span> {chapters}
                   </p>
                   <p className="mt-4">{description}</p>
                 </div>
