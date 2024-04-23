@@ -3,6 +3,7 @@ import cors from 'cors';
 import connectdb from './utils/db.js';
 import dotenv from "dotenv"
 import userRoutes from "./routes/userRoutes.js"
+import bookRoutes from "./routes/bookRoutes.js"
 
 const app = express();
 const port = 8081;
@@ -16,6 +17,7 @@ app.use(
 )
 app.use(express.json())
 app.use('/users', userRoutes)
+app.use('/books', bookRoutes)
 
 app.get('/', (req, res) => {
     res.send("Mudijo");  

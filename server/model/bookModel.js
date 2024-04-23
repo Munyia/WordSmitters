@@ -38,4 +38,4 @@ const bookSchema = new mongoose.Schema
 });
 
 const Books = mongoose.model("Book'", bookSchema);
-export default User;
+export default Books;
