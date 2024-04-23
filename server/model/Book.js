@@ -23,7 +23,7 @@ const bookSchema = new mongoose.Schema
         type: String,
         required: true
     },
-    posterURL: {
+    coverImage: {
         type: String,
         required: true
     },

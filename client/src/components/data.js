@@ -4,7 +4,7 @@ const data = [
     {
         title:'Lagos Wahala',
         description :'A Novel',
-        PosterURL: bk4,
+        coverImage: bk4,
         author: 'Pheecamila',
         publisher: 'Publisher',
         year:'Year',
@@ -13,7 +13,7 @@ const data = [
     {
         title:'The crush',
         description :'A Novel',
-        PosterURL:  bk22,
+        coverImage:  bk22,
         author: 'Pheechue',
         publisher: 'Publisher',
         year:'Year',
@@ -22,7 +22,7 @@ const data = [
     {
         title:'Marriage Mart',
         description :'A Novel',
-        PosterURL:  bk5,
+        coverImage:  bk5,
         author: 'Zuni',
         publisher: 'Publisher',
         year:'Year',
@@ -31,7 +31,7 @@ const data = [
     {
         title:'Tradition',
         description :'A Novel',
-        PosterURL: bk15,
+        coverImage: bk15,
         author: 'Pheetemee',
         publisher: 'Publisher',
         year:'Year',
@@ -40,7 +40,7 @@ const data = [
     {
         title:'Bookcard',
         description :'A Novel',
-        PosterURL: bk3,
+        coverImage: bk3,
         author: 'Author',
         publisher: 'Publisher',
         year:'Year',
@@ -49,7 +49,7 @@ const data = [
     {
         title:'Bookcard',
         description :'A Novel',
-        PosterURL: Kevin,
+        coverImage: Kevin,
         author: 'Author',
         publisher: 'Publisher',
         year:'Year',
@@ -58,7 +58,7 @@ const data = [
     {
         title:'Bookcard',
         description :'A Novel',
-        PosterURL: bk8,
+        coverImage: bk8,
         author: 'Author',
         publisher: 'Publisher',
         year:'Year',
@@ -67,7 +67,7 @@ const data = [
     {
         title:'Bookcard',
         description :'A Novel',
-        PosterURL: tb,
+        coverImage: tb,
         author: 'Author',
         publisher: 'Publisher',
         year:'Year',
@@ -76,7 +76,7 @@ const data = [
     {
         title:'Bookcard',
         description :'A Novel',
-        PosterURL: bk14,
+        coverImage: bk14,
         author: 'Author',
         publisher: 'Publisher',
         year:'Year',
@@ -85,7 +85,7 @@ const data = [
     {
         title:'Bookcard',
         description :'A Novel',
-        PosterURL: bk10,
+        coverImage: bk10,
         author: 'Author',
         publisher: 'Publisher',
         year:'Year',
@@ -94,7 +94,7 @@ const data = [
     {
         title:'Bookcard',
         description :'A Novel',
-        PosterURL: dance,
+        coverImage: dance,
         author: 'Author',
         publisher: 'Publisher',
         year:'Year',
@@ -103,7 +103,7 @@ const data = [
     {
         title:'Bookcard',
         description :'A Novel',
-        PosterURL: bk1,
+        coverImage: bk1,
         author: 'Author',
         publisher: 'Publisher',
         year:'Year',
@@ -112,7 +112,7 @@ const data = [
     {
         title:'Bookcard',
         description :'A Novel',
-        PosterURL: bk2,
+        coverImage: bk2,
         author: 'Author',
         publisher: 'Publisher',
         year:'Year',
@@ -121,7 +121,7 @@ const data = [
     {
         title:'Bookcard',
         description :'A Novel',
-        PosterURL: ladies,
+        coverImage: ladies,
         author: 'Author',
         publisher: 'Publisher',
         year:'Year',
@@ -130,7 +130,7 @@ const data = [
     {
         title:'Bookcard',
         description :'A Novel',
-        PosterURL: haus,
+        coverImagesss: haus,
         author: 'Author',
         publisher: 'Publisher',
         year:'Year',

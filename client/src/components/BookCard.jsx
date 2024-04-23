@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 const BookCard = ({
   title = "Bookcard",
   description = "A Novel",
-  PosterURL = "",
+  coverImage = "",
   author = "Author",
   publisher = "Publisher",
   year = "Year",
@@ -35,7 +35,7 @@ const BookCard = ({
         onClick={openDescription}
         className="flex flex-col text-pry rounded-lg hover:text-white hover:shadow-xl hover:scale-x-[0.99] hover:scale-y-[0.996] scale-100 transition-transform duration-200 overflow-hidden"
       >
-        <img className="w-[100%] aspect-square " src={PosterURL} alt="" />
+        <img className="w-[100%] aspect-square " src={coverImage} alt="" />
         <h1 className=" text-2xl align-middle text-center justify-center ">
           {title}
         </h1>
@@ -59,7 +59,7 @@ const BookCard = ({
                 <div className="w-1/2">
                   <img
                     className="w-full h-full object-cover"
-                    src={PosterURL}
+                    src={coverImage}
                     alt=""
                   />
                 </div>
