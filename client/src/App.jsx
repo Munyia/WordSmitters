@@ -23,6 +23,7 @@ import BookPage from "./pages/BookPage";
 import Categories from "./pages/Categories";
 import UserProfile from "./pages/UserProfile";
 import WriterProfile from "./pages/WriterProfile";
+import DeleteModal from "./components/DeleteModal";
 
 
 
@@ -74,6 +75,7 @@ function App() {
         { path: "/categories", element: <Categories /> },
         { path: "/userprofile", element: <UserProfile /> },
         { path: "/writerprofile", element: <WriterProfile /> },
+        { path: "/deletemodal", element: <DeleteModal /> },
         
      
       ],
