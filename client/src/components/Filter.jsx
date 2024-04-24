@@ -35,7 +35,7 @@ const Filter = () => {
         <BookCard key={index} {...book}/>
      ))}</div>:
      <div>
-      <p className='text-[red]'>Does not match any books or authors</p>
+      <p className='text-[red] text-3xl font-bold text-center'>Does not match any books or authors</p>
      </div>
 
     }
