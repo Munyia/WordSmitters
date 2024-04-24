@@ -59,4 +59,35 @@ const authUser = async (req, res) => {
 
 
 }
-export {registerUser, authUser}
+
+const updateUserProfile = async (req, res) => {
+    const {firstname, lastname, username, gender, DOB, password} = req.body
+    if (!firstname && !lastname && !username && !password && !DOB) {
+        return res.status(400).json({message: "Please fill all fields"})
+    }
+    try {
+        const Id = req.user.id
+
+        const newUser = new User({
+            firstname: firstname,
+        lastname: lastname,
+        email: email,
+        password: password,
+        username: username,
+        gender: gender,
+        DOB: DOB,
+    })
+    console.log("i got here")
+    user = await newUser.save();
+    console.log("i got here")
+
+
+
+      const updatedUserProfile = await UserProfile.findByIdAndUpdate(req.params.id, req.body, { new: true });
+      res.json(updatedUserProfile);
+    } catch (err) {
+      res.status(400).json({ message: err.message });
+    }
+}
+
+export {registerUser, authUser, updateUserProfile}
