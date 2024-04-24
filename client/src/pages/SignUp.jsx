@@ -35,6 +35,9 @@ const SignUp = () => {
   const togglePasswordVisibility = () => {
     setShowPassword(!showPassword);
   };
+  const toggleConfirmPasswordVisibility = () => {
+    setConfirmPassword(!confirmPassword);
+  };
 
   const handleFirstNameFocus = () => {
     setIsFirstNameFocused(true);
@@ -56,6 +59,26 @@ const SignUp = () => {
     }
   };
 
+  
+  const handleEmailFocus = () => {
+    setIsEmailFocused(true);
+  };
+  
+  const handleEmailBlur = () => {
+    if (!email) {
+      setIsEmailFocused(false);
+    }
+  };
+  
+  const handleUsernameFocus = () => {
+    setIsUsernameFocused(true);
+  };
+  
+  const handleUsernameBlur = () => {
+    if (!username) {
+      setIsUsernameFocused(false);
+    }
+  };
   const handlePasswordFocus = () => {
     setIsPasswordFocused(true);
   };
@@ -63,26 +86,6 @@ const SignUp = () => {
   const handlePasswordBlur = () => {
     if (!password) {
       setIsPasswordFocused(false);
-    }
-  };
-
-  const handleEmailFocus = () => {
-    setIsEmailFocused(true);
-  };
-
-  const handleEmailBlur = () => {
-    if (!email) {
-      setIsEmailFocused(false);
-    }
-  };
-
-  const handleUsernameFocus = () => {
-    setIsUsernameFocused(true);
-  };
-
-  const handleUsernameBlur = () => {
-    if (!username) {
-      setIsUsernameFocused(false);
     }
   };
 
@@ -246,7 +249,7 @@ const SignUp = () => {
                 value={confirmPassword}
                 onChange={(e) => setConfirmPassword(e.target.value)}
                 className={`input-field placeholder:text-[#CD9564] ${isConfirmPasswordFocused || confirmPassword? 'focus:border-black outline-none py-1 px-2 border-b border-gray-500' : ''}`}
-                type={showPassword ? "text" : "Confirm password"} // Show password if showPassword is true, otherwise hide it
+                type={confirmPassword ? "text" : "Confirm password"} // Show password if showPassword is true, otherwise hide it
                 onFocus={handleConfirmPasswordFocus}
                 onBlur={handleConfirmPasswordBlur}
               />
@@ -254,7 +257,7 @@ const SignUp = () => {
               <img
                 src={showPassword ? eye : lock} // Display different images based on the showPassword state
                 alt="Password toggle"
-                onClick={togglePasswordVisibility}
+                onClick={toggleConfirmPasswordVisibility}
                 className="password-toggle-icon w-[7%]"
               />
             </div>

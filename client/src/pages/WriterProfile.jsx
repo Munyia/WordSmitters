@@ -8,6 +8,33 @@ function WriterProfile({ userId }) {
   document.title= "Writer Profile"
 //   const [user, setUser] = useState(null);
 
+const [fileInput, setFileInput] = useState(null);
+const [uploadedBooks, setUploadedBooks] = useState([]);
+
+
+const handleFileChange = (event) => {
+  setFileInput(event.target.files[0]);
+};
+
+
+const handleBookUpload = async () => {
+  try {
+    setLoading(true);
+    const formData = new FormData();
+    formData.append('book', fileInput);
+    const response = await axios.post('/api/books/upload', formData, {
+      headers: {
+        'Content-Type': 'multipart/form-data'
+      }
+    });
+    setUploadedBooks([...uploadedBooks, response.data]);
+    setLoading(false);
+  } catch (error) {
+    console.error('Error uploading book:', error);
+    setLoading(false);
+  }
+};
+
 const currentlyReadingBooks = [
   { title: 'Book 1', author: 'Author 1', coverImage: 'book1.jpg', description: 'Description 1', publisher: 'Publisher 1', year: 'Year 1', genre: 'Genre 1', chapters: 'Chapters 1'},
   { title: 'Book 2', author: 'Author 2', coverImage: 'book2.jpg', description: 'Description 2', publisher: 'Publisher 1', year: 'Year 1', genre: 'Genre 1', chapters: 'Chapters 1' },
@@ -144,11 +171,19 @@ return (
          */}
 
         <div className='w-full bg-white  text-sec font-bold  justify-center text-center rounded-3xl border min-h-[40vh] pt-5 text-lg   '>
-          <div className='flex'>
-          <h2 className="section-title">Uploaded Books</h2>
-          </div>
+            <div>
+              <h2 className="section-title">Uploaded Books</h2>
+              <input type="file" onChange={handleFileChange} className="my-2" />
+              <button onClick={handleBookUpload}>Upload Book</button>
+              {loading && <Loader />}
+              {uploadedBooks.map((book, index) => (
+                <div key={index} className='min-w-[15%]'>
+                  <BookCard {...book} />
+                </div>
+              ))}
+            </div>
         </div>
-        <div className='w-full bg-white  text-sec font-bold  justify-center text-center rounded-3xl border min-h-[40vh] pt-5 text-lg   '>
+        <div className='w-full bg-white  text-sec font-bold  rounded-3xl border min-h-[40vh] pt-5 text-lg   '>
           <div className='flex'>
           <h2 className="section-title">Currently Reading</h2>
           </div>
