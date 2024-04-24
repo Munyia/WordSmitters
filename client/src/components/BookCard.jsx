@@ -77,10 +77,10 @@ const BookCard = ({
                     <span className="font-bold">Year:</span> {year}
                   </p>
                   <p>
-                    <span className="font-bold">Year:</span> {genre}
+                    <span className="font-bold">Genre:</span> {genre}
                   </p>
                   <p>
-                    <span className="font-bold">Year:</span> {chapters}
+                    <span className="font-bold">Chapters:</span> {chapters}
                   </p>
                   <p className="mt-4">{description}</p>
                 </div>
