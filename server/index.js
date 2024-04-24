@@ -4,6 +4,7 @@ import connectdb from './utils/db.js';
 import dotenv from "dotenv"
 import userRoutes from "./routes/userRoutes.js"
 import bookRoutes from "./routes/bookRoutes.js"
+import { UserProfile } from './controllers/userProfileController.js';
 
 const app = express();
 const port = 8081;
@@ -18,6 +19,7 @@ app.use(
 app.use(express.json())
 app.use('/users', userRoutes)
 app.use('/books', bookRoutes)
+app.use('/userprofile', UserProfile)
 
 app.get('/', (req, res) => {
     res.send("Mudijo");  
