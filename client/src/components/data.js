@@ -8,7 +8,7 @@ const data = [
         author: 'Pheecamila',
         publisher: 'Publisher',
         year:'Year',
-        genre: 'Genre',
+        genre: 'Romance',
     },
     {
         title:'The crush',

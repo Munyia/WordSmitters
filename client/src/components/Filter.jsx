@@ -13,6 +13,17 @@ const Filter = () => {
       book.author.toLowerCase().includes(searchText.toLowerCase())
     ) 
     console.log(filtered)
+
+// const Filter = () => {
+//   const { search, genre } = useParams(); // Get both search query and genre from URL params
+
+//   const filtered = data.filter(book => {
+//     const titleMatch = book.title.toLowerCase().includes(search.toLowerCase());
+//     const authorMatch = book.author.toLowerCase().includes(search.toLowerCase());
+//     const genreMatch = genre ? book.genre.toLowerCase() === genre.toLowerCase() : true; // Check if genre matches
+
+//     return titleMatch || authorMatch || genreMatch;
+//   });
      
   return (
     <div   className=''>
