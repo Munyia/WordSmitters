@@ -172,6 +172,7 @@ const SignUp = () => {
           <h1 id="heading" className="text-2xl font-bold mb[-60] text-[#CD9564]">Sign Up</h1>
           <div className="w-full flex gap-1 flex-col">
             <div className="field">
+            <div>
               <input
                 autoComplete="off"
                 value={firstname}
@@ -182,8 +183,6 @@ const SignUp = () => {
                 onBlur={handleFirstNameBlur}
               />
               <label className={`absolute left-21 px-2 ${isFirstNameFocused || firstname ? 'text-white' : 'text-pry'} transition-all duration-300 ${isFirstNameFocused ? '-translate-y-2 text-sm' : 'translate-y-2 text-base'}`}>First Name</label>
-            </div>
-            <div className="field">
             <input
                 autoComplete="off"
                 value={lastname}
@@ -192,10 +191,13 @@ const SignUp = () => {
                 type="text"
                 onFocus={handleLastNameFocus}
                 onBlur={handleLastNameBlur}
-              />
+                />
               <label className={`absolute left-21 px-2 ${isLastNameFocused || lastname ? 'text-white' : 'text-pry'} transition-all duration-300 ${isLastNameFocused ? '-translate-y-2 text-sm' : 'translate-y-2 text-base'}`}>Last Name</label>
-            </div>
+                </div>
+                </div>
+  
             <div className="field">
+            <div>
               <input
                 autocomplete="off"
                 value={email}
@@ -206,8 +208,6 @@ const SignUp = () => {
                 onBlur={handleEmailBlur}
               />
               <label className={`absolute left-21 px-2 ${isEmailFocused || email ? 'text-white' : 'text-pry'} transition-all duration-300 ${isEmailFocused ? '-translate-y-2 text-sm' : 'translate-y-2 text-base'}`}>Email</label>
-            </div>
-            <div className="field">
               <input
                 autocomplete="off"
                 value={username}
@@ -219,7 +219,9 @@ const SignUp = () => {
               />
               <label className={`absolute left-21 px-2 ${isUsernameFocused || username? 'text-white' : 'text-pry'} transition-all duration-300 ${isUsernameFocused ? '-translate-y-2 text-sm' : 'translate-y-2 text-base'}`}>Username</label>
             </div>
+            </div>
             <div className="field">
+            <div>
               <input
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
@@ -235,8 +237,6 @@ const SignUp = () => {
                 onClick={togglePasswordVisibility}
                 className="password-toggle-icon w-[7%]"
               />
-            </div>
-            <div className="field">
               <input
                 value={confirmPassword}
                 onChange={(e) => setConfirmPassword(e.target.value)}
@@ -246,7 +246,6 @@ const SignUp = () => {
                 onBlur={handleConfirmPasswordBlur}
               />
               <label className={`absolute left-21 px-2 ${isConfirmPasswordFocused || confirmPassword? 'text-white' : 'text-pry'} transition-all duration-300 ${isConfirmPasswordFocused ? '-translate-y-2 text-sm' : 'translate-y-2 text-base'}`}>Confirm Password</label>
-  
               <img
                 src={showPassword ? eye : lock} // Display different images based on the showPassword state
                 alt="Password toggle"
@@ -254,7 +253,9 @@ const SignUp = () => {
                 className="password-toggle-icon w-[7%]"
               />
             </div>
+            </div>
             <div className="field">
+            <div>
               <input
                 value={gender}
                 onChange={(e) => setGender(e.target.value)}
@@ -264,8 +265,6 @@ const SignUp = () => {
                 onBlur={handleGenderBlur}
               />
               <label className={`absolute left-21 px-2 ${isGenderFocused || gender? 'text-white' : 'text-pry'} transition-all duration-300 ${isGenderFocused ? '-translate-y-2 text-sm' : 'translate-y-2 text-base'}`}>Gender</label>
-            </div>
-            <div className="field">
               <input
                 value={DOB}
                 onChange={(e) => setDob(e.target.value)}
@@ -275,6 +274,7 @@ const SignUp = () => {
                 onBlur={handleDobBlur}
               />
               <label className={`absolute left-21 px-2 ${isDobFocused || DOB? 'text-white' : 'text-pry'} transition-all duration-300 ${isDobFocused ? '-translate-y-2 text-sm' : 'translate-y-2 text-base'}`}>DOB</label>
+            </div>
             </div>
             <div>
 

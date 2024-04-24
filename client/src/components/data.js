@@ -43,7 +43,7 @@ const data = [
         coverImage: bk3,
         author: 'Author',
         publisher: 'Publisher',
-        year:'Year',
+        year:'2024',
         genre: 'Genre',
     },
     {
