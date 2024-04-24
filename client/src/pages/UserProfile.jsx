@@ -145,7 +145,7 @@ return (
 
         <div className='w-full bg-white  text-sec font-bold  justify-center text-center rounded-3xl border min-h-[40vh] pt-5 text-lg   '>
           <div className='flex'>
-          <h2 className="section-title">Currently Reading</h2>
+          <h2 className="section-title ">Currently Reading</h2>
           </div>
           <div className="  h-full pl-3 flex gap-5 overflow-x-scroll [&::-webkit-scrollbar]:hidden ">
             {currentlyReadingBooks.map((book, index) => (
@@ -157,7 +157,7 @@ return (
         </div>
         <div className='w-full bg-white text-sec font-bold justify-center text-center rounded-3xl border min-h-[40vh] pt-5 text-lg   '>
           <div className='flex'>
-          <h2 className="section-title">Purchased Books</h2>
+          <h2 className="section-title ">Purchased Books</h2>
           </div>
           <div className="  h-full pl-3 flex gap-5 overflow-x-scroll [&::-webkit-scrollbar]:hidden ">
             {purchasedBooks.map((book, index) => (
@@ -169,7 +169,7 @@ return (
         </div>
         <div className='w-full bg-white   text-sec font-bold  justify-center text-center rounded-3xl border min-h-[40vh] pt-5 text-lg   '>
           <div className='flex'>
-          <h2 className="section-title">Reading List</h2>
+          <h2 className="section-title ">Reading List</h2>
           </div>
           <div className="  h-full pl-3 text-s flex gap-5 overflow-x-scroll [&::-webkit-scrollbar]:hidden ">
             {readingListBooks.map((book, index) => (

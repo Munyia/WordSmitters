@@ -171,7 +171,7 @@ const SignUp = () => {
         <form onSubmit={handleSubmit} className="form overflow-clip backdrop-blur-sm bg-[rgba(0,0,0,0.3)]">
           <h1 id="heading" className="text-2xl font-bold mb[-60] text-[#CD9564]">Sign Up</h1>
           <div className="w-full flex gap-1 flex-col">
-            <div className="field flex gap-10 ">
+            <div className="field flex gap-10">
             <div className=" flex-grow">
               <input
                 autoComplete="off"
