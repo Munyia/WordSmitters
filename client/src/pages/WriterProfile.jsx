@@ -9,7 +9,7 @@ function WriterProfile({ userId }) {
 //   const [user, setUser] = useState(null);
 
 const [fileInput, setFileInput] = useState(null);
-const [uploadedBooks, setUploadedBooks] = useState([]);
+
 
 
 const handleFileChange = (event) => {
@@ -64,6 +64,12 @@ const purchasedBooks = [
   // Add more books as needed
 ];
 const readingListBooks = [
+  { title: 'Book 1', author: 'Author 1', coverImage: 'book1.jpg', description: 'Description 1', publisher: 'Publisher 1', year: 'Year 1', genre: 'Genre 1', chapters: 'Chapters 1'},
+  { title: 'Book 2', author: 'Author 2', coverImage: 'book2.jpg', description: 'Description 2', publisher: 'Publisher 1', year: 'Year 1', genre: 'Genre 1', chapters: 'Chapters 1' },
+  // Add more books as needed
+];
+
+const uploadedBooks = [
   { title: 'Book 1', author: 'Author 1', coverImage: 'book1.jpg', description: 'Description 1', publisher: 'Publisher 1', year: 'Year 1', genre: 'Genre 1', chapters: 'Chapters 1'},
   { title: 'Book 2', author: 'Author 2', coverImage: 'book2.jpg', description: 'Description 2', publisher: 'Publisher 1', year: 'Year 1', genre: 'Genre 1', chapters: 'Chapters 1' },
   // Add more books as needed
@@ -170,17 +176,21 @@ return (
         <div className='w-full bg-white rounded-3xl border  min-h-[40vh] pt-5 text-lg overflow-x-scroll [&::-webkit-scrollbar]:hidden'>Purchased Books</div>
          */}
 
-        <div className='w-full bg-white  text-sec font-bold  justify-center text-center rounded-3xl border min-h-[40vh] pt-5 text-lg   '>
-            <div>
+        <div className='w-full bg-white  text-sec font-bold  rounded-3xl border min-h-[40vh] pt-5 text-lg   '>
+            <div className='flex flex-col'>
+            <div className='flex text-justify mb-3  p-2 gap-5'>
               <h2 className="section-title">Uploaded Books</h2>
-              <input type="file" onChange={handleFileChange} className="my-2" />
-              <button onClick={handleBookUpload}>Upload Book</button>
+              <input type="file" onChange={handleFileChange} className=" " />
+              <button className='bg-sec border-s-pry  text-white px-2' onClick={handleBookUpload}>Upload Book</button>
+             </div>
               {loading && <Loader />}
+              <div className="  h-full pl-3 flex gap-5 overflow-x-scroll [&::-webkit-scrollbar]:hidden ">
               {uploadedBooks.map((book, index) => (
                 <div key={index} className='min-w-[15%]'>
                   <BookCard {...book} />
                 </div>
               ))}
+            </div>
             </div>
         </div>
         <div className='w-full bg-white  text-sec font-bold  rounded-3xl border min-h-[40vh] pt-5 text-lg   '>
