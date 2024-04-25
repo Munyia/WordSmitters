@@ -181,7 +181,7 @@ return (
             <div className='flex text-justify mb-3  p-2 gap-5'>
               <h2 className="section-title">Uploaded Books</h2>
               <input type="file" onChange={handleFileChange} className=" " />
-              <button className='bg-sec border-s-pry  text-white px-2' onClick={handleBookUpload}>Upload Book</button>
+              <button className='hover:bg-sec bg-pry border-s-pry hover:text-white text-sec px-2' onClick={handleBookUpload}>Upload Book</button>
              </div>
               {loading && <Loader />}
               <div className="  h-full pl-3 flex gap-5 overflow-x-scroll [&::-webkit-scrollbar]:hidden ">
