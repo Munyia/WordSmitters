@@ -6,8 +6,8 @@ import userRoutes from "./routes/userRoutes.js"
 import bookRoutes from "./routes/bookRoutes.js"
 
 const app = express();
-const port = 8081;
 dotenv.config();
+const port = process.env.PORT || 5001;
 connectdb();
 
 app.use(

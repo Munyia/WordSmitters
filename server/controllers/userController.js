@@ -1,93 +1,151 @@
-import User from "../model/userModel.js";
-import generateToken from "../utils/generateToken.js";
+import asyncHandler from 'express-async-handler';
+import User from '../model/userModel.js';
+import generateToken from '../utils/generateToken.js';
 
-const registerUser =  async (req, res) => {
+// @desc    Register a new user
+// @route   POST /api/users
+// @access  Public
+const registerUser = asyncHandler(async (req, res) => {
     const {firstname, lastname, email, username, gender, DOB, password} = req.body
     console.log( firstname, lastname, email, username, DOB, password);
     if (!firstname || !lastname || !email || !username || !password || !DOB) {
-        return res.status(400).json({message: "Please fill all fields"})
+        throw new Error("Please fill all fields");
     }
-    try{
-    
-        let user = await User.findOne({username})
-    
-    if(user){
-        return res.status(401).send("User already exists")
+    const userExists = await User.findOne({ email });
+  
+    if (userExists) {
+      res.status(400);
+      throw new Error('User already exists');
     }
-    user = await User.findOne({email})
-    if(user){
-        return res.status(401).send("User already exists")
-    }
-    
-        const newUser = new User({
-            firstname: firstname,
+  
+    const user = await User.create({
+        firstname: firstname,
         lastname: lastname,
         email: email,
         password: password,
         username: username,
         gender: gender,
         DOB: DOB,
-    })
-    console.log("i got here")
-    user = await newUser.save();
-    console.log("i got here")
-     res.status(200).send('user created successfully');
-}
-catch (err) {res.send("i failed" + err);}
-}
+})
+  
+    if (user) {
+      generateToken(res, user._id);
+  
+      res.status(201).json({
+      _id: user._id,
+      name: user.firstname + " " + user.lastname,
+        username: user.username,
+        email: user.email,
+        image: user.image,
+        createdAt: user.createdAt,
+        updatedAt: user.updatedAt,
+      });
 
 
-const authUser = async (req, res) => {
+
+    } else {
+      res.status(400);
+      throw new Error('Invalid user data');
+    }
+  });
+
+
+  const authUser = asyncHandler(async (req, res) => {
     const {credentials, password} =   req.body
     if (!credentials || !password){
-        return res.status(400).json({message: "Please fill all fields"})
+        res.status(401);
+      throw new Error('Please fill all fields');
         // !IMPORTANT(json is use for arrays when u have multiple stuff and send is use for one message)
     }
+
     let user = await User.findOne({email:credentials});
     if (!user){
         user = await User.findOne({username:credentials});
         if (!user){
-            return res.status(401).send({message: "User not found"})
+            res.status(401);
+            throw new Error('Invalid email or password');
         }
     }
 
-    const isMatch = await user.matchPassword(password);
-    if (!isMatch) {
-        return res.status(401).send({message: "Password is incorrect"})
+  
+    if (user && (await user.matchPassword(password))) {
+      generateToken(res, user._id);
+  
+      res.json({
+        _id: user._id,
+        name: user.firstname + " " + user.lastname,
+          username: user.username,
+          email: user.email,
+          image: user.image,
+          createdAt: user.createdAt,
+          updatedAt: user.updatedAt,
+        });
+    } else {
+      res.status(401);
+      throw new Error('Invalid email or password');
     }
-    return res.status(200).send({message: "user authenticated successfully", token: generateToken({"id":user._id, "email":user.email, "firstname":user.firstname, "lastname":user.lastname, "created":user.createdAt, "updated":user.updatedAt})});
+  });
 
 
-}
 
-const updateUserProfile = async (req, res) => {
-    const {firstname, lastname, username, gender, DOB, password} = req.body
-    if (!firstname && !lastname && !username && !password && !DOB) {
-        return res.status(400).json({message: "Please fill all fields"})
+// @desc    Update user profile
+// @route   PUT /api/users/profile
+// @access  Private
+const updateUserProfile = asyncHandler(async (req, res) => {
+    const user = await User.findById(req.user._id);
+  
+    if (user) {
+      user.firstname = req.body.firstname || user.firstname;
+      user.email = req.body.email || user.email;
+      user.lastname = req.body.lastname || user.lastname;
+      user.username = req.body.username || user.username;
+     
+      if (req.body.password) {
+        user.password = req.body.password;
+      }
+  
+        await user.save();
+  
+      res.send("profile updated successfully");
+    } else {
+      res.status(404);
+      throw new Error('User not found');
     }
-    try {
-        const Id = req.user.id
-
-        const newUser = new User({
-            firstname: firstname,
-        lastname: lastname,
-        email: email,
-        password: password,
-        username: username,
-        gender: gender,
-        DOB: DOB,
-    })
-    console.log("i got here")
-    user = await newUser.save();
-    console.log("i got here")
+  });
 
 
+// @desc    Logout user / clear cookie
+// @route   POST /api/users/logout
+// @access  Public
+const logoutUser = (req, res) => {
+    res.cookie('jwt', '', {
+      httpOnly: true,
+      expires: new Date(0),
+    });
+    res.status(200).json({ message: 'Logged out successfully' });
+  };
 
-      const updatedUserProfile = await UserProfile.findByIdAndUpdate(req.params.id, req.body, { new: true });
-      res.json(updatedUserProfile);
-    } catch (err) {
-      res.status(400).json({ message: err.message });
+
+// @desc    Get user profile
+// @route   GET /api/users/profile
+// @access  Private
+const getUserProfile = asyncHandler(async (req, res) => {
+    const user = await User.findById(req.user._id);
+  
+    if (user) {
+      res.json({
+        _id: user._id,
+        name: user.firstname + " " + user.lastname,
+        username: user.username,
+        email: user.email,
+        image: user.image,
+        createdAt: user.createdAt,
+        updatedAt: user.updatedAt,
+      });
+    } else {
+      res.status(404);
+      throw new Error('User not found');
     }
-}
+  });
 
-export {registerUser, authUser, updateUserProfile}
+export {registerUser, authUser, updateUserProfile, logoutUser, getUserProfile}

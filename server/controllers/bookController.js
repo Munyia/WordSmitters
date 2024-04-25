@@ -1,54 +1,72 @@
-import User from "../model/userModel.js";
-import Books from "../model/bookModel.js";
+import Book from "../model/bookModel.js";
+import asyncHandler from "express-async-handler";
 
-const addBook =  async (req, res) => {
-    const {title, description, genre, publisher, year, coverImage, chapters} = req.body
-    console.log( title, description, genre, publisher, year, coverImage, chapters);
-    if (!title || !description || !genre|| !publisher|| !year || !coverImage || !chapters) {
-        return res.status(400).json({message: "Please fill all fields"})
-    }
-    const authorName = req.user.firstname + " " + req.body.lastname
-    const authorId = req.user.id
-    try{    
-        const newBook = new Books({
-            title, 
-            description, 
-            genre, 
-            publisher, 
-            year, 
-            coverImage, 
-            authorName,
-            authorId, 
-            chapters
-    })
-    console.log("i got here")
-    await newBook.save();
-    res.status(200).send('Book added successfully');
-}
-catch (err) {res.send("i failed" + err);}
-}
+// @desc    Adds a new book
+// @route   POST /books
+// @access  Private
+const addBook = asyncHandler(async (req, res) => {
+  const { title, description, genre, publisher, year, coverImage, chapters } =
+    req.body;
+  console.log(title, description, genre, publisher, year, coverImage, chapters);
+  if (
+    !title ||
+    !description ||
+    !genre ||
+    !publisher ||
+    !year ||
+    !coverImage ||
+    !chapters
+  ) {
+    return res.status(400).json({ message: "Please fill all fields" });
+  }
+  const authorName = req.user.firstname + " " + req.body.lastname;
+  const authorId = req.user.id;
+  const newBook = await Book.create({
+    title,
+    description,
+    genre,
+    publisher,
+    year,
+    coverImage,
+    authorName,
+    authorId,
+    chapters,
+  });
 
+  if (newBook) {
+    res.status(200).send("Book added successfully");
+  } else {
+    res.status(400);
+    throw new Error("Invalid user data");
+  }
+});
 
-// const authUser = async (req, res) => {
-//     const {credentials, password} =   req.body
-//     if (!credentials || !password){
-//         res.status(400).json({message: "Please fill all fields"})
-//         // !IMPORTANT(json is use for arrays when u have multiple stuff and send is use for one message)
-//     }
-//     let user = await User.findOne({email:credentials});
-//     if (!user){
-//         user = await User.findOne({username:credentials});
-//         if (!user){
-//             res.status(401).send({message: "User not found"})
-//         }
-//     }
+const getAllBooks = asyncHandler(async (req, res) => {
+  const books = await Book.find();
+  if (books) {
+    res.json({
+      author: books.authorName,
+      desc: books.description,
+      title: books.title,
+      genre: books.genre,
+      year: books.year,
+      coverImage: books.coverImage,
+    });
+  } else {
+    res.status(404);
+    throw new Error("Failed to find books");
+  }
+});
+const getBookDetail = asyncHandler(async (req, res) => {
+    const vendorId = req.params.id;
 
-//     const isMatch = await user.matchPassword(password);
-//     if (!isMatch) {
-//         res.status(401).send({message: "Password is incorrect"})
-//     }
-//     res.status(200).send({message: "user authenticated successfully", token: generateToken({id:user._id, email:user.email, firstname:user.firstname, lastname:user.lastname, created:user.createdAt, updated:user.updatedAt})});
+    const book = await Book.findById(id);
+  if (book) {
+    res.json(book);
+  } else {
+    res.status(404);
+    throw new Error("Failed to find books");
+  }
+});
 
-
-// }
-export {addBook}
+export { addBook, getAllBooks, getBookDetail };
