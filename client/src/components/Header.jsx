@@ -51,11 +51,8 @@ const Header = () => {
           <Link to={"/about"} className='flex hover:underline text-lg hover:text-xl w-20'>About</Link>
           <Link to={"/books"}  className='flex hover:underline text-lg hover:text-xl w-20'>Books</Link>
           <div className="group relative w-[10vw] flex justify-evenly pr-5 cursor-pointer">
-    <Link to="#" className="flex items-center hover:underline text-lg hover:text-xl text-sec">Categories</Link>
-    <div className="hidden absolute top-full z-50 left-0 bg-pry rounded w-full flex-col gap-2 p-2 text-center group-hover:flex">
-        <Link to="/categories" className="hover:bg-sec hover:text-white justify-center text-center rounded-lg px-1 py-1 text-black">Fiction</Link>
-        <Link to="/categories" className="hover:bg-sec hover:text-white justify-center text-center rounded-lg px-1 py-1 text-black">Non-Fiction</Link>
-    </div>
+    <Link to="/categories" className="flex items-center hover:underline text-lg hover:text-xl text-sec">Categories</Link>
+   
 </div>
 
        </div>
