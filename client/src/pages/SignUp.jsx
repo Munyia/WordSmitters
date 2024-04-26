@@ -58,6 +58,7 @@ const SignUp = () => {
       setIsLastNameFocused(false);
     }
   };
+  console.log(errors)
 
   
   const handleEmailFocus = () => {
@@ -147,7 +148,7 @@ const SignUp = () => {
 
     console.log(email, password);
     try {
-      const response = await api.post('users', { firstname, lastname, username, gender, DOB, email, password });
+      const response = await api.post('api/users', { firstname, lastname, username, gender, DOB, email, password });
       console.log(response);
       setLoading(false);
       setSuccessful(true); // Toggle loading state off after successful request
@@ -167,67 +168,71 @@ const SignUp = () => {
   return (
     <div className="w-full placeholder:text-[#CD9564] bg-[rgba(10,32,8,0.9)] h-[100vh]  overflow-hidden" id="Login">
       <img src={tb} className="w-full justify-center text-center align-middle" alt="" />
-      <div className="absolute w-full bg-[rgba(0,0,0,0.7)] flex justify-center items-center top-0 ">
+      <div className="absolute w-full h-full bg-[rgba(0,0,0,0.7)] flex justify-center items-center top-0 ">
         <Link to={"/"}>
-          <img src={llogo} className="h-[10vh] absolute top-0 left-0" alt="" />
+          <img src={llogo} className="h-[10vh] absolute z-50 top-0 left-0" alt="" />
         </Link>
-        <form onSubmit={handleSubmit} className="form overflow-clip backdrop-blur-sm bg-[rgba(0,0,0,0.3)]">
+        <form onSubmit={handleSubmit} className="flex text-center transition ease-in-out duration-300 hover:scale-105 hover:border border-pry flex-col gap-3 rounded-3xl pb-[0.4em] justify-center items-center p-4 sm:px-10 overflow-clip backdrop-blur-sm bg-[rgba(0,0,0,0.3)] h-full sm:h-auto">
           <h1 id="heading" className="text-2xl font-bold mb[-60] text-[#CD9564]">Sign Up</h1>
-          <div className="w-full flex gap-1 flex-col">
-            <div className="field flex gap-10">
-            <div className=" flex-grow">
+          <div className="w-full flex gap-4 flex-col">
+            <div className=" flex gap-2 sm:gap-10 sm:flex-row flex-col">
+            <div className="field w-full">
               <input
                 autoComplete="off"
                 value={firstname}
                 onChange={(e) => setFirstName(e.target.value)}
                 className={`input-field flex-1 placeholder:text-[#CD9564] ${isFirstNameFocused || firstname ? 'focus:border-black  py-1 px-2 border-b' : ''}`}
                 type="text"
+                id="firstname"
                 onFocus={handleFirstNameFocus}
                 onBlur={handleFirstNameBlur}
               />
-              <label className={` ${isFirstNameFocused || firstname ? 'text-white' : 'text-pry'} transition-all duration-300 ${isFirstNameFocused ? '-translate-y-2 text-sm' : 'translate-y-2 text-base'}`}>First Name</label>
+              <label htmlFor="firstname" className={` ${isFirstNameFocused || firstname ? 'text-white' : 'text-pry'} transition-all duration-300 ${isFirstNameFocused ? '-translate-y-5 text-sm' : 'translate-y-0 text-base'} absolute`}>First Name</label>
               </div>
-            <div className=" flex-grow">
+            <div className="field w-full">
             <input
                 autoComplete="off"
                 value={lastname}
                 onChange={(e) => setLastName(e.target.value)}
                 className={`input-field  placeholder:text-[#CD9564] ${isLastNameFocused || lastname ? 'focus:border-black outline-none py-1 px-2 border-b border-gray-500' : ''}`}
                 type="text"
+                id="lastname"
                 onFocus={handleLastNameFocus}
                 onBlur={handleLastNameBlur}
                 />
-              <label className={` ${isLastNameFocused || lastname ? 'text-white' : 'text-pry'} transition-all duration-300 ${isLastNameFocused ? '-translate-y-2 text-sm' : 'translate-y-2 text-base'}`}>Last Name</label>
+              <label htmlFor="lastname" className={` ${isLastNameFocused || lastname ? 'text-white' : 'text-pry'} transition-all duration-300 ${isLastNameFocused ? '-translate-y-5 text-sm' : 'translate-y-0 text-base'} absolute`}>Last Name</label>
                 </div>
                 </div>
-                <div className="field flex gap-10 ">
-            <div className=" flex-grow">
+                <div className="flex gap-2 sm:gap-10 sm:flex-row flex-col">
+            <div className=" field w-full">
               <input
                 autocomplete="off"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 className={`input-field placeholder:text-[#CD9564] ${isEmailFocused || email ? 'focus:border-black outline-none py-1 px-2 border-b border-gray-500' : ''}`}
                 type="text"
+                id="email"
                 onFocus={handleEmailFocus}
                 onBlur={handleEmailBlur}
               />
-              <label className={` ${isEmailFocused || email ? 'text-white' : 'text-pry'} transition-all duration-300 ${isEmailFocused ? '-translate-y-2 text-sm' : 'translate-y-2 text-base'}`}>Email</label>
+              <label htmlFor="email" className={` ${isEmailFocused || email ? 'text-white' : 'text-pry'} transition-all duration-300 ${isEmailFocused ? '-translate-y-5 text-sm' : 'translate-y-0 text-base'} absolute`}>Email</label>
               </div>
-              <div className=" flex-grow">
+              <div className=" field w-full">
               <input
                 autocomplete="off"
                 value={username}
                 onChange={(e) => setUsername(e.target.value)}
                 className={`input-field placeholder:text-[#CD9564] ${isUsernameFocused || username ? 'focus:border-black outline-none py-1 px-2 border-b border-gray-500' : ''}`}
                 type="text"
+                id="username"
                 onFocus={handleUsernameFocus}
                 onBlur={handleUsernameBlur}
               />
-              <label className={` ${isUsernameFocused || username? 'text-white' : 'text-pry'} transition-all duration-300 ${isUsernameFocused ? '-translate-y-2 text-sm' : 'translate-y-2 text-base'}`}>Username</label>
+              <label htmlFor="username" className={` ${isUsernameFocused || username? 'text-white' : 'text-pry'} transition-all duration-300 ${isUsernameFocused ? '-translate-y-5 text-sm' : 'translate-y-0 text-base'} absolute`}>Username</label>
             </div>
             </div>
-            <div className="field flex gap-10 ">
-            <div className=" flex-grow">
+            <div className="flex gap-2 sm:gap-10 sm:flex-row flex-col ">
+            <div className=" field w-full">
               <input
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
@@ -235,8 +240,9 @@ const SignUp = () => {
                 type={showPassword ? "text" : "password"} // Show password if showPassword is true, otherwise hide it
                 onFocus={handlePasswordFocus}
                 onBlur={handlePasswordBlur}
+                id="password"
               />
-              <label className={` ${isPasswordFocused || password? 'text-white' : 'text-pry'} transition-all duration-300 ${isPasswordFocused ? '-translate-y-2 text-sm' : 'translate-y-2 text-base'}`}>Password</label>
+              <label htmlFor="password" className={` ${isPasswordFocused || password? 'text-white' : 'text-pry'} transition-all duration-300 ${isPasswordFocused ? '-translate-y-5 text-sm' : 'translate-y-0 text-base'} absolute`}>Password</label>
               <img
                 src={showPassword ? eye : lock} // Display different images based on the showPassword state
                 alt="Password toggle"
@@ -244,7 +250,7 @@ const SignUp = () => {
                 className="password-toggle-icon w-[7%]"
               />
                  </div>
-                 <div className=" flex-grow">
+                 <div className=" field w-full">
               <input
                 value={confirmPassword}
                 onChange={(e) => setConfirmPassword(e.target.value)}
@@ -252,8 +258,9 @@ const SignUp = () => {
                 type={confirmPassword ? "text" : "Confirm password"} // Show password if showPassword is true, otherwise hide it
                 onFocus={handleConfirmPasswordFocus}
                 onBlur={handleConfirmPasswordBlur}
+                id="confirmPassword"
               />
-              <label className={` ${isConfirmPasswordFocused || confirmPassword? 'text-white' : 'text-pry'} transition-all duration-300 ${isConfirmPasswordFocused ? '-translate-y-2 text-sm' : 'translate-y-2 text-base'}`}>Confirm Password</label>
+              <label htmlFor="confirmPassword" className={` ${isConfirmPasswordFocused || confirmPassword? 'text-white' : 'text-pry'} transition-all duration-300 ${isConfirmPasswordFocused ? '-translate-y-5 text-sm' : 'translate-y-0 text-base'} absolute`}>Confirm Password</label>
               <img
                 src={showPassword ? eye : lock} // Display different images based on the showPassword state
                 alt="Password toggle"
@@ -262,8 +269,9 @@ const SignUp = () => {
               />
             </div>
             </div>
-            <div className="field flex gap-10 ">
-            <div className=" flex-grow">
+              {/* <p className="text-red-500">{errors && errors}</p> */}
+            <div className=" flex gap-10 ">
+            <div className=" field w-full">
               <input
                 value={gender}
                 onChange={(e) => setGender(e.target.value)}
@@ -271,10 +279,11 @@ const SignUp = () => {
                 type="text"
                 onFocus={handleGenderFocus}
                 onBlur={handleGenderBlur}
+                id="gender"
               />
-              <label className={` ${isGenderFocused || gender? 'text-white' : 'text-pry'} transition-all duration-300 ${isGenderFocused ? '-translate-y-2 text-sm' : 'translate-y-2 text-base'}`}>Gender</label>
+              <label htmlFor="gender" className={` ${isGenderFocused || gender? 'text-white' : 'text-pry'} transition-all duration-300 ${isGenderFocused ? '-translate-y-5 text-sm' : 'translate-y-0 text-base'} absolute`}>Gender</label>
               </div>
-              <div className=" flex-grow"> 
+              <div className=" field w-full"> 
               <input
                 value={DOB}
                 onChange={(e) => setDob(e.target.value)}
@@ -282,8 +291,9 @@ const SignUp = () => {
                 type="text"
                 onFocus={handleDobFocus}
                 onBlur={handleDobBlur}
+                id="dob"
               />
-              <label className={` ${isDobFocused || DOB? 'text-white' : 'text-pry'} transition-all duration-300 ${isDobFocused ? '-translate-y-2 text-sm' : 'translate-y-2 text-base'}`}>DOB</label>
+              <label htmlFor="dob" className={` ${isDobFocused || DOB? 'text-white' : 'text-pry'} transition-all duration-300 ${isDobFocused ? '-translate-y-5 text-sm' : 'translate-y-0 text-base'} absolute`}>DOB</label>
             </div>
             </div>
             <div>
@@ -298,7 +308,6 @@ const SignUp = () => {
             </Link>
           </p>
           <button className="button3">Sign Up With Google</button>
-          <p className="text-red-500">{errors && errors}</p>
           {loading && (
             <div className="absolute bottom-0 left-0 w-full flex justify-center">
               <Loader />
@@ -306,7 +315,6 @@ const SignUp = () => {
           )}
         </form>
       </div>
-      <Loader />
       {
         successful && <RegistrationSuccesful/>
       }

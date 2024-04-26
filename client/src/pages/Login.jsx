@@ -43,13 +43,12 @@ const Login = () => {
     e.preventDefault()  
     setLoading(true);
     try {
-      const response = await api.post("users/login", {
+      const response = await api.post("api/users/login", {
         credentials: credentials,
         password: password
-      });
+      },{withCredentials: true});
       console.log(response);
       setLoading(false);
-      localStorage.setItem('token', response.data.token);
       Navigate('/');
     } catch(error) {
       console.log(error);

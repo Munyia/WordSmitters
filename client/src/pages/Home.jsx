@@ -6,12 +6,7 @@ import Footer2 from "../components/Footer2";
 
 const Home = () => {
   document.title= "Landing Page"
-  useEffect(() => {
-    fetch("http://localhost:4000/countries")
-      .then((res) => res.json())
-      .then((res) => console.log(res));
-  }, []);
- 
+
   return (
     <div className="flex  flex-col" id="Home">
       <div className="mb-[28%]">

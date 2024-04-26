@@ -9,7 +9,7 @@ router.route('/').post(registerUser)
 router.route('/login').post(authUser)
 router.post('/logout', logoutUser);
 router
-  .route('/update')
+  .route('/profile')
   .get(protect, getUserProfile)
   .put(protect, updateUserProfile);
 
