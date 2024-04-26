@@ -3,6 +3,7 @@ import React, { useState, useEffect } from 'react';
 import Loader from '../components/Loader';
 import BookCard from '../components/BookCard';
 import DeleteModal from '../components/DeleteModal';
+import { Link } from 'react-router-dom';
 
 function UserProfile({ userId }) {
   document.title= "Profile"
@@ -109,14 +110,15 @@ return (
             </div>
             
           )}
-          <div className='flex text-white gap-2 font-bold text-center justify-center'>
+          <input type="file" onChange={handleImageChange} className="my-1" />
+          <div className='flex text-sec gap-2 font-bold text-center justify-center'>
             <h1 className='text-xl'>{user.firstname}</h1>
             <h1 className='text-xl'>{user.lastname}</h1>
           </div>
-          <h1 className='font-bold text-black'>{user.username}</h1>
+          <h1 className='font-bold  text-sec'>{user.username}</h1>
           <p className='text-blue-500 font-bold'>Email: {user.email}</p>
-          <p className='text-black'>Joined: {new Date(user.joinDate).toLocaleDateString()}</p>
-          <input type="file" onChange={handleImageChange} className="my-2" />
+          <p className=' text-sec'>Joined: {new Date(user.joinDate).toLocaleDateString()}</p>
+        <Link to={'/updateprofile'}className='bg-pry text-sec border rounded-full text-l p-3'> Update Profile</Link>
           {user.profileImage && (
               <>
                 <button
@@ -137,7 +139,7 @@ return (
               </>
             )}
         </div>
-        <div className='flex gap-5  text-sec font-bold flex-col w-full h-[80vh] overflow-y-scroll flex-nowrap [&::-webkit-scrollbar]:hidden'>
+        <div className='flex gap-5 relative text-sec font-bold flex-col w-full h-[80vh] overflow-y-scroll flex-nowrap [&::-webkit-scrollbar]:hidden'>
         {/* <div className='w-full bg-white rounded-3xl border min-h-[40vh] pt-5 text-lg flex overflow-x-scroll [&::-webkit-scrollbar]:hidden '>Currently Reading</div>
         <div className='w-full bg-white rounded-3xl border min-h-[40vh]  pt-5 text-lg overflow-x-scroll [&::-webkit-scrollbar]:hidden'>Reading Lists</div>
         <div className='w-full bg-white rounded-3xl border  min-h-[40vh] pt-5 text-lg overflow-x-scroll [&::-webkit-scrollbar]:hidden'>Purchased Books</div>

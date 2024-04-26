@@ -24,6 +24,7 @@ import Categories from "./pages/Categories";
 import UserProfile from "./pages/UserProfile";
 import WriterProfile from "./pages/WriterProfile";
 import DeleteModal from "./components/DeleteModal";
+import UpdateProfile from "./pages/UpdateProfile";
 
 
 
@@ -83,6 +84,7 @@ function App() {
         { path: "/userprofile", element: <UserProfile /> },
         { path: "/writerprofile", element: <WriterProfile /> },
         { path: "/deletemodal", element: <DeleteModal /> },
+        { path: "/updateprofile", element: <UpdateProfile /> },
         
      
       ],
