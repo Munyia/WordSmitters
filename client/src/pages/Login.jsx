@@ -72,6 +72,7 @@ const Login = () => {
               <input 
                 autoComplete="off"
                 placeholder="" 
+                id='credentials'
                 value={credentials} 
                 onChange={(e)=>setCredentials(e.target.value)}
                 className={`input-field placeholder:text-[#CD9564] w-full border-b border-gray-500 focus:border-black outline-none py-1 px-2 ${isFocused ? 'border-t-2 border-black' : ''}`}
@@ -79,10 +80,10 @@ const Login = () => {
                 onBlur={handleBlur}
                 type="text"
               />
-              <label
-                className={`absolute left-10 px-2 ${isFocused || credentials ? 'text-white' : 'text-pry'} transition-all duration-300 ${isFocused ? '-translate-y-2 text-sm' : 'translate-y-2 text-base'}`}
+              <label htmlFor="credentials" 
+                className={`absolute left-10 ${isFocused || credentials ? 'text-white' : 'text-pry'} transition-all duration-300 ${isFocused ? '-translate-y-5 text-sm' : 'translate-y-0 text-base'} absolute`}
               >
-                Username
+                Username or Email
               </label>
             </div>
           </div>
@@ -95,6 +96,7 @@ const Login = () => {
                 type={showPassword ? 'text' : 'password'} // Show password if showPassword is true, otherwise hide it
                 onFocus={handlePasswordFocus}
                 onBlur={handlePasswordBlur}
+                id="password"
               />
               <img 
                 src={showPassword ? eye : lock} // Display different images based on the showPassword state
@@ -102,8 +104,8 @@ const Login = () => {
                 onClick={togglePasswordVisibility}
                 className="password-toggle-icon w-[7%]"
               />
-              <label
-                className={`absolute left-21 px-2 ${isPasswordFocused || password ? 'text-white' : 'text-pry'} transition-all duration-300 ${isPasswordFocused ? '-translate-y-2 text-sm' : 'translate-y-2 text-base'}`}
+              <label  htmlFor="password" 
+                className={`absolute left-21 px-2 ${isPasswordFocused || password ? 'text-white' : 'text-pry'} transition-all duration-300 ${isPasswordFocused ? '-translate-y-5 text-sm' : 'translate-y-0 text-base'} absolute`}
               >
                 Password
               </label>

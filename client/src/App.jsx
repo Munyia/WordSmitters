@@ -28,8 +28,15 @@ import DeleteModal from "./components/DeleteModal";
 
 
 function App() {
-  function isLoggedIn() {
-    return !!localStorage.getItem("token");
+  const isLoggedIn = async () => {
+    try {
+      const response = await api.get("api/users/profile", {
+        withCredentials:true,
+      });      
+      return true
+    } catch (error) {
+      return false
+    } 
   }
 
   const router = createBrowserRouter([
@@ -82,11 +89,22 @@ function App() {
     },
     {
       path: "signup",
-      element: !isLoggedIn() ? <SignUp /> : <Navigate to={"/"} />,
+      loader: async () => {
+        try {
+          const response = await api.get("api/users/profile", {
+            withCredentials:true,
+          });      
+          <Navigate to={"/"}/>
+        } catch (error) {
+          return false
+        } 
+
+      },
+      element:  <SignUp />,
     },
     {
       path: "/login",
-      element: !isLoggedIn() ? <Login /> : <Navigate to={"/"} />,
+      element: <Login />,
     },
     {
       path: "/writers",
