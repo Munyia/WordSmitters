@@ -66,7 +66,7 @@ const Header = () => {
           {
 
           isOpen &&
-          <div className="absolute top-full right-0 flex flex-col w-[300%] bg-pry px-1 gap-4 pb-2">
+          <div className="absolute top-full right-0 flex flex-col w-[300%] rounded-3xl  bg-pry px-1 gap-4 pb-2">
             <div className='flex items-center pl-2 gap-2'>
             <span className=' bg-gray-300 rounded-full aspect-square w-[30%] flex items-center justify-center'>{userdata && userdata.name[0]}</span>
             <span to={"/login"} className="button3 ">{userdata && userdata.name}</span>
@@ -81,7 +81,7 @@ const Header = () => {
           <Link to={"/login"}  className='flex hover:underline text-lg hover:text-xl w-20'>Login</Link>
         <div className="group  gap-5 relative w-[10vw] text-[rgb(10,32,8)]  flex justify-evenly pr-5 cursor-pointer">
         <Link  className='flex hover:underline text-lg hover:text-xl '>Sign Up</Link>
-  <div className="hidden text-black absolute top-[100%] bg-[#CD9564] rounded  group-hover:flex w-full flex-col gap-2 p-2 text-center">
+  <div className="hidden text-black absolute top-[100%] bg-[#CD9564] rounded-3xl  group-hover:flex w-full flex-col gap-2 p-2 text-center">
             <Link to={"/signup"} className='hover:bg-[rgb(10,32,8)]  hover:text-white  rounded-lg px-1 py-1'>Reader</Link>
             <Link to={"/signup"} className='hover:bg-[rgb(10,32,8)] hover:text-white rounded-lg px-1 py-1'>Writer</Link>
             <div className=' border-b-[rgb(10,32,8)]'></div>

@@ -20,6 +20,7 @@ const SignUp = () => {
   const [loading, setLoading] = useState(false);
   const [errors, setErrors] = useState('');
   const [showPassword, setShowPassword] = useState(false);
+  const [showConfirmPassword, setShowConfirmPassword] = useState(false);
   const [isFirstNameFocused, setIsFirstNameFocused] = useState(false);
   const [isLastNameFocused, setIsLastNameFocused] = useState(false);
   const [isEmailFocused, setIsEmailFocused] = useState(false);
@@ -36,7 +37,7 @@ const SignUp = () => {
     setShowPassword(!showPassword);
   };
   const toggleConfirmPasswordVisibility = () => {
-    setConfirmPassword(!confirmPassword);
+    setShowConfirmPassword(!showConfirmPassword);
   };
 
   const handleFirstNameFocus = () => {
@@ -255,14 +256,14 @@ const SignUp = () => {
                 value={confirmPassword}
                 onChange={(e) => setConfirmPassword(e.target.value)}
                 className={`input-field placeholder:text-[#CD9564] ${isConfirmPasswordFocused || confirmPassword? 'focus:border-black outline-none py-1 px-2 border-b border-gray-500' : ''}`}
-                type={confirmPassword ? "text" : "Confirm password"} // Show password if showPassword is true, otherwise hide it
+                type={showConfirmPassword ? "text" : "password"} // Show password if showPassword is true, otherwise hide it
                 onFocus={handleConfirmPasswordFocus}
                 onBlur={handleConfirmPasswordBlur}
                 id="confirmPassword"
               />
               <label htmlFor="confirmPassword" className={` ${isConfirmPasswordFocused || confirmPassword? 'text-white' : 'text-pry'} transition-all duration-300 ${isConfirmPasswordFocused ? '-translate-y-5 text-sm' : 'translate-y-0 text-base'} absolute`}>Confirm Password</label>
               <img
-                src={showPassword ? eye : lock} // Display different images based on the showPassword state
+                src={showConfirmPassword ? eye : lock} // Display different images based on the showPassword state
                 alt="Password toggle"
                 onClick={toggleConfirmPasswordVisibility}
                 className="password-toggle-icon w-[7%]"
