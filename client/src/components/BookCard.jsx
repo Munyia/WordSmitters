@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 const BookCard = ({
   title = "Bookcard",
@@ -83,6 +84,9 @@ const BookCard = ({
                     <span className="font-bold">Chapters:</span> {chapters}
                   </p>
                   <p className="mt-4">{description}</p>
+                  <div className="flex justify-end">
+                  <Link className="flex cursor-pointer bg-pry p-2 rounded font-bold text-sec " to={'/bookpage'}>Start Reading</Link>
+                  </div>
                 </div>
               </div>
             </div>
