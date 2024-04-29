@@ -26,10 +26,15 @@ import WriterProfile from "./pages/WriterProfile";
 import DeleteModal from "./components/DeleteModal";
 import UpdateProfile from "./pages/UpdateProfile";
 import SignupWriters from "./pages/SignupWriters";
+import api from "./utils/api";
 
 
 
 function App() {
+  const books = async ()=> {
+    const response = await api.get("api/books");
+    return response.data;
+  }
   const isLoggedIn = async () => {
     try {
       const response = await api.get("api/users/profile", {
@@ -54,8 +59,8 @@ function App() {
           path: "books",
           element: <Books />,
           children: [
-            { index: true, element: <BookList list={data} /> },
-            { path: ":search", element: <Filter list={data} /> },
+            { index: true, element: <BookList /> },
+            { path: ":search", element: <Filter /> },
           ],
         },
         {
@@ -80,7 +85,7 @@ function App() {
         },
         { path: "/guarantee", element: <Guarantee /> },
         { path: "/privacy", element: <Privacy /> },
-        { path: "/bookpage", element: <BookPage /> },
+        { path: "/read/:id", element: <BookPage /> },
         { path: "/categories", element: <Categories /> },
         { path: "/userprofile", element: <UserProfile /> },
         { path: "/writerprofile", element: <WriterProfile /> },

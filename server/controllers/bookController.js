@@ -19,7 +19,7 @@ const addBook = asyncHandler(async (req, res) => {
   ) {
     return res.status(400).json({ message: "Please fill all fields" });
   }
-  const authorName = req.user.firstname + " " + req.body.lastname;
+  const authorName = req.user.firstname + " " + req.user.lastname;
   const authorId = req.user.id;
   const newBook = await Book.create({
     title,
@@ -42,15 +42,9 @@ const addBook = asyncHandler(async (req, res) => {
 });
 
 const getAllBooks = asyncHandler(async (req, res) => {
-  const books = await Book.find();
+  const books = await Book.find({},{chapters:0});
   if (books) {
-    res.json({
-      author: books.authorName,
-      desc: books.description,
-      title: books.title,
-      genre: books.genre,
-      year: books.year,
-      coverImage: books.coverImage,
+    res.json({books
     });
   } else {
     res.status(404);
@@ -58,7 +52,7 @@ const getAllBooks = asyncHandler(async (req, res) => {
   }
 });
 const getBookDetail = asyncHandler(async (req, res) => {
-    const vendorId = req.params.id;
+    const id = req.params.id;
 
     const book = await Book.findById(id);
   if (book) {

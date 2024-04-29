@@ -23,7 +23,7 @@ app.use(
   )
 app.use(express.json())
 app.use('/api/users', userRoutes);
-app.use('/books', bookRoutes)
+app.use('/api/books', bookRoutes)
 
 app.get('/', (req, res) => {
     res.send("Mudijo");  

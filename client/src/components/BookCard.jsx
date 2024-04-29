@@ -10,6 +10,7 @@ const BookCard = ({
   year = "Year",
   genre = "Genre",
   chapters = "",
+  _id
 }) => {
   const [showdescription, setdescription] = useState(false);
   console.log(showdescription);
@@ -85,7 +86,7 @@ const BookCard = ({
                   </p>
                   <p className="mt-4">{description}</p>
                   <div className="flex justify-end">
-                  <Link className="flex cursor-pointer bg-pry p-2 rounded font-bold text-sec " to={'/bookpage'}>Start Reading</Link>
+                  <Link className="flex cursor-pointer bg-pry p-2 rounded font-bold text-sec " to={`/read/${_id}`}>Start Reading</Link>
                   </div>
                 </div>
               </div>
