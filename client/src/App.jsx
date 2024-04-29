@@ -84,7 +84,7 @@ function App() {
         { path: "/userprofile", element: <UserProfile /> },
         { path: "/writerprofile", element: <WriterProfile /> },
         { path: "/deletemodal", element: <DeleteModal /> },
-        { path: "/updateprofile", element: <UpdateProfile /> },
+     
         
      
       ],
@@ -107,6 +107,10 @@ function App() {
     {
       path: "/login",
       element: <Login />,
+    },
+    {
+      path: "/updateprofile",
+      element: <UpdateProfile />,
     },
     {
       path: "/writers",
