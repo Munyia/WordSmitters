@@ -99,6 +99,7 @@ const updateUserProfile = asyncHandler(async (req, res) => {
       user.email = req.body.email || user.email;
       user.lastname = req.body.lastname || user.lastname;
       user.username = req.body.username || user.username;
+      user.bio = req.body.bio || user.bio;
      
       if (req.body.password) {
         user.password = req.body.password;

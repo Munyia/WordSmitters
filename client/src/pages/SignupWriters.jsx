@@ -1,32 +1,37 @@
-import React from 'react'
-import "./login.css"
-import { tb, llogo, lock, eye } from '../assets'
-import { Link, useNavigate } from 'react-router-dom'
-import { useState } from 'react'
-import Loader from '../components/Loader'
-import api from '../utils/api'
+import React, { useState } from "react";
+import "./login.css";
+import { tb, llogo, lock, eye } from "../assets";
+import { Link } from "react-router-dom";
+import axios from "axios";
+import Loader from "../components/Loader";
+import RegistrationSuccesful from "../components/RegistrationSuccessful";
+import api from "../utils/api";
 
-const UpdateProfile = () => {
-  document.title= "Update Profile"
+const SignupWriters = () => {
   const [firstname, setFirstName] = useState("");
   const [lastname, setLastName] = useState("");
   const [successful, setSuccessful] = useState(false);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [confirmPassword, setConfirmPassword] = useState("");
   const [username, setUsername] = useState("");
-  const [bio, setBio] = useState("");
+  const [gender, setGender] = useState("");
+  const [DOB, setDob] = useState("");
   const [loading, setLoading] = useState(false);
   const [errors, setErrors] = useState('');
   const [showPassword, setShowPassword] = useState(false);
+  const [showConfirmPassword, setShowConfirmPassword] = useState(false);
   const [isFirstNameFocused, setIsFirstNameFocused] = useState(false);
   const [isLastNameFocused, setIsLastNameFocused] = useState(false);
   const [isEmailFocused, setIsEmailFocused] = useState(false);
   const [isUsernameFocused, setIsUsernameFocused] = useState(false);
   const [isPasswordFocused, setIsPasswordFocused] = useState(false);
-  const [isBioFocused, setIsBioFocused] = useState(false);
+  const [isConfirmPasswordFocused, setIsConfirmPasswordFocused] = useState(false);
+  const [isGenderFocused, setIsGenderFocused] = useState(false);
+  const [isDobFocused, setIsDobFocused] = useState(false);
 
 
-  document.title = "Sign Up";
+  document.title = "Writer's Sign Up";
 
   const togglePasswordVisibility = () => {
     setShowPassword(!showPassword);
@@ -86,23 +91,41 @@ const UpdateProfile = () => {
     }
   };
 
-  const handleBioFocus = () => {
-    setIsBioFocused(true);
+  const handleConfirmPasswordFocus = () => {
+    setIsConfirmPasswordFocused(true);
   };
 
-  const handleBioBlur = () => {
-    if (!bio) {
-      setIsBioFocused(false);
+  const handleConfirmPasswordBlur = () => {
+    if (!confirmPassword) {
+      setIsConfirmPasswordFocused(false);
     }
   };
 
+  const handleGenderFocus = () => {
+    setIsGenderFocused(true);
+  };
+
+  const handleGenderBlur = () => {
+    if (!gender) {
+      setIsGenderFocused(false);
+    }
+  };
+
+  const handleDobFocus = () => {
+    setIsDobFocused(true);
+  };
+
+  const handleDobBlur = () => {
+    if (!DOB) {
+      setIsDobFocused(false);
+    }
+  };
+  
 
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
-
-  
 
     // Email validation
     if (!validateEmail(email)) {
@@ -117,10 +140,16 @@ const UpdateProfile = () => {
       return;
     }
 
+    // Confirm password validation
+    if (password !== confirmPassword) {
+      setLoading(false);
+      setErrors("Passwords do not match.");
+      return;
+    }
 
     console.log(email, password);
     try {
-      const response = await api.post('api/users', { firstname, lastname, username, bio, email, password });
+      const response = await api.post('api/users', { firstname, lastname, username, gender, DOB, email, password });
       console.log(response);
       setLoading(false);
       setSuccessful(true); // Toggle loading state off after successful request
@@ -145,7 +174,7 @@ const UpdateProfile = () => {
           <img src={llogo} className="h-[10vh] absolute z-50 top-0 left-0" alt="" />
         </Link>
         <form onSubmit={handleSubmit} className="flex text-center transition ease-in-out duration-300 hover:scale-105 hover:border border-pry flex-col gap-3 rounded-3xl pb-[0.4em] justify-center items-center p-4 sm:px-10 overflow-clip backdrop-blur-sm bg-[rgba(0,0,0,0.3)] h-full sm:h-auto">
-          <h1 id="heading" className="text-2xl font-bold mb[-60] text-[#CD9564]">Update Profile</h1>
+          <h1 id="heading" className="text-2xl font-bold mb[-60] text-[#CD9564]"> Writer's Sign Up</h1>
           <div className="w-full flex gap-4 flex-col">
             <div className=" flex gap-2 sm:gap-10 sm:flex-row flex-col">
             <div className="field w-full">
@@ -203,49 +232,83 @@ const UpdateProfile = () => {
               <label htmlFor="username" className={` ${isUsernameFocused || username? 'text-white' : 'text-pry'} transition-all duration-300 ${isUsernameFocused ? '-translate-y-5 text-sm' : 'translate-y-0 text-base'} absolute`}>Username</label>
             </div>
             </div>
-              <div className="field w-[50%] justify-center text-center">
-                <input
-                  value={password}
-                  onChange={(e) => setPassword(e.target.value)}
-                  className={`input-field placeholder:text-[#CD9564] ${isPasswordFocused || password ? 'focus:border-black outline-none py-1 px-2 w-[50%] justify-center text-center border-b border-gray-500' : ''}`}
-                  type={showPassword ? "text" : "password"} // Show password if showPassword is true, otherwise hide it
-                  onFocus={handlePasswordFocus}
-                  onBlur={handlePasswordBlur}
-                  id="password"
-                />
-                <label htmlFor="password" className={` ${isPasswordFocused || password? 'text-white' : 'text-pry'} transition-all duration-300 ${isPasswordFocused ? '-translate-y-5 text-sm' : 'translate-y-0 text-base'} absolute`}>Password</label>
-                <img
-                  src={showPassword ? eye : lock} // Display different images based on the showPassword state
-                  alt="Password toggle"
-                  onClick={togglePasswordVisibility}
-                  className="password-toggle-icon w-[5%]"
-                />
+            <div className="flex gap-2 sm:gap-10 sm:flex-row flex-col ">
+            <div className=" field w-full">
+              <input
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                className={`input-field placeholder:text-[#CD9564] ${isPasswordFocused || password ? 'focus:border-black outline-none py-1 px-2 border-b border-gray-500' : ''}`}
+                type={showPassword ? "text" : "password"} // Show password if showPassword is true, otherwise hide it
+                onFocus={handlePasswordFocus}
+                onBlur={handlePasswordBlur}
+                id="password"
+              />
+              <label htmlFor="password" className={` ${isPasswordFocused || password? 'text-white' : 'text-pry'} transition-all duration-300 ${isPasswordFocused ? '-translate-y-5 text-sm' : 'translate-y-0 text-base'} absolute`}>Password</label>
+              <img
+                src={showPassword ? eye : lock} // Display different images based on the showPassword state
+                alt="Password toggle"
+                onClick={togglePasswordVisibility}
+                className="password-toggle-icon w-[7%]"
+              />
+                 </div>
+                 <div className=" field w-full">
+              <input
+                value={confirmPassword}
+                onChange={(e) => setConfirmPassword(e.target.value)}
+                className={`input-field placeholder:text-[#CD9564] ${isConfirmPasswordFocused || confirmPassword? 'focus:border-black outline-none py-1 px-2 border-b border-gray-500' : ''}`}
+                type={showConfirmPassword ? "text" : "password"} // Show password if showPassword is true, otherwise hide it
+                onFocus={handleConfirmPasswordFocus}
+                onBlur={handleConfirmPasswordBlur}
+                id="confirmPassword"
+              />
+              <label htmlFor="confirmPassword" className={` ${isConfirmPasswordFocused || confirmPassword? 'text-white' : 'text-pry'} transition-all duration-300 ${isConfirmPasswordFocused ? '-translate-y-5 text-sm' : 'translate-y-0 text-base'} absolute`}>Confirm Password</label>
+              <img
+                src={showConfirmPassword ? eye : lock} // Display different images based on the showPassword state
+                alt="Password toggle"
+                onClick={toggleConfirmPasswordVisibility}
+                className="password-toggle-icon w-[7%]"
+              />
+            </div>
+            </div>
+              {/* <p className="text-red-500">{errors && errors}</p> */}
+            <div className=" flex gap-10 ">
+            <div className=" field w-full">
+              <input
+                value={gender}
+                onChange={(e) => setGender(e.target.value)}
+                className={`input-field placeholder:text-[#CD9564] ${isGenderFocused || gender? 'focus:border-black outline-none py-1 px-2 border-b border-gray-500' : ''}`}
+                type="text"
+                onFocus={handleGenderFocus}
+                onBlur={handleGenderBlur}
+                id="gender"
+              />
+              <label htmlFor="gender" className={` ${isGenderFocused || gender? 'text-white' : 'text-pry'} transition-all duration-300 ${isGenderFocused ? '-translate-y-5 text-sm' : 'translate-y-0 text-base'} absolute`}>Gender</label>
               </div>
-             <div className="flex gap-2 sm:gap-10 sm:flex-row flex-col">
-              <div className="field w-full">
-                <textarea
-                  value={bio}
-                  onChange={(e) => setBio(e.target.value)}
-                  className={`input-field placeholder:text-[#CD9564] ${isBioFocused || bio? 'focus:border-black outline-none py-1 px-2 border-b border-gray-500' : ''}`}
-                  onFocus={handleBioFocus}
-                  onBlur={handleBioBlur}
-                  id="bio"
-                  rows={5} // Set the number of rows for the textarea
-                />
-                <label htmlFor="bio" className={` ${isBioFocused || bio? 'text-white' : 'text-pry'} transition-all duration-300 ${isBioFocused ? '-translate-y-5 text-sm' : 'translate-y-0 text-base'} absolute`}>Bio</label>
-              </div>
+              <div className=" field w-full"> 
+              <input
+                value={DOB}
+                onChange={(e) => setDob(e.target.value)}
+                className={`input-field placeholder:text-[#CD9564] ${isDobFocused ||DOB? 'focus:border-black outline-none py-1 px-2 border-b border-gray-500' : ''}`}
+                type="text"
+                onFocus={handleDobFocus}
+                onBlur={handleDobBlur}
+                id="dob"
+              />
+              <label htmlFor="dob" className={` ${isDobFocused || DOB? 'text-white' : 'text-pry'} transition-all duration-300 ${isDobFocused ? '-translate-y-5 text-sm' : 'translate-y-0 text-base'} absolute`}>DOB</label>
+            </div>
             </div>
             <div>
-            <button type='submit' disabled= {loading} className="mb-[0.5em] mt-2 disabled:bg-sec text-pry bg-[#171717] rounded border-none hover:text-white hover:bg-pry p-[0.5rem] px-6 transition-all ease-in-out duration-500">Update Profile</button>
+            <button type='submit' disabled= {loading} className="mb-[0.5em] mt-2 disabled:bg-sec text-pry bg-[#171717] rounded border-none hover:text-white hover:bg-pry p-[0.5rem] px-6 transition-all ease-in-out duration-500">Sign Up</button>
             </div>
           </div>
           
-          <p to={"/updateprofile"} className="group text-pry ">
-            Back to {" "}
-            <Link to={"/userprofile"} className=" group-hover:underline">
-              Profile
+          <p to={"/signup"} className="group text-pry ">
+            Already have an account?{" "}
+            <Link to={"/login"} className=" group-hover:underline">
+              Login
             </Link>
           </p>
+          <button className="button3">Sign Up With Google</button>
           {loading && (
             <div className="absolute bottom-0 left-0 w-full flex justify-center">
               <Loader />
@@ -260,4 +323,7 @@ const UpdateProfile = () => {
   );
 };
 
-export default UpdateProfile;
+export default SignupWriters;
+
+
+

@@ -25,6 +25,7 @@ import UserProfile from "./pages/UserProfile";
 import WriterProfile from "./pages/WriterProfile";
 import DeleteModal from "./components/DeleteModal";
 import UpdateProfile from "./pages/UpdateProfile";
+import SignupWriters from "./pages/SignupWriters";
 
 
 
@@ -103,6 +104,21 @@ function App() {
 
       },
       element:  <SignUp />,
+    },
+    {
+      path: "/signupwriters",
+      loader: async () => {
+        try {
+          const response = await api.get("api/users/profile", {
+            withCredentials:true,
+          });      
+          <Navigate to={"/"}/>
+        } catch (error) {
+          return false
+        } 
+
+      },
+      element:  <SignupWriters />,
     },
     {
       path: "/login",

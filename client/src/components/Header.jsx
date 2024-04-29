@@ -88,7 +88,7 @@ const getInitials = (firstname, lastname) => {
         <Link  className='flex hover:underline text-lg hover:text-xl '>Sign Up</Link>
   <div className="hidden text-black absolute top-[100%] bg-[#CD9564] rounded-3xl  group-hover:flex w-full flex-col gap-2 p-2 text-center">
             <Link to={"/signup"} className='hover:bg-[rgb(10,32,8)]  hover:text-white  rounded-lg px-1 py-1'>Reader</Link>
-            <Link to={"/signup"} className='hover:bg-[rgb(10,32,8)] hover:text-white rounded-lg px-1 py-1'>Writer</Link>
+            <Link to={'/signupwriters'} className='hover:bg-[rgb(10,32,8)]  hover:text-white rounded-lg px-1 py-1'>Writer</Link>
             <div className=' border-b-[rgb(10,32,8)]'></div>
         </div>
        </div>
