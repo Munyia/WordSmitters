@@ -1,9 +1,9 @@
 import axios from "axios";
 
 const api = axios.create({
-    baseURL:"https://wordsmitters.onrender.com/",
+    baseURL:"http://localhost:5001",
     withCredentials: true
-    
+    // https://wordsmitters.onrender.com/
 })
 
 export default api
