@@ -119,7 +119,12 @@ const updateUserProfile = asyncHandler(async (req, res) => {
 // @route   POST /api/users/logout
 // @access  Public
 const logoutUser = (req, res) => {
-  res.cookie('jwt', '', {maxAge:-1});
+  res.cookie('jwt', '', {
+    httpOnly: true,
+    expires: new Date(0),
+    secure:true, 
+    sameSite: 'strict', // Prevent CSRF attacks
+  });
   res.status(200).json({ message: 'Logged out successfully' });
 };
 
