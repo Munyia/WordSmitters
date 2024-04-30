@@ -36,7 +36,7 @@ const getInitials = (firstname, lastname) => {
   const logout= async () =>{
     try {
       console.log("loging out");
-      const response = await api.post('http://localhost:5001/api/users/logout');
+      const response = await api.post('api/users/logout');
       console.log(response);
       Navigate('/login')
     } catch (error) {
