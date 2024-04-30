@@ -74,7 +74,7 @@ return (
   <div className='bg-gradient-to-br from-[rgb(11,31,10)] via-[rgb(7,49,3)] w-full  to-[rgb(6,49,6)] '>
     {user ? (
       <div className='flex border text-black py-2 px-2 '>
-        <div className='border shadow-2xl mr-2 max-h-[80vh]  bg-white rounded-3xl justify-center flex flex-col gap-5 items-center w-[23%]'>
+        <div className='border shadow-2xl mr-2 max-h-[80vh]  bg-white rounded-3xl justify-center flex flex-col gap-2 items-center w-[23%]'>
           {user.profileImage ? (
             <div className='w-[50%] flex justify-center items-center aspect-square bg-pry rounded-full overflow-hidden text-white text-[3rem]'>
             <img className='w-full rounded-full overflow-hidden'

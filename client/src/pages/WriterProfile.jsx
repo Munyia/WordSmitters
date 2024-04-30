@@ -115,7 +115,7 @@ return (
   <div className='bg-gradient-to-br from-[rgb(11,31,10)] via-[rgb(7,49,3)] w-full  to-[rgb(6,49,6)] '>
     {user ? (
       <div className='flex border text-black py-2 px-2 '>
-        <div className='border shadow-2xl mr-2 max-h-[80vh]  bg-white rounded-3xl justify-center flex flex-col gap-5 items-center w-[23%]'>
+        <div className='border shadow-2xl mr-2 max-h-[80vh]  bg-white rounded-3xl justify-center flex flex-col gap-2 items-center w-[23%]'>
           {user.profileImage ? (
             <div className='w-[50%] flex justify-center items-center aspect-square bg-pry rounded-full overflow-hidden text-white text-[3rem]'>
             <img className='w-full rounded-full overflow-hidden'
@@ -128,7 +128,7 @@ return (
             </div>
             
           )}
-          <input type="file" onChange={handleImageChange} className="my-2" />
+          <input type="file" onChange={handleImageChange} className="my-1" />
           <div className='flex text-white gap-2 font-bold text-center justify-center'>
             <h1 className='text-xl'>{user.firstname}</h1>
             <h1 className='text-xl'>{user.lastname}</h1>
@@ -136,6 +136,7 @@ return (
           <h1 className='font-bold text-black'>{user.username}</h1>
           <p className='text-blue-500 font-bold'>Email: {user.email}</p>
           <p className='text-black'>Joined: {new Date(user.joinDate).toLocaleDateString()}</p>
+          <Link to={'/updateprofile'}className='bg-pry p-2 text-sec hover:bg-sec hover:text-white'> Update Profile</Link>
           <Link className='bg-pry p-2 text-sec hover:bg-sec hover:text-white' to={'/textarea'}>Start Writing</Link>
        
         </div>
