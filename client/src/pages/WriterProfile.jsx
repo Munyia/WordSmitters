@@ -3,6 +3,7 @@ import React, { useState, useEffect } from 'react';
 import Loader from '../components/Loader';
 import BookCard from '../components/BookCard';
 import DeleteModal from '../components/DeleteModal';
+import { Link } from 'react-router-dom';
 
 function WriterProfile({ userId }) {
   document.title= "Writer Profile"
@@ -90,21 +91,6 @@ const getInitials = (firstname, lastname) => {
   return `${firstname[0]}${lastname[0]}`;
 };
 
-const [showModal, setShowModal] = useState(false);
-
-const handleDeleteImage = () => {
-  setShowModal(true);
-};
-
-const handleConfirmDelete = () => {
-  // Delete image logic here
-  deleteProfileImage();
-  setShowModal(false);
-};
-
-const handleCancelDelete = () => {
-  setShowModal(false);
-};
 const handleImageChange = (event) => {
   const file = event.target.files[0];
   const reader = new FileReader();
@@ -142,6 +128,7 @@ return (
             </div>
             
           )}
+          <input type="file" onChange={handleImageChange} className="my-2" />
           <div className='flex text-white gap-2 font-bold text-center justify-center'>
             <h1 className='text-xl'>{user.firstname}</h1>
             <h1 className='text-xl'>{user.lastname}</h1>
@@ -149,26 +136,8 @@ return (
           <h1 className='font-bold text-black'>{user.username}</h1>
           <p className='text-blue-500 font-bold'>Email: {user.email}</p>
           <p className='text-black'>Joined: {new Date(user.joinDate).toLocaleDateString()}</p>
-          <input type="file" onChange={handleImageChange} className="my-2" />
-          {user.profileImage && (
-              <>
-                <button
-                  className={`bg-red-700 hover:bg-red-500 text-white font-bold py-1 px-2 rounded ${
-                    !user.profileImage ? 'opacity-50 cursor-not-allowed' : ''
-                  }`}
-                  disabled={!user.profileImage}
-                  onClick={handleDeleteImage}
-                >
-                  Delete Image
-                </button>
-                {showModal && (
-                  <DeleteModal
-                    onConfirm={handleConfirmDelete}
-                    onCancel={handleCancelDelete}
-                  />
-                )}
-              </>
-            )}
+          <Link className='bg-pry p-2 text-sec hover:bg-sec hover:text-white' to={'/textarea'}>Start Writing</Link>
+       
         </div>
         <div className='flex gap-5 text-sec font-bold flex-col w-full h-[80vh] overflow-y-scroll flex-nowrap [&::-webkit-scrollbar]:hidden'>
         {/* <div className='w-full bg-white rounded-3xl border min-h-[40vh] pt-5 text-lg flex overflow-x-scroll [&::-webkit-scrollbar]:hidden '>Currently Reading</div>
@@ -176,23 +145,6 @@ return (
         <div className='w-full bg-white rounded-3xl border  min-h-[40vh] pt-5 text-lg overflow-x-scroll [&::-webkit-scrollbar]:hidden'>Purchased Books</div>
          */}
 
-        <div className='w-full bg-white  text-sec font-bold  rounded-3xl border min-h-[40vh] pt-5 text-lg   '>
-            <div className='flex flex-col'>
-            <div className='flex text-justify mb-3  p-2 gap-5'>
-              <h2 className="section-title">Uploaded Books</h2>
-              <input type="file" onChange={handleFileChange} className=" " />
-              <button className='hover:bg-sec bg-pry border-s-pry hover:text-white text-sec px-2' onClick={handleBookUpload}>Upload Book</button>
-             </div>
-              {loading && <Loader />}
-              <div className="  h-full pl-3 flex gap-5 overflow-x-scroll [&::-webkit-scrollbar]:hidden ">
-              {uploadedBooks.map((book, index) => (
-                <div key={index} className='min-w-[15%]'>
-                  <BookCard {...book} />
-                </div>
-              ))}
-            </div>
-            </div>
-        </div>
         <div className='w-full bg-white  text-sec font-bold  rounded-3xl border min-h-[40vh] pt-5 text-lg   '>
           <div className='flex'>
           <h2 className="section-title">Currently Reading</h2>

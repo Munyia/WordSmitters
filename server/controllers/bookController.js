@@ -5,9 +5,9 @@ import asyncHandler from "express-async-handler";
 // @route   POST /books
 // @access  Private
 const addBook = asyncHandler(async (req, res) => {
-  const { title, description, genre, publisher, year, coverImage, chapters } =
+  const { title, description, genre, publisher, year, coverImage, chapters, } =
     req.body;
-  console.log(title, description, genre, publisher, year, coverImage, chapters);
+  console.log(title, description, genre, publisher, year, coverImage, chapters, );
   if (
     !title ||
     !description ||
@@ -16,6 +16,7 @@ const addBook = asyncHandler(async (req, res) => {
     !year ||
     !coverImage ||
     !chapters
+
   ) {
     return res.status(400).json({ message: "Please fill all fields" });
   }
@@ -31,6 +32,7 @@ const addBook = asyncHandler(async (req, res) => {
     authorName,
     authorId,
     chapters,
+
   });
 
   if (newBook) {

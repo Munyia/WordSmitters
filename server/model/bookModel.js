@@ -38,7 +38,8 @@ const bookSchema = new mongoose.Schema
     chapters: {
         type: [String],
         required: true
-    }
+    },
+  
 });
 
 const Book = mongoose.model("Book'", bookSchema);

@@ -58,21 +58,6 @@ const getInitials = (firstname, lastname) => {
   return `${firstname[0]}${lastname[0]}`;
 };
 
-const [showModal, setShowModal] = useState(false);
-
-const handleDeleteImage = () => {
-  setShowModal(true);
-};
-
-const handleConfirmDelete = () => {
-  // Delete image logic here
-  deleteProfileImage();
-  setShowModal(false);
-};
-
-const handleCancelDelete = () => {
-  setShowModal(false);
-};
 const handleImageChange = (event) => {
   const file = event.target.files[0];
   const reader = new FileReader();
@@ -83,15 +68,7 @@ const handleImageChange = (event) => {
 };
 
 
-//   useEffect(() => {
-//     axios.get(`http://localhost:8081/users/${userId}`)
-//       .then(response => {
-//         setUser(response.data);
-//       })
-//       .catch(error => {
-//         console.error('Error fetching user data:', error);
-//       });
-//   }, [userId]);
+
 
 return (
   <div className='bg-gradient-to-br from-[rgb(11,31,10)] via-[rgb(7,49,3)] w-full  to-[rgb(6,49,6)] '>
@@ -119,25 +96,7 @@ return (
           <p className='text-blue-500 font-bold'>Email: {user.email}</p>
           <p className=' text-sec'>Joined: {new Date(user.joinDate).toLocaleDateString()}</p>
         <Link to={'/updateprofile'}className='bg-pry text-sec border rounded-full text-l p-3'> Update Profile</Link>
-          {user.profileImage && (
-              <>
-                <button
-                  className={`bg-red-700 hover:bg-red-500 text-white font-bold py-1 px-2 rounded ${
-                    !user.profileImage ? 'opacity-50 cursor-not-allowed' : ''
-                  }`}
-                  disabled={!user.profileImage}
-                  onClick={handleDeleteImage}
-                >
-                  Delete Image
-                </button>
-                {showModal && (
-                  <DeleteModal
-                    onConfirm={handleConfirmDelete}
-                    onCancel={handleCancelDelete}
-                  />
-                )}
-              </>
-            )}
+        
         </div>
         <div className='flex gap-5  text-sec font-bold flex-col w-full h-[80vh] overflow-y-scroll flex-nowrap [&::-webkit-scrollbar]:hidden'>
         {/* <div className='w-full bg-white rounded-3xl border min-h-[40vh] pt-5 text-lg flex overflow-x-scroll [&::-webkit-scrollbar]:hidden '>Currently Reading</div>
