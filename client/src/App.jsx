@@ -29,6 +29,7 @@ import SignupWriters from "./pages/SignupWriters";
 import api from "./utils/api";
 import TextAreaWithParagraphs from "./pages/TextArea";
 import TextArea from "./pages/TextArea";
+import TopMe from "./pages/TopMe";
 
 
 
@@ -135,6 +136,10 @@ function App() {
     {
       path: "/updateprofile",
       element: <UpdateProfile />,
+    },
+    {
+      path: "/topme",
+      element: <TopMe />,
     },
     {
       path: "/writers",
