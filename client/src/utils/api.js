@@ -6,4 +6,4 @@ const api = axios.create({
     // https://wordsmitters.onrender.com/
 })
 
-export default api
+export default api ;

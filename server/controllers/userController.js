@@ -110,7 +110,7 @@ const updateUserProfile = asyncHandler(async (req, res) => {
       res.send("profile updated successfully");
     } else {
       res.status(404);
-      throw new Error('User not found');
+      throw new Error('User is  not found');
     }
   });
 
