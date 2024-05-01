@@ -47,7 +47,7 @@ const TextArea = () => {
   };
 
   return (
-    <div className='flex flex-col mt-3 w-full min-h-[80vh] justify-center text-center'>
+    <div className='flex bg-black flex-col mt-3 w-full min-h-[80vh] justify-center text-center'>
         <div className='flex h-[100%] w-full gap-3 items-stretch '>
         <div className='border h-full w-[15%] gap-2 flex justify-center flex-col mx-5 rounded-lg'>
         <input type="text" 
