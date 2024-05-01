@@ -47,9 +47,10 @@ const TextArea = () => {
   };
 
   return (
-    <div className='flex bg-black flex-col mt-3 w-full min-h-[80vh] justify-center text-center'>
+    <div className='flex flex-col mt-3 w-full min-h-[80vh] justify-center text-center'>
         <div className='flex h-[100%] w-full gap-3 items-stretch '>
         <div className='border h-full w-[15%] gap-2 flex justify-center flex-col mx-5 rounded-lg'>
+          <div className='h-[100%]'>
         <input type="text" 
         placeholder="Book Title"   
         />
@@ -64,6 +65,7 @@ const TextArea = () => {
         placeholder="Description"   
         />
             <p className='bg-pry p-2 text-sec w-[45%] rounded-md text-center justify-center align-bottom hover:bg-sec hover:text-white'>Save</p>
+        </div>
         </div>
         <div className='w-[85%]'>
       <h1 className='text-3xl flex  text-sec  '>Write your stories</h1>

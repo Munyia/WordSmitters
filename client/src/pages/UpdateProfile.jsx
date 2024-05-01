@@ -203,7 +203,7 @@ const UpdateProfile = () => {
               <label htmlFor="username" className={` ${isUsernameFocused || username? 'text-white' : 'text-pry'} transition-all duration-300 ${isUsernameFocused ? '-translate-y-5 text-sm' : 'translate-y-0 text-base'} absolute`}>Username</label>
             </div>
             </div>
-              <div className="field w-[50%] justify-center text-center">
+              <div className="field w-[50%] justify-center mx-auto text-center">
                 <input
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
