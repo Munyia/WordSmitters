@@ -174,7 +174,8 @@ const SignupWriters = () => {
           <img src={llogo} className="h-[10vh] absolute z-50 top-0 left-0" alt="" />
         </Link>
         <form onSubmit={handleSubmit} className="flex text-center transition ease-in-out duration-300 hover:scale-105 hover:border border-pry flex-col gap-3 rounded-3xl pb-[0.4em] justify-center items-center p-4 sm:px-10 overflow-clip backdrop-blur-sm bg-[rgba(0,0,0,0.3)] h-full sm:h-auto">
-          <h1 id="heading" className="text-2xl font-bold mb[-60] text-[#CD9564]"> Writer's Sign Up</h1>
+          <h1 id="heading" className="text-2xl font-bold mb[-60] text-[#CD9564]"> Want to unleash your writing skills then</h1>
+          <h1 id="heading" className="text-2xl font-bold mb[-60] text-[#CD9564]"> Sign Up</h1>
           <div className="w-full flex gap-4 flex-col">
             <div className=" flex gap-2 sm:gap-10 sm:flex-row flex-col">
             <div className="field w-full">
@@ -304,7 +305,7 @@ const SignupWriters = () => {
           
           <p to={"/signup"} className="group text-pry ">
             Already have an account?{" "}
-            <Link to={"/login"} className=" group-hover:underline">
+            <Link to={"/loginwriter"} className=" group-hover:underline">
               Login
             </Link>
           </p>

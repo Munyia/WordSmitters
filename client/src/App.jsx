@@ -30,6 +30,7 @@ import api from "./utils/api";
 import TextAreaWithParagraphs from "./pages/TextArea";
 import TextArea from "./pages/TextArea";
 import TopMe from "./pages/TopMe";
+import LoginWriter from "./pages/LoginWriter";
 
 
 
@@ -132,6 +133,10 @@ function App() {
     {
       path: "/login",
       element: <Login />,
+    },
+    {
+      path: "/loginwriter",
+      element: <LoginWriter />,
     },
     {
       path: "/updateprofile",
