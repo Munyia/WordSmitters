@@ -116,7 +116,7 @@ return (
             </div>
             
           )}
-          <input type="file" onChange={handleImageChange} className="my-1" />
+          {/* <input type="file" onChange={handleImageChange} className="my-1" /> */}
           <div className='flex text-sec gap-2 font-bold text-center justify-center'>
             <h1 className='text-xl'>{userDetails && userDetails.firstname + " " + userDetails.lastname}</h1>
             <h1 className='text-xl'></h1>
