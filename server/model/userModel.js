@@ -38,8 +38,7 @@ const userSchema =mongoose.Schema(
     },
     image: {
         type: String,
-        required: true,
-        default: "https://i.pinimg.com/236x/00/00/00/00000000000000000000000000000000.jpg"
+        required: false,
     },
 },
     {
@@ -50,6 +49,9 @@ userSchema.methods.matchPassword = async function (enteredPassword){
 }
 
 userSchema.pre("save", async function(next){
+    if (!this.isModified('password')) {
+        next();
+      }
     const salt = await bcrypt.genSalt(10);
     this.password = await bcrypt.hash(this.password, salt);
 })
