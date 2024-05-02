@@ -34,9 +34,11 @@ const BookCard = ({
     <div className=" flex rounded-lg mb-5 hover:shadow-[0px_0px_30px_1px_rgba(0, 255, 117, 0.30)] bg-gradient-to-br from-[rgb(10,32,8)] via-[rgb(20,64,20)] to-[rgb(10,32,8)] transition-all duration-300 background-image: linear-gradient(163deg, green 0%, blue 100%) ">
       <div
         onClick={openDescription}
-        className="flex flex-col text-pry rounded-lg hover:text-white hover:shadow-xl hover:scale-x-[0.99] hover:scale-y-[0.996] scale-100 transition-transform duration-200 overflow-hidden"
+        className="flex flex-col text-pry rounded-lg hover:text-white hover:shadow-xl hover:scale-x-[0.99] hover:scale-y-[0.996] scale-100 w-full transition-transform duration-200 overflow-hidden"
       >
-        <img className="min-w-[100%]  aspect-square " src={coverImage} alt="" />
+        <div  className="w-full aspect-square overflow-hidden">
+        <img className="w-[100%]" src={coverImage} alt="" />
+        </div>
         <h1 className=" text-2xl align-middle line-clamp-1 text-center justify-center ">
           {title}
         </h1>
