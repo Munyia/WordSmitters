@@ -75,6 +75,7 @@ useEffect(() => {
 
 const updateUserPic = async () => {
   try{
+    console.log(newPic);
     const ress = await api.put('api/users/profile', {image:newPic},{
       withCredentials:true,
     })
