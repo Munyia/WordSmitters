@@ -38,7 +38,8 @@ const userSchema =mongoose.Schema(
     },
     image: {
         type: String,
-        required: false
+        required: true,
+        default: "https://i.pinimg.com/236x/00/00/00/00000000000000000000000000000000.jpg"
     },
 },
     {

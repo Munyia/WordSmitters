@@ -13,7 +13,6 @@ const BookCard = ({
   _id
 }) => {
   const [showdescription, setdescription] = useState(false);
-  console.log(showdescription);
   useEffect(() => {
     const handleBodyOverflow = () => {
       document.body.style.overflow = showdescription ? "hidden" : "auto";

@@ -4,10 +4,11 @@ import Loader from '../components/Loader';
 import BookCard from '../components/BookCard';
 import DeleteModal from '../components/DeleteModal';
 import { Link } from 'react-router-dom';
+import api from '../utils/api';
 
-function UserProfile({ userId }) {
+function UserProfile() {
   document.title= "Profile"
-//   const [user, setUser] = useState(null);
+  // const [user, setUser] = useState(null);
 
 const currentlyReadingBooks = [
   { title: 'Book 1', author: 'Author 1', coverImage: 'book1.jpg', description: 'Description 1', publisher: 'Publisher 1', year: 'Year 1', genre: 'Genre 1', chapters: 'Chapters 1'},
@@ -43,42 +44,53 @@ const readingListBooks = [
   // Add more books as needed
 ];
 const [user, setUser] = useState()
+const [userDetails, setUserDetails] = useState()
 const [loading, setLoading] = useState(false);
-const [userdata,  setUserdata] = useState({
-  firstname: "",
-  lastname: "",
-  username: "@",
-  email: "",
-  joinDate: new Date(),
-  profileImage: "",
-  // other fields...
-});
+const [newPic,  setNewPic] = useState("");
 
 const getInitials = (firstname, lastname) => {
   return `${firstname[0]}${lastname[0]}`;
 };
 
-const getUserDetails = async () => {
+const getUserdetails = async () => {
   try {
-    setLoading(true);
-    const response = await axios.get("api/users/profile", { withCredentials: true });
-    setUser(response.data); // Set user state with fetched data
+    const response = await api.get("api/users/profile", {
+      withCredentials:true,
+    });
+    setUserDetails(response.data);
+    console.log(response);
   } catch (error) {
-    console.error("Error fetching user details:", error);
-  } finally {
-    setLoading(false);
-  }
+    console.log(error);
+  } 
 };
-
 useEffect(() => {
-  getUserDetails(); // Fetch user details when component mounts
-}, []);
+  
+  if(newPic){
+    updateUserPic()
+  }
+
+  getUserdetails()
+
+},[newPic]);
+
+const updateUserPic = async () => {
+  try{
+    const ress = await api.put('api/users/profile', {image:newPic},{
+      withCredentials:true,
+    })
+    console.log("success");
+    console.log(ress);
+  }catch (error) {
+    console.log(error)
+  }
+}
+
 
 const handleImageChange = (event) => {
   const file = event.target.files[0];
   const reader = new FileReader();
   reader.onloadend = () => {
-    setUser({...user, profileImage: reader.result});
+    setNewPic(reader.result);
   };
   reader.readAsDataURL(file);
 };
@@ -88,29 +100,29 @@ const handleImageChange = (event) => {
 
 return (
   <div className='bg-gradient-to-br from-[rgb(11,31,10)] via-[rgb(7,49,3)] w-full  to-[rgb(6,49,6)] '>
-    {user ? (
+    {userDetails ? (
       <div className='flex border text-black py-2 px-2 '>
         <div className='border shadow-2xl mr-2 max-h-[80vh]  bg-white rounded-3xl justify-center flex flex-col gap-2 items-center w-[23%]'>
-          {user.profileImage ? (
+          {userDetails.image ? (
             <div className='w-[50%] flex justify-center items-center aspect-square bg-pry rounded-full overflow-hidden text-white text-[3rem]'>
             <img className='w-full rounded-full overflow-hidden'
-              src={userdata && userdata.profileImage} alt="Profile"
+              src={userDetails.image} alt="Profile"
               />
               </div>
           ) : (
             <div className='w-[50%] flex justify-center items-center aspect-square bg-pry rounded-full overflow-hidden text-white text-[3rem]'>
-             {userdata && getInitials(userdata.firstname, userdata.lastname)}
+             { getInitials(userDetails.firstname, userDetails.lastname)}
             </div>
             
           )}
           <input type="file" onChange={handleImageChange} className="my-1" />
           <div className='flex text-sec gap-2 font-bold text-center justify-center'>
-            <h1 className='text-xl'>{userdata && userdata.firstname + " " + userdata.lastname}</h1>
+            <h1 className='text-xl'>{userDetails && userDetails.firstname + " " + userDetails.lastname}</h1>
             <h1 className='text-xl'></h1>
           </div>
-          <h1 className='font-bold  text-sec'>{userdata && userdata.username}</h1>
-          <p className='text-blue-500 font-bold'>Email: {userdata && userdata.email}</p>
-          <p className=' text-sec'>Joined: {new Date(userdata && userdata.joinDate).toLocaleDateString()}</p>
+          <h1 className='font-bold  text-sec'>{userDetails && userDetails.username}</h1>
+          <p className='text-blue-500 font-bold'>Email: {userDetails && userDetails.email}</p>
+          <p className=' text-sec'>Joined: {(userDetails && userDetails.createdAt)}</p>
         <Link to={'/updateprofile'}className='bg-pry text-sec border rounded-full text-l p-3'> Update Profile</Link>
         
         </div>
