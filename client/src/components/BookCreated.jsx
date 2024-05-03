@@ -16,8 +16,10 @@ const BookCreated = () => {
                             Your book has been successfully created.
                         </p>
                     </div>
-                    <Link to={'/textarea'} className='bg-pry text-sec text-center justify-center rounded p-2'>Add another book</Link>
-                    <Link to={'/books'} className='bg-pry text-sec text-center justify-center rounded p-2'>Read A book</Link>
+                    <div className='flex justify-between '> 
+                    <Link to={'/textarea'} className='bg-pry text-sec hover:bg-white hover:text-sec text-center justify-center rounded p-2'>Add another book</Link>
+                    <Link to={'/books'} className='bg-pry text-sec hover:bg-white hover:text-sec text-center justify-center rounded p-2'>Read A book</Link>
+                    </div>
                 </div>
             </div>
         </div>
