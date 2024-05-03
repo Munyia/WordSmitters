@@ -146,7 +146,7 @@ return (
         <div className='w-full bg-white rounded-3xl border  min-h-[40vh] pt-5 text-lg overflow-x-scroll [&::-webkit-scrollbar]:hidden'>Purchased Books</div>
          */}
 
-        <div className='w-full bg-white  text-sec font-bold  rounded-3xl border min-h-[40vh] pt-5 text-lg   '>
+        <div className='w-full bg-white  text-sec mt font-bold  rounded-3xl border min-h-[40vh] pt-5 text-lg   '>
           <div className='flex'>
           <h2 className="section-title">Currently Reading</h2>
           </div>
