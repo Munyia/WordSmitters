@@ -29,7 +29,7 @@ const SignUp = () => {
   const [isConfirmPasswordFocused, setIsConfirmPasswordFocused] = useState(false);
   const [isGenderFocused, setIsGenderFocused] = useState(false);
   const [isDobFocused, setIsDobFocused] = useState(false);
-  const [dobError, setDobError] = useState('');
+  // const [dobError, setDobError] = useState('');
 
 
   document.title = "Sign Up";
@@ -122,22 +122,22 @@ const SignUp = () => {
     }
   };
   
-  const handleDobChange = (e) => {
-    const inputValue = e.target.value;
-    const dateRegex = /^(0[1-9]|1[0-2])\/(0[1-9]|1\d|2\d|3[01])\/(19|20)\d{2}$/;
-    if (inputValue.match(dateRegex)) {
-      const [month, day, year] = inputValue.split('/');
-      const date = new Date(year, month - 1, day);
-      if (date.getFullYear() === parseInt(year) && date.getMonth() + 1 === parseInt(month) && date.getDate() === parseInt(day)) {
-        setDob(date.toLocaleDateString());
-        setDobError('');
-      } else {
-        setDobError('Please enter a valid date.');
-      }
-    } else {
-      setDobError('Please enter a valid date.');
-    }
-  };
+  // const handleDobChange = (e) => {
+  //   const inputValue = e.target.value;
+  //   const dateRegex = /^(0[1-9]|1[0-2])\/(0[1-9]|1\d|2\d|3[01])\/(19|20)\d{2}$/;
+  //   if (inputValue.match(dateRegex)) {
+  //     const [month, day, year] = inputValue.split('/');
+  //     const date = new Date(year, month - 1, day);
+  //     if (date.getFullYear() === parseInt(year) && date.getMonth() + 1 === parseInt(month) && date.getDate() === parseInt(day)) {
+  //       setDob(date.toLocaleDateString());
+  //       setDobError('');
+  //     } else {
+  //       setDobError('Please enter a valid date.');
+  //     }
+  //   } else {
+  //     setDobError('Please enter a valid date.');
+  //   }
+  // };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -300,7 +300,7 @@ const SignUp = () => {
               />
               <label htmlFor="gender" className={` ${isGenderFocused || gender? 'text-white' : 'text-pry'} transition-all duration-300 ${isGenderFocused ? '-translate-y-5 text-sm' : 'translate-y-0 text-base'} absolute`}>Gender</label>
               </div>
-              {/* <div className=" field w-full"> 
+              <div className=" field w-full"> 
               <input
                 value={DOB}
                 onChange={(e) => setDob(e.target.value)}
@@ -311,8 +311,8 @@ const SignUp = () => {
                 id="dob"
               />
               <label htmlFor="dob" className={` ${isDobFocused || DOB? 'text-white' : 'text-pry'} transition-all duration-300 ${isDobFocused ? '-translate-y-5 text-sm' : 'translate-y-0 text-base'} absolute`}>DOB</label>
-            </div> */}
-            <div className="field w-full">
+            </div>
+            {/* <div className="field w-full">
       <input
         value={DOB}
         onChange={handleDobChange}
@@ -324,7 +324,7 @@ const SignUp = () => {
       />
       <label htmlFor="dob" className={` ${isDobFocused || DOB? 'text-white' : 'text-pry'} transition-all duration-300 ${isDobFocused ? '-translate-y-5 text-sm' : 'translate-y-0 text-base'} absolute`}>DOB</label>
       {dobError && <p className="text-red-500 text-xs mt-1">{dobError}</p>}
-    </div>
+    </div> */}
             </div>
             <div>
             <button type='submit' disabled= {loading} className="mb-[0.5em] mt-2 disabled:bg-sec text-pry bg-[#171717] rounded border-none hover:text-white hover:bg-pry p-[0.5rem] px-6 transition-all ease-in-out duration-500">Sign Up</button>
