@@ -3,6 +3,7 @@ import BookCard from './BookCard';
 import { useParams } from 'react-router-dom';
 import data from './data';
 import api from '../utils/api';
+import Loader from './Loader';
 
 
 const Filter = () => {
@@ -35,7 +36,7 @@ const Filter = () => {
   
   
 
-  return (
+  return (loading?<Loader/>:
     <div   className=''>
     <p className=' text-[3rem] text-center border-b-2 py-2 mb-6'>{books && search}</p>
     {

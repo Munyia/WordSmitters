@@ -70,14 +70,15 @@ const getInitials = (firstname, lastname) => {
           {
 
           isOpen &&
-          <div className="absolute top-full right-0 flex flex-col w-[300%] rounded-3xl  bg-pry px-1 gap-4 pb-2">
+          <div className="absolute top-full right-0 flex flex-col w-[300%] rounded-3xl  bg-pry px-1 gap-4 pb-2 z-[99]">
             <div className='flex items-center pl-2 gap-2'>
             <span className=' bg-gray-300 rounded-full aspect-square w-[30%] flex items-center justify-center'>{userdata && getInitials(userdata.firstname, userdata.lastname)}</span>
             <span to={"/login"} className="button3 ">{userdata && userdata.firstname + " " + userdata.lastname}</span>
             
             </div>
-            <Link to={'/userprofile'} className="hover:bg-sec bg-opacity-0 cursor-pointer rounded p-1 text-center">Profile</Link>
-            <p onClick={logout} className="hover:bg-sec rounded p-1 cursor-pointer text-center">Logout</p>
+            <Link to={'/userprofile'} onClick={()=>setOpen(false)} className="hover:bg-sec bg-opacity-0 cursor-pointer rounded p-1 text-center">Profile</Link>
+            <Link to={'/textarea'} onClick={()=>setOpen(false)} className="hover:bg-sec bg-opacity-0 cursor-pointer rounded p-1 text-center">Add Book</Link>
+            <p onClick={logout}  className="hover:bg-sec rounded p-1 cursor-pointer text-center">Logout</p>
           </div>
           }
           </div>:

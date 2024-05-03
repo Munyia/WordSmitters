@@ -5,6 +5,7 @@ import BookCard from '../components/BookCard';
 import DeleteModal from '../components/DeleteModal';
 import { Link } from 'react-router-dom';
 import api from '../utils/api';
+import pencil from '../assets/res/pencil.svg'
 
 function UserProfile() {
   document.title= "Profile"
@@ -66,7 +67,7 @@ const getUserdetails = async () => {
 useEffect(() => {
   
   if(newPic){
-    updateUserPic()
+    updateUserPic().then(getUserdetails)
   }
 
   getUserdetails()
@@ -105,18 +106,22 @@ return (
       <div className='flex border text-black py-2 px-2 '>
         <div className='border shadow-2xl mr-2 max-h-[80vh]  bg-white rounded-3xl justify-center flex flex-col gap-2 items-center w-[23%]'>
           {userDetails.image ? (
-            <div className='w-[50%] flex justify-center items-center aspect-square bg-pry rounded-full overflow-hidden text-white text-[3rem]'>
+            <div className='relative w-[50%]'>
+            <div className='w-full overflow-hidden flex justify-center items-center aspect-square bg-pry rounded-full text-white text-[3rem]'>
             <img className='w-full rounded-full overflow-hidden'
               src={userDetails.image} alt="Profile"
               />
               </div>
+              <label htmlFor='ppic' className='absolute bottom-[10%] w-6 right-0 bg-pry rounded-full p-2'><img src={pencil} className='w-full' alt="" /></label>
+              </div>
           ) : (
-            <div className='w-[50%] flex justify-center items-center aspect-square bg-pry rounded-full overflow-hidden text-white text-[3rem]'>
+            <div className='w-[50%] flex justify-center items-center aspect-square bg-pry rounded-full  text-white text-[3rem] relative'>
              { getInitials(userDetails.firstname, userDetails.lastname)}
+              <label htmlFor='ppic' className='absolute bottom-[10%] w-6 right-0 bg-[#808080] rounded-full p-2'><img src={pencil} className='w-full' alt="" /></label>
             </div>
             
           )}
-          <input type="file" onChange={handleImageChange} className="my-1" />
+          <input type="file" id='ppic' onChange={handleImageChange} className="hidden" />
           <div className='flex text-sec gap-2 font-bold text-center justify-center'>
             <h1 className='text-xl'>{userDetails && userDetails.firstname + " " + userDetails.lastname}</h1>
             <h1 className='text-xl'></h1>
@@ -137,36 +142,45 @@ return (
           <div className='flex'>
           <h2 className="section-title ">Currently Reading</h2>
           </div>
-          <div className="  h-full pl-3 flex gap-5 overflow-x-scroll [&::-webkit-scrollbar]:hidden ">
+          {/* <div className="  h-full pl-3 flex gap-5 overflow-x-scroll [&::-webkit-scrollbar]:hidden ">
             {currentlyReadingBooks.map((book, index) => (
               <div className='min-w-[15%] '>
               <BookCard key={index} {...book} />
               </div>
             ))}
+            </div> */}
+            <div className='text-[2rem] text-pry'>
+              <p>Coming Soon</p>
             </div>
         </div>
         <div className='w-full bg-white text-sec font-bold justify-center text-center rounded-3xl border min-h-[40vh] pt-5 text-lg   '>
           <div className='flex'>
           <h2 className="section-title ">Purchased Books</h2>
           </div>
-          <div className="  h-full pl-3 flex gap-5 overflow-x-scroll [&::-webkit-scrollbar]:hidden ">
+          {/* <div className="  h-full pl-3 flex gap-5 overflow-x-scroll [&::-webkit-scrollbar]:hidden ">
             {purchasedBooks.map((book, index) => (
               <div className='min-w-[15%] '>
               <BookCard key={index} {...book} />
               </div>
             ))}
+            </div> */}
+            <div className='text-[2rem] text-pry'>
+              <p>Coming Soon</p>
             </div>
         </div>
         <div className='w-full bg-white   text-sec font-bold  justify-center text-center rounded-3xl border min-h-[40vh] pt-5 text-lg   '>
           <div className='flex'>
           <h2 className="section-title ">Reading List</h2>
           </div>
-          <div className="  h-full pl-3 text-s flex gap-5 overflow-x-scroll [&::-webkit-scrollbar]:hidden ">
+          {/* <div className="  h-full pl-3 text-s flex gap-5 overflow-x-scroll [&::-webkit-scrollbar]:hidden ">
             {readingListBooks.map((book, index) => (
               <div className='min-w-[15%] '>
               <BookCard key={index} {...book} />
               </div>
             ))}
+            </div> */}
+            <div className='text-[2rem] text-pry'>
+              <p>Coming Soon</p>
             </div>
         </div>
         </div>

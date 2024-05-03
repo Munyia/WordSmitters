@@ -94,7 +94,7 @@ function App() {
         { path: "/userprofile", element: <UserProfile /> },
         { path: "/writerprofile", element: <WriterProfile /> },
         { path: "/deletemodal", element: <DeleteModal /> },
-        { path: "/textarea", element: <TextArea /> },
+        { path: "/textarea/:id?", element: <TextArea /> },
      
         
      
