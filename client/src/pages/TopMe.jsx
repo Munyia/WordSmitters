@@ -17,11 +17,11 @@ import { Link } from 'react-router-dom';
 const TopMe = () => {
   return (
     <div className='flex flex-col w-full justify-center '>
-        <div className='flex mx-auto  rounded w-[90%] text-center justify-center mt-2'>
+        <div className='flex mx-auto ml-5  rounded w-[95%] text-center justify-center mt-2'>
         <img className='flex text-center' src={img3} alt="Img3" />
         </div>
-        <div className='flex w-[80%] overflow-hidden mx-auto gap-7 mt-4  '>
-            <div  className='W-[50%] '>
+        <div className='flex w-[85%]  mx-auto gap-7 mt-4  '>
+            <div  className='W-[50vw] '>
             <div className='flex  w-full mb-7 justify-between gap-5'>
                 <div className='w-[80%] gap-5 flex'>
                 <div className='flex gap-2 items-center '>
@@ -38,7 +38,7 @@ const TopMe = () => {
             </div>
             <div className='w-[15%]  justify-end'> 
             <div className='items-center  bg-black rounded py-1 flex my-3  text-center'>
-               <p className=' px-5  text-white text-center items-center justify-center'>SHARE</p>
+               <p className=' px-4  text-white text-center items-center justify-center'>SHARE</p>
            <img src={Icon1} alt="" />
             </div>
             </div>
@@ -112,71 +112,99 @@ const TopMe = () => {
                     <p className='font-bold mb-3'>Comments (3)</p>
                     <div>
                         <div>
-                            <div className='flex items-start  gap-5'>
-                                <div className='w-[15%] aspect-square items-center text-center justify-center  bg-[#808080] rounded-full'> 
-                                <span className=' text-center justify-center items-center m-auto text-white'>JN</span>
-                                </div>
+                            <div className='flex items-start mb-7  gap-5'>
+                                <span className=' bg-[#808080] rounded-full aspect-square w-[10%] text-white flex items-center justify-center'>JN</span>
                                 <div className='flex flex-col'>
                                 <div className='flex justify-between'>
                                     <p>John Nwankwo</p>
                                     <p>24 OCT, 2023</p>
                                 </div>
                                 <div>
-                                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
+                                <p className='text-[#808080] '>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
                                 </div>
-                                <div className='flex'>
+                                <div className='flex text-center items-center gap-5'>
                                     <p>REPLY</p>
-                                    <img src={Vector} alt="" />
+                                    <img className='' src={Vector} alt="" />
                                 </div>
                                 </div>
 
                             </div>
-                            <div>
-                                <div className='w-[10%] h-[10%] rounded-full'>SC
-                                </div>
-                                <div>
+                            <div className='flex ml-16 border-b border-[#808080] mb-7 items-start  gap-5'>
+                                <span className=' bg-[#9747FF] rounded-full  aspect-square w-[11%] text-white flex items-center justify-center'>SO</span>
+                                <div className='flex flex-col'>
+                                <div className='flex justify-between'>
                                     <p>Stephen Okonkwo</p>
                                     <p>26 OCT, 2023</p>
                                 </div>
                                 <div>
-                                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
+                                <p className='text-[#808080] '>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
                                 </div>
-                                <div>
+                                <div className='flex text-center items-center gap-5'>
                                     <p>REPLY</p>
+                                    <img className='' src={Vector} alt="" />
                                 </div>
+                                </div>
+
                             </div>
-                            <div>
-                                <div className='w-[10%] h-[10%] rounded-full'>UF
-                                </div>
-                                <div>
+                            <div className='flex items-start mb-14  gap-5'>
+                                <span className=' bg-[#FF6B6B] rounded-full aspect-square w-[10%] text-white flex items-center justify-center'>UF</span>
+                                <div className='flex flex-col'>
+                                <div className='flex justify-between'>
                                     <p>Ubong Franklin</p>
-                                    <p>26 OCT, 2023</p>
+                                    <p>24 OCT, 2023</p>
                                 </div>
                                 <div>
-                                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
+                                <p className='text-[#808080] '>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
                                 </div>
-                                <div>
+                                <div className='flex text-center items-center gap-5'>
                                     <p>REPLY</p>
+                                    <img className='' src={Vector} alt="" />
                                 </div>
+                                </div>
+
                             </div>
                             
                         </div>
-                        <div>
+                        <div className='my-10  flex gap-5 flex-col'>
                             <p>LEAVE A COMMENT</p>
-                            <div>
-                            <input type="text"
-                            placeholder='INPUT FULL NAME'
+                            <div className=''>
+                                <div className=' flex mb-5 gap-10'>
+                            <input 
+                              className='w-[45%] h-[8vh] bg-[#F6F6F6] pl-10  rounded-[8px] border-[#808080] '                            
+                              type="text"
+                              name="fullName" 
+                              value={""} 
+                              placeholder="INPUT FULL NAME"
                             />
-                            <input type="text"
-                            placeholder='PHONE NUMBER'
+                            <input 
+                              className='w-[45%] h-[8vh] bg-[#F6F6F6] pl-10  rounded-[8px] border-[#808080] '                            
+                              type="text"
+                              name="phonenumber" 
+                              value={""} 
+                              placeholder="PHONE NUMBER"
                             />
-                            <input type="text"
-                            placeholder='INPUT YOUR EMAIL'
-                            />
-
                             </div>
-                            <textarea name="WRITE COMMENT" id="WRITE COMMENT" ></textarea>
-                            <Link>POST</Link>
+                                <div>
+                                <input 
+                              className='w-[45%] h-[8vh] bg-[#F6F6F6] pl-10 rounded-[8px] border-[#808080] '                            
+                              type="text"
+                              name="email" 
+                              value={""} 
+                              placeholder="INPUT YOUR EMAIL"
+                            />
+                                </div>
+                          </div>
+                            <div className='flex flex-col gap-5'>
+                                <textarea 
+                                 type="text"
+                                 value={""}
+                                 name="writecomment"
+                                 placeholder="WRITE COMMENTL"
+                                 cols="30"
+                                  rows="10"
+                                />
+                            <Link className='text-white w-10 px-20 py-3 items-center text-center flex justify-center bg-[#43C4B2] rounded-full'>POST</Link>
+                            </div>
 
                         </div>
                     </div>
@@ -184,13 +212,86 @@ const TopMe = () => {
             </div>
 
             </div>
-<div className='w-[45%] '>
-    <div>
-    <p>Search Here</p>
-
-    <input type="text" 
-    placeholder='KEYWORDS'/>
-    <img src={Icon} alt="" />
+<div className='w-[47vw]  '>
+<div className='w-full bg-black rounded text-white h-[30vh]'> 
+    <p className='flex mb-10 pl-3 pt-5'>Search Here</p>
+    <div className='flex relative'>
+        <input 
+            className='relative border-none mx-5 flex py-4 px-8 rounded-full bg-white'
+            type="text" 
+            placeholder='KEYWORDS'
+        />
+        <img className='absolute right-0 top-0 mt-4 mr-7' src={Icon} alt="" /> 
+    </div>
+</div>
+    <div className=' flex flex-col gap-3 mt-5'>
+        <p className='flex mb-5 border-b border-[#808080]'>CATEGORIES</p>
+        <div className='flex justify-between'>
+            <p className=' text-[#808080]'>Events</p>
+            <p>10</p>
+        </div>
+        <div  className='flex justify-between'>
+            <p  className=' text-[#808080]'>Past Events</p>
+            <p>3</p>
+        </div>
+        <div  className='flex justify-between'> 
+            <p  className=' text-[#808080]'>Announcements</p>
+            <p>12</p>
+        </div>
+        <div  className='flex justify-between'>
+            <p  className=' text-[#808080]'>TopMe Guidelines</p>
+            <p>4</p>
+        </div>
+        <div  className='flex justify-between'>
+            <p  className=' text-[#808080]'>Arts & Culture</p>
+            <p>15</p>
+        </div>
+        <div  className='flex justify-between'>
+            <p  className=' text-[#808080]'>Stacks</p>
+            <p>10</p>
+        </div>
+        <div  className='flex justify-between'>
+            <p  className=' text-[#808080]'>Best Practices</p>
+            <p>23</p>
+        </div>
+        <div  className='flex justify-between'>
+            <p  className=' text-[#808080]'>Campaign Creation</p>
+            <p>11</p>
+        </div>
+    </div>
+    <div className='flex mt-10 flex-col'>
+        <p className='flex mb-5 border-b border-[#808080]'>RELATED POST</p>
+        <div className=' flex gap-5'>
+        <div className='flex'>
+        <img src={img5} alt="" />
+       <div className='flex flex-col'>
+        <p>Build Seamless Spreadsheet Import Experience</p>
+        <p>23 Oct 2023</p>
+       </div>
+        </div>
+        </div>
+        <div className=' flex gap-5'>
+        <div className='flex'>
+        <img src={img5} alt="" />
+       <div className='flex flex-col'>
+        <p>Build Seamless Spreadsheet Import Experience</p>
+        <p>23 Oct 2023</p>
+       </div>
+        </div>
+        </div>
+        <div className=' flex gap-5'>
+        <div className='flex'>
+        <img src={img5} alt="" />
+       <div className='flex flex-col'>
+        <p>Build Seamless Spreadsheet Import Experience</p>
+        <p>23 Oct 2023</p>
+       </div>
+        </div>
+        </div>
+    </div>
+    <div className='flex mt-5'>
+        <img className='relative flex' src={img6} alt="" />
+        <img className='absolute flex' src={img2} alt="" />
     </div>
 
 </div>
